@@ -22,25 +22,25 @@ body {
 }
 
 .email::placeholder {
-  color: #1f204140;
+  color: var(--Dark-Shade25);
 }
 
 .email__title {
-  font-family: "Montserrat";
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-weight: var(--font-big);
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: var(--h3-font-size);
   line-height: 100%;
-  color: #1f2041;
+  color: var(--Dark-Shade100);
 }
 
 .email__description {
-  font-family: "Montserrat";
-  font-weight: 400;
+  font-family: var(--body-font);
+  font-weight: var(--font-small);
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: var(--h3-font-size);
   line-height: 100%;
-  color: #1f204180;
+  color: var(--Dark-Shade50);
 }
 /* email */
 

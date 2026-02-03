@@ -10,7 +10,7 @@
   --Green: #6fcf97;
 
   /*========== Font and typography ==========*/
-  --body-font-h1: "Montserrat", sans-serif;
+  --body-font: "Montserrat", sans-serif;
 
   --h1-font-size: 24px;
   --h2-font-size: 19px;
@@ -18,6 +18,6 @@
   --body-font-size: 14px;
 
   /*========== Font weight ==========*/
-  --font-rbig: 700;
+  --font-big: 700;
   --font-small: 400;
 }
