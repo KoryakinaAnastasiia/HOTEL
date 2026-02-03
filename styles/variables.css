@@ -10,15 +10,14 @@
   --Green: #6fcf97;
 
   /*========== Font and typography ==========*/
-  --body-font-big: "Forum", sans-serif;
-  --body-font-small: "Noto Sans", sans-serif;
-  --big-font-size: 64px;
-  --normal-font-size: 48px;
-  --small-font-size: 16px;
-  --smaller-font-size: 18px;
-  --transparent-font-size: 22px;
+  --body-font-h1: "Montserrat", sans-serif;
+
+  --h1-font-size: 24px;
+  --h2-font-size: 19px;
+  --h3-font-size: 12px;
+  --body-font-size: 14px;
 
   /*========== Font weight ==========*/
-  --font-regular: 400;
-  --font-small: 300;
+  --font-rbig: 700;
+  --font-small: 400;
 }
