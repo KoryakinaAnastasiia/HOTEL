@@ -2,19 +2,22 @@ body {
   padding: 141px;
 }
 /* email */
-.email__form {
+.email__form,
+.purpose_trip__form {
   max-width: 320px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.email__form-name {
+.email__form-name,
+.purpose__form-name {
   display: flex;
   justify-content: space-between;
 }
 
-.email {
+.email,
+.purpose {
   width: 100%;
   border: 1px solid #1f204140;
   padding: 13px;
@@ -25,7 +28,8 @@ body {
   color: var(--Dark-Shade25);
 }
 
-.email__title {
+.email__title,
+.purpose__title {
   font-family: var(--body-font);
   font-weight: var(--font-big);
   text-transform: uppercase;
@@ -34,7 +38,8 @@ body {
   color: var(--Dark-Shade100);
 }
 
-.email__description {
+.email__description,
+.purpose__description {
   font-family: var(--body-font);
   font-weight: var(--font-small);
   text-transform: uppercase;
