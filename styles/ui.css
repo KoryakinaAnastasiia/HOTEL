@@ -1,0 +1,49 @@
+body {
+  padding: 141px;
+}
+/* email */
+.email__form {
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.email__form-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.email {
+  width: 100%;
+  border: 1px solid #1f204140;
+  padding: 13px;
+  border-radius: 4px;
+}
+
+.email::placeholder {
+  color: #1f204140;
+}
+
+.email__title {
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 100%;
+  color: #1f2041;
+}
+
+.email__description {
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 100%;
+  color: #1f204180;
+}
+/* email */
+
+/* purpose */
+
+/* purpose */

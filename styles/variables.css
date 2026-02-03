@@ -1,0 +1,24 @@
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --Dark-Shade100: #1f2041;
+  --Dark-Shade75: #1f2041bf;
+  --Dark-Shade50: #1f204180;
+  --Dark-Shade25: #1f204140;
+  --Dark-Shade5: #1f20410d;
+  --Purple: #bc9cff;
+  --Green: #6fcf97;
+
+  /*========== Font and typography ==========*/
+  --body-font-big: "Forum", sans-serif;
+  --body-font-small: "Noto Sans", sans-serif;
+  --big-font-size: 64px;
+  --normal-font-size: 48px;
+  --small-font-size: 16px;
+  --smaller-font-size: 18px;
+  --transparent-font-size: 22px;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-small: 300;
+}
