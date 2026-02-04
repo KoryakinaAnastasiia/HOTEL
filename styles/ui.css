@@ -4,9 +4,10 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-/* email */
+
 .email__form,
-.purpose_trip__form {
+.purpose_trip__form,
+.number_guests__form {
   max-width: 320px;
   display: flex;
   flex-direction: column;
@@ -32,7 +33,8 @@ body {
 }
 
 .email__title,
-.purpose__title {
+.purpose__title,
+.number_guests__title {
   font-family: var(--body-font);
   font-weight: var(--font-big);
   text-transform: uppercase;
@@ -49,6 +51,33 @@ body {
   font-size: var(--h3-font-size);
   line-height: 100%;
   color: var(--Dark-Shade50);
+}
+
+.tip_guests {
+  width: 100%;
+}
+
+.number_guests_line {
+  max-width: 320px;
+  position: relative;
+  display: inline-block;
+  border: 1px solid #1f204140;
+  border-radius: 4px;
+}
+
+.number_guests {
+  border: none;
+  width: 100%;
+  padding: 13px 80px 13px 13px;
+}
+
+.arrow_button {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 13px;
+  cursor: pointer;
+  right: 5px;
 }
 /* email */
 
