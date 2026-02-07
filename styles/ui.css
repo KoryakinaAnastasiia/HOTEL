@@ -32,7 +32,8 @@ body {
 
 .email::placeholder,
 .data::placeholder,
-.number_guests::placeholder {
+.number_guests::placeholder,
+.form-email-title::placeholder {
   color: var(--Dark-Shade25);
 }
 
@@ -63,12 +64,21 @@ body {
 }
 
 .number_guests_line,
-.data_line-mini {
+.data_line-mini,
+.data_line-mini-filter {
   max-width: 320px;
   position: relative;
   display: inline-block;
   border: 1px solid #1f204140;
   border-radius: 4px;
+}
+
+.data-mini,
+.data-filter,
+.form-email-title {
+  border: none;
+  width: 100%;
+  padding: 13px;
 }
 
 .number_guests {
@@ -97,6 +107,14 @@ body {
 .data__form-mini-block {
   display: flex;
   gap: 20px;
+}
+
+.data__form-filter,
+.data__form-email {
+  max-width: 266px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 /* email */
