@@ -4,6 +4,37 @@ body {
   gap: 120px;
 }
 
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.text-field span {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  font-family: var(--body-font);
+  color: var(--Dark-Shade100);
+  text-transform: uppercase;
+}
+
+.text-field input {
+  padding: 13px;
+  border: 1px solid var(--Dark-Shade25);
+  border-radius: 4px;
+}
+
+.text-field input:hover,
+.text-field input:focus {
+  border: 1px solid var(--Dark-Shade100);
+  outline: none;
+}
+
+.text-field input::placeholder {
+  color: var(--Dark-Shade25);
+}
+
+//исправить ниже 
 .choice.input {
   display: flex;
   flex-direction: column;
