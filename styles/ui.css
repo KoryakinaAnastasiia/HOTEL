@@ -5,6 +5,12 @@ body {
   gap: 20px;
 }
 
+.choice.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .email__form,
 .purpose_trip__form,
 .number_guests__form,
@@ -117,8 +123,24 @@ body {
   gap: 5px;
 }
 
-/* email */
+/* check box */
 
-/* purpose */
+.checkbox_buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
 
-/* purpose */
+.checkbox__title {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
+
+.checkbox__form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* check box */
