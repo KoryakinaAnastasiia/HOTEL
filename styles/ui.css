@@ -124,11 +124,6 @@ body {
 
 /* check box */
 
-.checkbox {
-  display: flex;
-  gap: 10x;
-}
-
 .checkbox span {
   display: flex;
   position: relative;
