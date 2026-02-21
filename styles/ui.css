@@ -10,7 +10,8 @@ body {
   gap: 5px;
 }
 
-.text-field span {
+.text-field span,
+.number_guests__form span {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   font-family: var(--body-font);
@@ -18,7 +19,8 @@ body {
   text-transform: uppercase;
 }
 
-.text-field input {
+.text-field input,
+.number_guests__form input {
   padding: 13px;
   border: 1px solid var(--Dark-Shade25);
   border-radius: 4px;
@@ -34,8 +36,7 @@ body {
   color: var(--Dark-Shade25);
 }
 
-//исправить ниже 
-.choice.input {
+#input {
   display: flex;
   flex-direction: column;
   gap: 10px;
