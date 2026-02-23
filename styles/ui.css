@@ -2,38 +2,7 @@ body {
   padding: 141px;
   display: flex;
   gap: 120px;
-}
-
-.text-field {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.text-field span,
-.number_guests__form span {
-  font-weight: var(--font-big);
-  font-size: var(--h3-font-size);
   font-family: var(--body-font);
-  color: var(--Dark-Shade100);
-  text-transform: uppercase;
-}
-
-.text-field input,
-.number_guests__form input {
-  padding: 13px;
-  border: 1px solid var(--Dark-Shade25);
-  border-radius: 4px;
-}
-
-.text-field input:hover,
-.text-field input:focus {
-  border: 1px solid var(--Dark-Shade100);
-  outline: none;
-}
-
-.text-field input::placeholder {
-  color: var(--Dark-Shade25);
 }
 
 #input {
@@ -42,86 +11,130 @@ body {
   gap: 10px;
 }
 
-.email__form,
-.purpose_trip__form,
+.text-field span,
+.number_guests__form span,
+.data__form span,
+.data__form-mini-first span,
+.data__form-mini-second span,
+.data__form-filter span,
+.data__form-email span {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  color: var(--Dark-Shade100);
+  text-transform: uppercase;
+  line-height: 100%;
+}
+
+.text-field,
 .number_guests__form,
 .data__form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   max-width: 320px;
+}
+
+.data__form-mini-first,
+.data__form-mini-second {
+  position: relative;
+  max-width: 150px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.email__form-name,
-.purpose__form-name {
-  display: flex;
-  justify-content: space-between;
-}
-
-.email,
-.purpose,
-.data {
-  width: 100%;
-  border: 1px solid #1f204140;
+.text-field input,
+.number_guests__form input,
+.data__form input,
+.data__form-mini-first input,
+.data__form-mini-second input,
+.data__form-filter input,
+.data__form-email input {
+  position: relative;
   padding: 13px;
+  border: 1px solid var(--Dark-Shade25);
   border-radius: 4px;
+  width: 100%;
 }
 
-.email::placeholder,
-.data::placeholder,
-.number_guests::placeholder,
-.form-email-title::placeholder {
+.text-field input:hover,
+.text-field input:focus {
+  border: 1px solid var(--Dark-Shade100);
+  outline: none;
+}
+
+.text-field input::placeholder,
+.data__form-email input::placeholder {
   color: var(--Dark-Shade25);
 }
 
-.email__title,
-.purpose__title,
-.number_guests__title,
-.data__title {
-  font-family: var(--body-font);
-  font-weight: var(--font-big);
-  text-transform: uppercase;
-  font-size: var(--h3-font-size);
-  line-height: 100%;
+.data__form input::placeholder {
+  font-weight: var(--font-small);
+  font-size: var(--body-font-size);
+  line-height: 24px;
+  color: var(--Dark-Shade25);
+  letter-spacing: 0%;
+}
+
+.number_guests__form div input::placeholder {
+  font-weight: var(--font-small);
+  font-size: var(--body-font-size);
+  line-height: 24px;
   color: var(--Dark-Shade100);
 }
 
-.email__description,
-.purpose__description {
-  font-family: var(--body-font);
+.data__form-mini-first div input::placeholder,
+.data__form-mini-second div input::placeholder {
   font-weight: var(--font-small);
-  text-transform: uppercase;
-  font-size: var(--h3-font-size);
-  line-height: 100%;
-  color: var(--Dark-Shade50);
+  font-size: var(--body-font-size);
+  line-height: 18px;
+  color: var(--Dark-Shade75);
 }
 
-.tip_guests {
-  width: 100%;
+.data__form-filter div input::placeholder {
+  font-weight: var(--font-small);
+  font-size: var(--body-font-size);
+  line-height: 24px;
+  color: var(--Dark-Shade75);
 }
 
-.number_guests_line,
-.data_line-mini,
-.data_line-mini-filter {
+.purpose_trip__form,
+.number_guests__form div,
+.data__form-mini-first div,
+.data__form-mini-second div {
+  position: relative;
   max-width: 320px;
+  display: inline-block;
+  gap: 5px;
+}
+
+.data__form-mini {
+  display: flex;
+  gap: 20px;
+}
+
+.data__form-filter,
+.data__form-email {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 266px;
+}
+
+.data__form-filter div,
+.data__form-email div {
   position: relative;
   display: inline-block;
-  border: 1px solid #1f204140;
-  border-radius: 4px;
 }
 
-.data-mini,
-.data-filter,
-.form-email-title {
+.number_guests::placeholder {
+  color: var(--Dark-Shade25);
+}
+
+.data-mini {
   border: none;
   width: 100%;
   padding: 13px;
-}
-
-.number_guests {
-  border: none;
-  width: 100%;
-  padding: 13px 80px 13px 13px;
 }
 
 .arrow_button,
@@ -132,26 +145,6 @@ body {
   padding: 13px;
   cursor: pointer;
   right: 5px;
-}
-
-.data__form-mini {
-  max-width: 150px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.data__form-mini-block {
-  display: flex;
-  gap: 20px;
-}
-
-.data__form-filter,
-.data__form-email {
-  max-width: 266px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
 }
 
 /* check box */

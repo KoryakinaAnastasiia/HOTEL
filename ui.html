@@ -18,8 +18,8 @@
     <!--font family-->
   </head>
   <body>
-    <!--email-->
     <section class="choice input" id="input">
+      <!--email-->
       <label class="text-field">
         <span>Text Field</span>
         <input placeholder="Email" />
@@ -27,124 +27,71 @@
       <!--email-->
 
       <!--number guests form-->
-      <form class="number_guests__form">
-        <div class="number__form-guests">
-          <h3 class="number_guests__title">Dropdown</h3>
-        </div>
-        <div class="number_guests_line">
-          <input
-            class="number_guests"
-            list="browsers"
-            placeholder="Сколько гостей"
-          />
+      <label class="number_guests__form">
+        <span>Dropdown</span>
+        <div>
+          <input placeholder="Сколько гостей" />
           <button class="arrow_button">
             <img src="./img/arrow_number_guest.png" alt="image" />
           </button>
         </div>
-      </form>
-
-      <label class="number_guests__form">
-        <span>Dropdown</span>
-        <input placeholder="Сколько гостей" />
-        <button class="arrow_button">
-          <img src="./img/arrow_number_guest.png" alt="image" />
-        </button>
       </label>
       <!--number guests form-->
 
       <!--data form-->
-      <form class="data__form">
-        <div class="data__form-block">
-          <h3 class="data__title">masked text field</h3>
-        </div>
-        <div class="data_line">
-          <input
-            class="data"
-            type="text"
-            id="date"
-            name="date"
-            placeholder="ДД.ММ.ГГГГ"
-            pattern="\d{2}\.\d{2}\.\d{4}"
-          />
-        </div>
-      </form>
+      <label class="data__form">
+        <span>masked text field</span>
+        <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
+      </label>
+      <!--data form-->
 
-      <div class="data__form-mini-block">
-        <form class="data__form-mini">
-          <div class="data__form-block">
-            <h3 class="data__title">date Dropdown</h3>
-          </div>
-          <div class="data_line-mini">
-            <input
-              class="data-mini"
-              type="text"
-              id="date"
-              name="date"
-              placeholder="ДД.ММ.ГГГГ"
-              pattern="\d{2}\.\d{2}\.\d{4}"
-            />
-            <button class="arrow_button-mini">
+      <!--data form mini-->
+      <div class="data__form-mini">
+        <label class="data__form-mini-first">
+          <span>date Dropdown</span>
+          <div>
+            <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
+            <button class="arrow_button">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
           </div>
-        </form>
+        </label>
 
-        <form class="data__form-mini">
-          <div class="data__form-block">
-            <h3 class="data__title">date Dropdown</h3>
-          </div>
-          <div class="data_line-mini">
-            <input
-              class="data-mini"
-              type="text"
-              id="date"
-              name="date"
-              placeholder="19.08.2019"
-              pattern="\d{2}\.\d{2}\.\d{4}"
-            />
-            <button class="arrow_button-mini">
+        <label class="data__form-mini-second">
+          <span>date Dropdown</span>
+          <div>
+            <input placeholder="19.08.2019" pattern="\d{2}\.\d{2}\.\d{4}" />
+            <button class="arrow_button">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
           </div>
-        </form>
+        </label>
       </div>
+      <!--data form mini-->
 
-      <form class="data__form-filter">
-        <div class="data__form-filter1">
-          <h3 class="data__title">date Dropdown</h3>
-        </div>
-        <div class="data_line-mini-filter">
-          <input
-            class="data-filter"
-            type="text"
-            id="date"
-            name="date"
-            placeholder="19 авг - 23 авг"
-          />
+      <!--data form filter-->
+      <label class="data__form-filter">
+        <span>date Dropdown</span>
+        <div>
+          <input placeholder="19 авг - 23 авг" />
           <button class="arrow_button-mini">
             <img src="./img/arrow_number_guest.png" alt="image" />
           </button>
         </div>
-      </form>
+      </label>
+      <!--data form filter-->
 
-      <form class="data__form-email">
-        <div class="data__form-filter1">
-          <h3 class="data__title">subscription text field</h3>
-        </div>
-        <div class="data_line-mini-filter">
-          <input
-            class="form-email-title"
-            type="email"
-            id="date"
-            name="date"
-            placeholder="Email"
-          />
+      <!--data form email-->
+      <label class="data__form-email">
+        <span>subscription text field</span>
+        <div>
+          <input type="email" placeholder="Email" />
           <button class="arrow_button-mini">
             <img src="./img/arrow_forward.png" alt="image" />
           </button>
         </div>
-      </form>
-      <!--data form-->
+      </label>
+      <!--data form email-->
     </section>
     <section class="check box" id="check">
       <div class="checkbox_buttons">
