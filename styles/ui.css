@@ -167,22 +167,66 @@ body {
   gap: 11px;
 }
 
-.checkbox__form div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
 }
 
-.checkbox__form label {
-  color: var(--Dark-Shade50);
-  font-weight: var(--font-small);
-  font-size: var(--body-font-size);
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-.checkbox__form input {
-  border: 1px;
-  color: var(--Dark-Shade25);
-  accent-color: #bc9cff;
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid #1F204140;       /* Серая рамка по умолчанию */
+  border-radius: 4px;
+  transition: all 0.2s ease;    /* Плавный переход для всех свойств */
+  box-sizing: border-box;       /* Чтобы рамка не увеличивала размер */
 }
 
+/* При наведении подсвечиваем только рамку */
+.container:hover input ~ .checkmark {
+  border-color:  #BC9CFF;
+}
+
+/* Когда чекбокс активен — красим ТОЛЬКО рамку */
+.container input:checked ~ .checkmark {
+  background-color: transparent; /* Фон остается прозрачным */
+  border-color: #BC9CFF;        /* Рамка становится синей */
+}
+
+/* Создаем саму галочку (скрыта по умолчанию) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Показываем галочку при клике */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Стили галочки (белая перевернутая "L") */
+.container .checkmark:after {
+  text-align: center;
+  left: 9px;
+  top: 5px;
+  width: 6px;
+  height: 8px;
+  border: red
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
 /* check box */
