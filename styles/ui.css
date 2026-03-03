@@ -189,21 +189,21 @@ body {
   height: 20px;
   width: 20px;
   background-color: transparent; /* Прозрачный фон */
-  border: 1px solid #1F204140;       /* Серая рамка по умолчанию */
+  border: 1px solid #1f204140; /* Серая рамка по умолчанию */
   border-radius: 4px;
-  transition: all 0.2s ease;    /* Плавный переход для всех свойств */
-  box-sizing: border-box;       /* Чтобы рамка не увеличивала размер */
+  transition: all 0.2s ease; /* Плавный переход для всех свойств */
+  box-sizing: border-box; /* Чтобы рамка не увеличивала размер */
 }
 
 /* При наведении подсвечиваем только рамку */
 .container:hover input ~ .checkmark {
-  border-color:  #BC9CFF;
+  border-color: #bc9cff;
 }
 
 /* Когда чекбокс активен — красим ТОЛЬКО рамку */
 .container input:checked ~ .checkmark {
   background-color: transparent; /* Фон остается прозрачным */
-  border-color: #BC9CFF;        /* Рамка становится синей */
+  border-color: #bc9cff; /* Рамка становится синей */
 }
 
 /* Создаем саму галочку (скрыта по умолчанию) */
@@ -216,6 +216,7 @@ body {
 /* Показываем галочку при клике */
 .container input:checked ~ .checkmark:after {
   display: block;
+  position: relative;
 }
 
 /* Стили галочки (белая перевернутая "L") */
@@ -225,8 +226,7 @@ body {
   top: 5px;
   width: 6px;
   height: 8px;
-  border: red
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
+  border: red;
 }
+
 /* check box */
