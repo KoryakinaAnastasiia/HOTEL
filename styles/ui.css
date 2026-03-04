@@ -238,4 +238,54 @@ body {
   gap: 16px;
 }
 
+.radioButtons__title {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
+
+.radioButtons__form {
+  display: flex;
+  gap: 20px;
+}
+
+input[type="radio"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* Стилизация метки радиокнопки */
+input[type="radio"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+/* Кастомная радиокнопка */
+input[type="radio"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 1px solid #1f204140;
+  border-radius: 50%;
+}
+
+/* Состояние выбранной радиокнопки */
+input[type="radio"]:checked + label::before {
+  background-color: #bc9cff;
+  box-shadow: inset 0 0 0 3px #f4f4f4;
+  border: 1px solid #bc9cff;
+}
+
+.radioButtons__form label {
+  font-weight: var(--font-small);
+  font-size: var(--body-font-size);
+  color: var(--Dark-Shade75);
+}
+
 /* radio buttons */
