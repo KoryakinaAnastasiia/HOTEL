@@ -287,5 +287,4 @@ input[type="radio"]:checked + label::before {
   font-size: var(--body-font-size);
   color: var(--Dark-Shade75);
 }
-
 /* radio buttons */
