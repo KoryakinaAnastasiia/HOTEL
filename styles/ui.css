@@ -196,9 +196,9 @@ body {
 }
 
 /* При наведении подсвечиваем только рамку */
-.container:hover input ~ .checkmark {
+/* .container:hover input ~ .checkmark {
   border-color: #bc9cff;
-}
+} */
 
 /* Когда чекбокс активен — красим ТОЛЬКО рамку */
 .container input:checked ~ .checkmark {
