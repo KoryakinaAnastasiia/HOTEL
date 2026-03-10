@@ -310,7 +310,6 @@ input[type="radio"]:checked + label::before {
   position: absolute;
   top: 3px;
   left: 3px;
-  display: inline-block;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -319,7 +318,6 @@ input[type="radio"]:checked + label::before {
   transition: 0.15s;
 }
 .checkbox-ios input[type="checkbox"] {
-  display: block;
   width: 0;
   height: 0;
   position: absolute;
@@ -328,7 +326,6 @@ input[type="radio"]:checked + label::before {
 }
 
 .checkbox-ios input[type="checkbox"]:checked + .checkbox-ios-switch {
-  background: #ffffff;
   border-color: #bc9cff;
 }
 .checkbox-ios input[type="checkbox"]:checked + .checkbox-ios-switch:before {
