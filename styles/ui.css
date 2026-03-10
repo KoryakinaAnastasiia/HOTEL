@@ -304,6 +304,7 @@ input[type="radio"]:checked + label::before {
   vertical-align: top;
   background: #ffffff;
   transition: 0.2s;
+  margin-right: 10px;
 }
 .checkbox-ios .checkbox-ios-switch:before {
   content: "";
