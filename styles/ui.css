@@ -149,7 +149,8 @@ body {
 
 /* check box */
 
-.checkbox__title {
+.checkbox__title,
+.buttonsLike__title {
   text-transform: uppercase;
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
@@ -336,40 +337,26 @@ input[type="radio"]:checked + label::before {
 /* toggle button */
 
 /* like buttons */
-.buttonsLike__img {
+.buttonsLike {
   position: relative;
-  min-width: 40px;
+  width: 40px;
   height: 20px;
+  border: 1px solid #1f204140;
   border-radius: 10px;
-  border: 1px solid var(--Dark-Shade25);
-  display: flex;
-  gap: 2px;
   background-color: #ffffff;
-  cursor: pointer;
+  display: flex;
 }
 
-.buttonsLike__img img {
-  object-fit: none;
-  flex-shrink: 0;
+.buttonsLike__input {
+  display: none;
+}
+.buttonsLike__img {
+  position: absolute;
 }
 
 .buttonsLike__counter {
-  font-weight: var(--font-small);
-  font-size: 10px;
-  color: var(--Dark-Shade25);
-  align-content: center;
-}
-
-.buttonsLike__img2 {
   position: absolute;
-  opacity: 0;
 }
-
-.buttonsLike__img button:checked ~ .buttonsLike__img {
-  border: 1px solid #bc9cff;
-  opacity: 1;
-}
-
 /* event target , parent element 
 
 /* like buttons */

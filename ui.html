@@ -139,22 +139,22 @@
       <!--Toggle Buttons-->
 
       <!--Like Buttons-->
-      <div class="buttonsLike">
-        <h3 class="buttonsLike__title">like button</h3>
-        <button class="buttonsLike__img" type="button">
+      <h3 class="buttonsLike__title">like button</h3>
+
+      <label class="buttonsLike">
+        <!-- Скрытый чекбокс для логики "нажато/не нажато" -->
+        <input type="checkbox" class="buttonsLike__input" />
+
+        <!-- Обёртка для иконки и цифр (сюда переносим стили рамки) -->
+        <div class="buttonsLike__content">
           <img
-            class="buttonsLike__img1"
+            class="buttonsLike__heart"
             src="./img/buttons_heart.svg"
-            alt="image"
+            alt="like"
           />
-          <img
-            class="buttonsLike__img2"
-            src="./img/buttons_heart_point.svg"
-            alt="image"
-          />
-          <p class="buttonsLike__counter">0</p>
-        </button>
-      </div>
+          <span class="buttonsLike__counter">0</span>
+        </div>
+      </label>
       <!--Like Buttons-->
     </section>
   </body>
