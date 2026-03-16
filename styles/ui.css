@@ -345,6 +345,7 @@ input[type="radio"]:checked + label::before {
   font-weight: var(--font-small);
   font-size: 10px;
   color: #1f204140;
+  user-select: none;
 }
 
 .buttonsLike__content {
@@ -371,7 +372,4 @@ input[type="radio"]:checked + label::before {
 .buttonsLike__input:checked + .buttonsLike__counter {
   color: #bc9cff;
 }
-
-/* event target , parent element 
-
 /* like buttons */
