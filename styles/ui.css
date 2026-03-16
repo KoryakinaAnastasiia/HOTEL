@@ -337,6 +337,10 @@ input[type="radio"]:checked + label::before {
 /* toggle button */
 
 /* like buttons */
+.buttonsLike__input {
+  display: none;
+}
+
 .buttonsLike {
   position: relative;
   width: 40px;
@@ -347,16 +351,30 @@ input[type="radio"]:checked + label::before {
   display: flex;
 }
 
-.buttonsLike__input {
-  display: none;
-}
-.buttonsLike__img {
-  position: absolute;
+.buttonsLike__counter {
+  font-weight: var(--font-small);
+  font-size: 10px;
+  color: #1f204140;
 }
 
-.buttonsLike__counter {
+.buttonsLike__content {
   position: absolute;
+  display: flex;
+  cursor: pointer;
+  text-align: center;
+  padding: 3px;
+  gap: 6px;
+  user-select: none;
 }
+
+.buttonsLike__heart {
+  object-fit: none;
+}
+
+.buttonsLike__input:checked + .buttonsLike__content {
+  border-color: #bc9cff;
+}
+
 /* event target , parent element 
 
 /* like buttons */
