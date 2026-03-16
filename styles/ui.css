@@ -150,7 +150,8 @@ body {
 /* check box */
 
 .checkbox__title,
-.buttonsLike__title {
+.buttonsLike__title,
+.buttonsRate__title {
   text-transform: uppercase;
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
@@ -341,13 +342,6 @@ input[type="radio"]:checked + label::before {
   display: none;
 }
 
-.buttonsLike__counter {
-  font-weight: var(--font-small);
-  font-size: 10px;
-  color: #1f204140;
-  user-select: none;
-}
-
 .buttonsLike__content {
   display: inline-flex; /* Чтобы кнопка была по ширине контента */
   align-items: center;
@@ -358,6 +352,13 @@ input[type="radio"]:checked + label::before {
   border: 1px solid var(--Dark-Shade25, #ccc);
   background-color: #ffffff;
   cursor: pointer;
+  user-select: none;
+}
+
+.buttonsLike__counter {
+  font-weight: var(--font-small);
+  font-size: 10px;
+  color: #1f204140;
   user-select: none;
 }
 
@@ -388,3 +389,17 @@ input[type="radio"]:checked + label::before {
   color: #bc9cff;
 }
 /* like buttons */
+
+/* Rate Buttons */
+.buttonStars {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonsRate__stars {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Rate Buttons */
