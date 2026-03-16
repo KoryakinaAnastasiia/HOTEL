@@ -341,16 +341,6 @@ input[type="radio"]:checked + label::before {
   display: none;
 }
 
-.buttonsLike {
-  position: relative;
-  width: 40px;
-  height: 20px;
-  border: 1px solid #1f204140;
-  border-radius: 10px;
-  background-color: #ffffff;
-  display: flex;
-}
-
 .buttonsLike__counter {
   font-weight: var(--font-small);
   font-size: 10px;
@@ -358,12 +348,15 @@ input[type="radio"]:checked + label::before {
 }
 
 .buttonsLike__content {
-  position: absolute;
-  display: flex;
+  display: inline-flex; /* Чтобы кнопка была по ширине контента */
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--Dark-Shade25, #ccc);
+  background-color: #ffffff;
   cursor: pointer;
-  text-align: center;
-  padding: 3px;
-  gap: 6px;
   user-select: none;
 }
 
@@ -373,6 +366,10 @@ input[type="radio"]:checked + label::before {
 
 .buttonsLike__input:checked + .buttonsLike__content {
   border-color: #bc9cff;
+}
+
+.buttonsLike__input:checked + .buttonsLike__counter {
+  color: #bc9cff;
 }
 
 /* event target , parent element 
