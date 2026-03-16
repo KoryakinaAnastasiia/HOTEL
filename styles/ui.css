@@ -365,11 +365,26 @@ input[type="radio"]:checked + label::before {
   object-fit: none;
 }
 
+.buttonsLike__heart2 {
+  object-fit: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.buttonsLike__input:checked + .buttonsLike__content .buttonsLike__heart {
+  display: none;
+}
+
+.buttonsLike__input:checked + .buttonsLike__content .buttonsLike__heart2 {
+  opacity: 1;
+  position: static;
+}
+
 .buttonsLike__input:checked + .buttonsLike__content {
   border-color: #bc9cff;
 }
 
-.buttonsLike__input:checked + .buttonsLike__counter {
+.buttonsLike__input:checked + .buttonsLike__content .buttonsLike__counter {
   color: #bc9cff;
 }
 /* like buttons */
