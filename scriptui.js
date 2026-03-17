@@ -19,17 +19,15 @@ const buttons = document.querySelectorAll(".buttonStars");
 // Выбираем все залитые звезды
 const starsOn = document.querySelectorAll(".buttonsRate__stars");
 // Выбираем все звезды
-const stars = document.querySelectorAll(".buttonsRate__starsBorder");
 
 buttons.forEach((btn, index) => {
   btn.addEventListener("click", () => {
-    // 1. Сбрасываем активный класс у всех залитых звезд
+    // Сбрасываем активный класс у всех залитых звезд
     starsOn.forEach((star) => star.classList.remove("active"));
-    stars.forEach((starsOff) => starsOff.classList.add("active"));
+
     // 2. Красим все звезды ДО нажатой включительно
     for (let i = 0; i <= index; i++) {
       starsOn[i].classList.add("active");
-      stars[i].classList.remove("active");
     }
   });
 });

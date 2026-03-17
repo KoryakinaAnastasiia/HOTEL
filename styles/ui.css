@@ -391,15 +391,27 @@ input[type="radio"]:checked + label::before {
 /* like buttons */
 
 /* Rate Buttons */
+
 .buttonStars {
   position: relative;
   background: none;
   border: none;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.buttonsRate__starsBorder,
+.buttonsRate__stars {
+  position: absolute;
+  object-fit: none;
+  top: 0px;
+  left: 0px;
 }
 
 .buttonsRate__stars {
   position: absolute;
+  object-fit: none;
   display: none; /* По умолчанию скрыты */
 }
 
