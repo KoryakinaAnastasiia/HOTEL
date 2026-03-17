@@ -392,6 +392,7 @@ input[type="radio"]:checked + label::before {
 
 /* Rate Buttons */
 .buttonStars {
+  position: relative;
   background: none;
   border: none;
   cursor: pointer;
@@ -399,7 +400,15 @@ input[type="radio"]:checked + label::before {
 
 .buttonsRate__stars {
   position: absolute;
-  opacity: 0;
+  display: none; /* По умолчанию скрыты */
+}
+
+.buttonsRate__starsBorder.active {
+  display: none;
+}
+
+.buttonsRate__stars.active {
+  display: block; /* Показываем при наличии класса */
 }
 
 /* Rate Buttons */
