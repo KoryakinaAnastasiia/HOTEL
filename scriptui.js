@@ -25,7 +25,7 @@ buttons.forEach((btn, index) => {
     // Сбрасываем активный класс у всех залитых звезд
     starsOn.forEach((star) => star.classList.remove("active"));
 
-    // 2. Красим все звезды ДО нажатой включительно
+    // Красим все звезды ДО нажатой включительно
     for (let i = 0; i <= index; i++) {
       starsOn[i].classList.add("active");
     }
