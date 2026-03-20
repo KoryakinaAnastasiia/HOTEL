@@ -373,12 +373,11 @@ input[type="radio"]:checked + label::before {
 }
 
 .buttonsLike__input:checked + .buttonsLike__content .buttonsLike__heart {
-  display: none;
+  opacity: 0;
 }
 
 .buttonsLike__input:checked + .buttonsLike__content .buttonsLike__heart2 {
   opacity: 1;
-  position: static;
 }
 
 .buttonsLike__input:checked + .buttonsLike__content {
