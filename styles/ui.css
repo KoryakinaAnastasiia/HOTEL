@@ -1,8 +1,14 @@
 body {
   padding: 141px;
   display: flex;
-  gap: 120px;
+  flex-direction: column;
+  gap: 100px;
   font-family: var(--body-font);
+}
+
+.blockOne {
+  display: flex;
+  gap: 126px;
 }
 
 #input {
@@ -152,7 +158,8 @@ body {
 .checkbox__title,
 .buttonsLike__title,
 .buttonsRate__title,
-.buttonsClick__title {
+.buttonsClick__title,
+.dropdown__rooms span {
   text-transform: uppercase;
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
@@ -426,9 +433,14 @@ input[type="radio"]:checked + label::before {
 /* Rate Buttons */
 
 /* Buttons Click*/
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 
-.buttons__click,
-.buttons__clickBorder {
+.button__click,
+.button__clickBorder {
   width: 99px;
   height: 44px;
   border-radius: 22px;
@@ -436,31 +448,31 @@ input[type="radio"]:checked + label::before {
   font-size: var(--h3-font-size);
 }
 
-.buttons__click,
-.buttons__pay {
+.button__click,
+.button__pay {
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   border: none;
   color: #ffffff;
   cursor: pointer;
 }
 
-.buttons__click:hover {
+.button__click:hover {
   opacity: 50%;
 }
 
-.buttons__clickBorder {
+.button__clickBorder {
   border: 2px solid #bc9cff;
   color: #bc9cff;
   cursor: pointer;
 }
 
-.buttons__clickBorder:hover {
+.button__clickBorder:hover {
   opacity: 50%;
 }
 
-.buttons__clickBorderOff {
+.button__clickBorderOff {
   border: none;
-  background: none;
+  background: white;
   color: #bc9cff;
   height: 15px;
   font-weight: var(--font-big);
@@ -468,12 +480,12 @@ input[type="radio"]:checked + label::before {
   width: 61px;
 }
 
-.buttons__clickBorderOff:hover {
+.button__clickBorderOff:hover {
   color: #1f204180;
   cursor: pointer;
 }
 
-.buttons__pay {
+.button__pay {
   width: 320px;
   height: 44px;
   border-radius: 22px;
@@ -483,3 +495,29 @@ input[type="radio"]:checked + label::before {
 }
 
 /* Buttons Click*/
+
+/*Dropdown*/
+
+.dropdown__rooms {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 266px;
+}
+
+.dropdown__rooms input {
+  border-radius: 1px;
+  position: relative;
+  padding: 13px;
+  border: 1px solid var(--Dark-Shade25);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.dropdown__rooms div {
+  position: relative;
+  max-width: 266px;
+  display: inline-block;
+}
+
+/*Dropdown*/

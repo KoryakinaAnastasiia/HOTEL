@@ -18,205 +18,223 @@
     <!--font family-->
   </head>
   <body>
-    <section class="choice input" id="input">
-      <!--email-->
-      <label class="text-field">
-        <span>Text Field</span>
-        <input placeholder="Email" />
-      </label>
-      <!--email-->
+    <div class="blockOne">
+      <section class="choice input" id="input">
+        <!--email-->
+        <label class="text-field">
+          <span>Text Field</span>
+          <input placeholder="Email" />
+        </label>
+        <!--email-->
 
-      <!--number guests form-->
-      <label class="number_guests__form">
-        <span>Dropdown</span>
-        <div>
-          <input placeholder="Сколько гостей" />
-          <button class="arrow_button">
-            <img src="./img/arrow_number_guest.png" alt="image" />
-          </button>
-        </div>
-      </label>
-      <!--number guests form-->
-
-      <!--data form-->
-      <label class="data__form">
-        <span>masked text field</span>
-        <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
-      </label>
-      <!--data form-->
-
-      <!--data form mini-->
-      <div class="data__form-mini">
-        <label class="data__form-mini-first">
-          <span>date Dropdown</span>
+        <!--number guests form-->
+        <label class="number_guests__form">
+          <span>Dropdown</span>
           <div>
-            <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
+            <input placeholder="Сколько гостей" />
             <button class="arrow_button">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
           </div>
         </label>
+        <!--number guests form-->
 
-        <label class="data__form-mini-second">
+        <!--data form-->
+        <label class="data__form">
+          <span>masked text field</span>
+          <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
+        </label>
+        <!--data form-->
+
+        <!--data form mini-->
+        <div class="data__form-mini">
+          <label class="data__form-mini-first">
+            <span>date Dropdown</span>
+            <div>
+              <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
+              <button class="arrow_button">
+                <img src="./img/arrow_number_guest.png" alt="image" />
+              </button>
+            </div>
+          </label>
+
+          <label class="data__form-mini-second">
+            <span>date Dropdown</span>
+            <div>
+              <input placeholder="19.08.2019" pattern="\d{2}\.\d{2}\.\d{4}" />
+              <button class="arrow_button">
+                <img src="./img/arrow_number_guest.png" alt="image" />
+              </button>
+            </div>
+          </label>
+        </div>
+        <!--data form mini-->
+
+        <!--data form filter-->
+        <label class="data__form-filter">
           <span>date Dropdown</span>
           <div>
-            <input placeholder="19.08.2019" pattern="\d{2}\.\d{2}\.\d{4}" />
-            <button class="arrow_button">
+            <input placeholder="19 авг - 23 авг" />
+            <button class="arrow_button-mini">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
           </div>
         </label>
-      </div>
-      <!--data form mini-->
+        <!--data form filter-->
 
-      <!--data form filter-->
-      <label class="data__form-filter">
-        <span>date Dropdown</span>
-        <div>
-          <input placeholder="19 авг - 23 авг" />
-          <button class="arrow_button-mini">
-            <img src="./img/arrow_number_guest.png" alt="image" />
-          </button>
-        </div>
-      </label>
-      <!--data form filter-->
-
-      <!--data form email-->
-      <label class="data__form-email">
-        <span>subscription text field</span>
-        <div>
-          <input type="email" placeholder="Email" />
-          <button class="arrow_button-mini">
-            <img src="./img/arrow_forward.png" alt="image" />
-          </button>
-        </div>
-      </label>
-      <!--data form email-->
-    </section>
-    <!--check box-->
-    <section class="check box" id="check">
-      <div class="checkbox__title">Checkbox Buttons</div>
-      <div class="checkbox__form">
-        <label class="container">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-          Можно курить
+        <!--data form email-->
+        <label class="data__form-email">
+          <span>subscription text field</span>
+          <div>
+            <input type="email" placeholder="Email" />
+            <button class="arrow_button-mini">
+              <img src="./img/arrow_forward.png" alt="image" />
+            </button>
+          </div>
         </label>
-        <label class="container">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-          Можно с питомцами
-        </label>
-        <label class="container">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-          Можно пригласить гостей (до 10 человек)
-        </label>
-      </div>
+        <!--data form email-->
+      </section>
       <!--check box-->
-
-      <!--Radio Buttons-->
-      <div class="radio__buttons">
-        <h3 class="radioButtons__title">Radio Buttons</h3>
-        <form class="radioButtons__form">
-          <input type="radio" id="option1" name="options" value="1" checked />
-          <label for="option1">Мужчина</label>
-          <input type="radio" id="option2" name="options" value="2" />
-          <label for="option2"> Женщина</label>
-        </form>
-      </div>
-      <!--Radio Buttons-->
-
-      <!--Toggle Buttons-->
-      <h3 class="checkbox__title">Toggle</h3>
-      <div class="checkbox__block">
-        <label class="checkbox-ios">
-          <input type="checkbox" />
-          <span class="checkbox-ios-switch"></span>
-          Получать спецпредложения
-        </label>
-      </div>
-      <!--Toggle Buttons-->
-
-      <!--Like Buttons-->
-      <h3 class="buttonsLike__title">like button</h3>
-
-      <label class="buttonsLike">
-        <!-- Скрытый чекбокс для логики "нажато/не нажато" -->
-        <input type="checkbox" class="buttonsLike__input" />
-
-        <!-- Обёртка для иконки и цифр (сюда переносим стили рамки) -->
-        <div class="buttonsLike__content">
-          <img
-            class="buttonsLike__heart"
-            src="./img/buttons_heart.svg"
-            alt="like"
-          />
-          <img
-            class="buttonsLike__heart2"
-            src="./img/buttons_heart_point.svg"
-            alt="like"
-          />
-          <span class="buttonsLike__counter">0</span>
+      <section class="check box" id="check">
+        <div class="checkbox__title">Checkbox Buttons</div>
+        <div class="checkbox__form">
+          <label class="container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Можно курить
+          </label>
+          <label class="container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Можно с питомцами
+          </label>
+          <label class="container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Можно пригласить гостей (до 10 человек)
+          </label>
         </div>
-      </label>
-      <!--Like Buttons-->
+        <!--check box-->
 
-      <!--Rate Buttons-->
-      <h3 class="buttonsRate__title">rate button</h3>
+        <!--Radio Buttons-->
+        <div class="radio__buttons">
+          <h3 class="radioButtons__title">Radio Buttons</h3>
+          <form class="radioButtons__form">
+            <input type="radio" id="option1" name="options" value="1" checked />
+            <label for="option1">Мужчина</label>
+            <input type="radio" id="option2" name="options" value="2" />
+            <label for="option2"> Женщина</label>
+          </form>
+        </div>
+        <!--Radio Buttons-->
 
-      <div class="buttonsRate__content">
-        <button class="buttonStars">
-          <img
-            class="buttonsRate__starsBorder"
-            src="./img/star_border.svg"
-            alt="stars"
-          />
-          <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
-        </button>
-        <button class="buttonStars">
-          <img
-            class="buttonsRate__starsBorder"
-            src="./img/star_border.svg"
-            alt="stars"
-          />
-          <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
-        </button>
-        <button class="buttonStars">
-          <img
-            class="buttonsRate__starsBorder"
-            src="./img/star_border.svg"
-            alt="stars"
-          />
-          <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
-        </button>
-        <button class="buttonStars">
-          <img
-            class="buttonsRate__starsBorder"
-            src="./img/star_border.svg"
-            alt="stars"
-          />
-          <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
-        </button>
-        <button class="buttonStars">
-          <img
-            class="buttonsRate__starsBorder"
-            src="./img/star_border.svg"
-            alt="stars"
-          />
-          <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
-        </button>
-      </div>
-      <!--Rate Buttons-->
+        <!--Toggle Buttons-->
+        <h3 class="checkbox__title">Toggle</h3>
+        <div class="checkbox__block">
+          <label class="checkbox-ios">
+            <input type="checkbox" />
+            <span class="checkbox-ios-switch"></span>
+            Получать спецпредложения
+          </label>
+        </div>
+        <!--Toggle Buttons-->
 
+        <!--Like Buttons-->
+        <h3 class="buttonsLike__title">like button</h3>
+
+        <label class="buttonsLike">
+          <!-- Скрытый чекбокс для логики "нажато/не нажато" -->
+          <input type="checkbox" class="buttonsLike__input" />
+
+          <!-- Обёртка для иконки и цифр (сюда переносим стили рамки) -->
+          <div class="buttonsLike__content">
+            <img
+              class="buttonsLike__heart"
+              src="./img/buttons_heart.svg"
+              alt="like"
+            />
+            <img
+              class="buttonsLike__heart2"
+              src="./img/buttons_heart_point.svg"
+              alt="like"
+            />
+            <span class="buttonsLike__counter">0</span>
+          </div>
+        </label>
+        <!--Like Buttons-->
+
+        <!--Rate Buttons-->
+        <h3 class="buttonsRate__title">rate button</h3>
+
+        <div class="buttonsRate__content">
+          <button class="buttonStars">
+            <img
+              class="buttonsRate__starsBorder"
+              src="./img/star_border.svg"
+              alt="stars"
+            />
+            <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
+          </button>
+          <button class="buttonStars">
+            <img
+              class="buttonsRate__starsBorder"
+              src="./img/star_border.svg"
+              alt="stars"
+            />
+            <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
+          </button>
+          <button class="buttonStars">
+            <img
+              class="buttonsRate__starsBorder"
+              src="./img/star_border.svg"
+              alt="stars"
+            />
+            <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
+          </button>
+          <button class="buttonStars">
+            <img
+              class="buttonsRate__starsBorder"
+              src="./img/star_border.svg"
+              alt="stars"
+            />
+            <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
+          </button>
+          <button class="buttonStars">
+            <img
+              class="buttonsRate__starsBorder"
+              src="./img/star_border.svg"
+              alt="stars"
+            />
+            <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
+          </button>
+        </div>
+        <!--Rate Buttons-->
+      </section>
       <!--Buttons-->
-      <h3 class="buttonsClick__title">buttons</h3>
-      <button class="buttons__click">CLICK ME</button>
-      <button class="buttons__clickBorder">CLICK ME</button>
-      <button class="buttons__clickBorderOff">CLICK ME</button>
-      <button class="buttons__pay">перейти к оплате</button>
-      <!--Buttons-->
-    </section>
+      <section class="buttons">
+        <h3 class="buttonsClick__title">buttons</h3>
+        <button class="button__click">CLICK ME</button>
+        <button class="button__clickBorder">CLICK ME</button>
+        <button class="button__clickBorderOff">CLICK ME</button>
+        <button class="button__pay">перейти к оплате</button>
+      </section>
+    </div>
+    <!--Buttons-->
+    <!--Dropdown-->
+    <div class="blockTwo">
+      <section class="dropdown">
+        <label class="dropdown__rooms">
+          <span>Dropdown</span>
+          <div>
+            <input placeholder="2 спальни, 2 кровати..." />
+            <button class="arrow_button">
+              <img src="./img/arrow_number_guest.png" alt="image" />
+            </button>
+          </div>
+        </label>
+      </section>
+    </div>
+    <!--Dropdown-->
     <!--==================== JAVASCRIPT ====================-->
     <script src="./scriptui.js"></script>
   </body>
