@@ -225,11 +225,19 @@
       <section class="dropdown">
         <label class="dropdown__rooms">
           <span>Dropdown</span>
-          <div>
+          <div class="dropdown__default" id="menuBtnClose">
             <input placeholder="2 спальни, 2 кровати..." />
-            <button class="arrow_button">
+            <button class="arrow_button" id="arrow_button">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
+          </div>
+          <div class="dropdown__expander" id="mobileMenu">
+            <h3 class="dropdownBad__title">спальни</h3>
+            <div class="dropdown__counter">
+              <button class="dropdownBad__plus">-</button>
+              <span>0</span>
+              <button class="dropdownBad__minus">+</button>
+            </div>
           </div>
         </label>
       </section>

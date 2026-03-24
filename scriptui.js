@@ -33,3 +33,19 @@ buttons.forEach((btn, index) => {
     }
   });
 });
+/*Dropdown*/
+
+const btn = document.getElementById("arrow_button");
+const menu = document.getElementById("mobileMenu");
+const btnclose = document.getElementById("menuBtnClose");
+
+btn.addEventListener("click", (e) => {
+  e.stopPropagation(); // Останавливает всплытие к родителю
+  menu.classList.toggle("active");
+});
+
+// Закрытие меню при клике вне его области
+btnclose.addEventListener("click", () => {
+  menu.classList.remove("active");
+});
+/*Dropdown*/

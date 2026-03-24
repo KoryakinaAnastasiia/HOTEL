@@ -499,10 +499,14 @@ input[type="radio"]:checked + label::before {
 /*Dropdown*/
 
 .dropdown__rooms {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 5px;
   max-width: 266px;
+}
+
+.dropdown__rooms span {
+  padding-bottom: 5px;
 }
 
 .dropdown__rooms input {
@@ -514,10 +518,65 @@ input[type="radio"]:checked + label::before {
   width: 100%;
 }
 
-.dropdown__rooms div {
+.dropdown__default {
   position: relative;
   max-width: 266px;
   display: inline-block;
 }
 
+.dropdown__expander {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #1f204180;
+  display: flex;
+  padding: 13px;
+  justify-content: space-between;
+}
+
+.dropdown__expander div {
+  display: flex;
+  gap: 15px;
+}
+
+.dropdownBad__plus,
+.dropdownBad__minus {
+  width: 30px;
+  height: 30px;
+  border-radius: 22px;
+  border: 1px solid #1f204140;
+  color: #1f204140;
+  background-color: white;
+}
+
+.dropdown__counter span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+}
+
+.dropdownBad__title {
+  font-weight: var(--font-big);
+  font-size: 12px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  color: #1f2041;
+}
+
+.dropdown__expander {
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  transform: translateY(
+    -100%
+  ); /* Полностью прячет блок вверх без сдвига экрана */
+  width: 266px;
+  transition: 0.4s ease; /* Плавность движения */
+}
+
+.dropdown__expander.active {
+  opacity: 1;
+  transform: translateY(0));
+}
 /*Dropdown*/
