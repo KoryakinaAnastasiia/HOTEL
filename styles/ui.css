@@ -565,18 +565,25 @@ input[type="radio"]:checked + label::before {
 }
 
 .dropdown__expander {
-  opacity: 1;
+  opacity: 0; /* Изначально прозрачный */
+  visibility: hidden; /* Чтобы не кликался в скрытом состоянии */
   position: absolute;
-  top: 0px;
-  transform: translateY(
-    -100%
-  ); /* Полностью прячет блок вверх без сдвига экрана */
-  width: 266px;
-  transition: 0.4s ease; /* Плавность движения */
+  top: 100%; /* Появляется ПОД инпутом */
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 10;
+  border: 1px solid #1f204180;
+  display: flex;
+  padding: 13px;
+  justify-content: space-between;
+  transform: translateY(-10px); /* Легкое смещение для эффекта выезда */
+  transition: 0.4s ease;
 }
 
 .dropdown__expander.active {
   opacity: 1;
-  transform: translateY(0));
+  visibility: visible;
+  transform: translateY(0); /* Убрал лишнюю скобку */
 }
 /*Dropdown*/
