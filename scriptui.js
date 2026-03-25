@@ -68,7 +68,7 @@ btnclose.addEventListener("click", () => {
 //   }
 // });
 
-const allPlusBtns = document.querySelectorAll(".dropdownBad__plus");
+const allPlusBtns = document.querySelectorAll(".dropdown__plus");
 
 allPlusBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -80,7 +80,7 @@ allPlusBtns.forEach((btn) => {
   });
 });
 
-const allMinusBtns = document.querySelectorAll(".dropdownBad__minus");
+const allMinusBtns = document.querySelectorAll(".dropdown__minus");
 
 allMinusBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
