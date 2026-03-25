@@ -13,6 +13,7 @@ body {
 
 .blockTwo {
   display: flex;
+  gap: 181px;
 }
 
 #input {
@@ -27,7 +28,8 @@ body {
 .data__form-mini-first span,
 .data__form-mini-second span,
 .data__form-filter span,
-.data__form-email span {
+.data__form-email span,
+.dropdown__peoples span {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   color: var(--Dark-Shade100);
@@ -603,4 +605,19 @@ input[type="radio"]:checked + label::before {
   visibility: visible; /*элемент становится невидемый*/
   transform: translateY(0);
 }
-/*Dropdown*/
+/*Dropdown People*/
+
+.dropdown__defaultPeople {
+  position: relative;
+  min-width: 320px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dropdown__defaultPeople input {
+  position: relative;
+  padding: 13px;
+  border: 1px solid var(--Dark-Shade50);
+  border-radius: 4px;
+  width: 100%;
+}
