@@ -510,12 +510,22 @@ input[type="radio"]:checked + label::before {
 }
 
 .dropdown__rooms input {
-  border-radius: 1px;
   position: relative;
   padding: 13px;
   border: 1px solid var(--Dark-Shade25);
   border-radius: 4px;
   width: 100%;
+}
+
+.dropdown__rooms input:active {
+  border-radius: 4px 4px 0px 0px;
+  border: 1px solid #1f204180;
+  outline: none;
+}
+
+.active .dropdown__expander {
+  border-radius: 0 0 4px 4px;
+  border-top: none; /* Убираем двойную рамку на стыке */
 }
 
 .dropdown__default {
@@ -524,18 +534,10 @@ input[type="radio"]:checked + label::before {
   display: inline-block;
 }
 
-.dropdown__expander {
-  position: absolute;
-  top: 100%;
-  border: 1px solid #1f204180;
-  display: flex;
-  padding: 13px;
-  justify-content: space-between;
-}
-
 .dropdown__expander div {
   display: flex;
-  gap: 15px;
+  gap: 9px;
+  justify-content: space-between;
 }
 
 .dropdownBad__plus,
@@ -562,11 +564,13 @@ input[type="radio"]:checked + label::before {
   display: flex;
   align-items: center;
   color: #1f2041;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .dropdown__expander {
-  opacity: 0; /* Изначально прозрачный */
-  visibility: hidden; /* Чтобы не кликался в скрытом состоянии */
+  opacity: 0;
+  visibility: hidden; /* элемент становится невидемый, но он есть*/
   position: absolute;
   top: 100%; /* Появляется ПОД инпутом */
   left: 0;
@@ -579,11 +583,13 @@ input[type="radio"]:checked + label::before {
   justify-content: space-between;
   transform: translateY(-10px); /* Легкое смещение для эффекта выезда */
   transition: 0.4s ease;
+  flex-direction: column;
+  gap: 7px;
 }
 
 .dropdown__expander.active {
   opacity: 1;
-  visibility: visible;
-  transform: translateY(0); /* Убрал лишнюю скобку */
+  visibility: visible; /*элемент становится невидемый*/
+  transform: translateY(0);
 }
 /*Dropdown*/

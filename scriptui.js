@@ -33,7 +33,7 @@ buttons.forEach((btn, index) => {
     }
   });
 });
-/*Dropdown*/
+/*Dropdown flashback*/
 
 const btn = document.getElementById("arrow_button");
 const menu = document.getElementById("mobileMenu");
@@ -48,4 +48,49 @@ btn.addEventListener("click", (e) => {
 btnclose.addEventListener("click", () => {
   menu.classList.remove("active");
 });
-/*Dropdown*/
+
+/*Dropdown plus minus*/
+// const plusBtn = document.querySelectorAll(".dropdownBad__plus");
+// const minusBtn = document.querySelectorAll(".dropdownBad__minus");
+// let counter = document.querySelectorAll(".dropdown__counter span");
+
+// plusBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   let counterInt = parseInt(counter.textContent);
+//   counter.textContent = counterInt + 1;
+// });
+
+// minusBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   let counterInt = parseInt(counter.textContent);
+//   if (counterInt > 0) {
+//     counter.textContent = counterInt - 1;
+//   }
+// });
+
+const allPlusBtns = document.querySelectorAll(".dropdownBad__plus");
+
+allPlusBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Ищем span именно в том блоке, где нажата кнопка
+    const counterSpan = e.target.parentElement.querySelector("span");
+    counterSpan.textContent = parseInt(counterSpan.textContent) + 1;
+  });
+});
+
+const allMinusBtns = document.querySelectorAll(".dropdownBad__minus");
+
+allMinusBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Ищем span именно в том блоке, где нажата кнопка
+    const counterSpan = e.target.parentElement.querySelector("span");
+    let counter = parseInt(counterSpan.textContent);
+    if (counter > 0) {
+      counterSpan.textContent = counter - 1;
+    }
+  });
+});
