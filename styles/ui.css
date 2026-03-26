@@ -608,6 +608,7 @@ input[type="radio"]:checked + label::before {
 /*Dropdown People*/
 
 .dropdown__peoples {
+  position: relative;
   display: block;
   width: 320px;
 }
@@ -634,8 +635,11 @@ input[type="radio"]:checked + label::before {
 }
 
 .dropdown__peopleExpander {
+  position: absolute;
   top: 100%;
   left: 0;
+  width: 100%;
+
   visibility: hidden;
   opacity: 0;
   z-index: 11;
