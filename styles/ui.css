@@ -607,6 +607,11 @@ input[type="radio"]:checked + label::before {
 }
 /*Dropdown People*/
 
+.dropdown__peoples {
+  display: block;
+  width: 320px;
+}
+
 .dropdown__defaultPeople {
   position: relative;
   min-width: 320px;
@@ -620,4 +625,53 @@ input[type="radio"]:checked + label::before {
   border: 1px solid var(--Dark-Shade50);
   border-radius: 4px;
   width: 100%;
+}
+
+.dropdown__counter {
+  display: flex;
+  gap: 9px;
+  justify-content: space-between;
+}
+
+.dropdown__peopleExpander {
+  top: 100%;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 11;
+  border: 1px solid #1f204180;
+  padding-top: 6px;
+  padding-left: 15px;
+  padding-right: 7px;
+  padding-bottom: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transform: translateY(-10px); /* Легкое смещение для эффекта выезда */
+  transition: 0.4s ease;
+}
+
+.dropdown__peopleExpander.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown__peopleExpander div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.BtnApply {
+  border: none;
+  background: none;
+  color: #bc9cff;
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+  padding-top: 13px;
+  margin-left: auto;
+  cursor: pointer;
+  width: min-content;
 }
