@@ -97,14 +97,15 @@ allMinusBtns.forEach((btn) => {
 
 const btnPeople = document.querySelector(".arrow_button");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
-const btnclosePeople = document.querySelector(".dropdown__defaultPeople");
 
 btnPeople.addEventListener("click", (e) => {
   e.stopPropagation(); // Останавливает всплытие к родителю
   menuPeople.classList.toggle("active");
 });
 
-// Закрытие меню при клике вне его области
-menuPeople.addEventListener("click", () => {
-  menuPeople.classList.remove("active");
+// Закрытие ПРИ КЛИКЕ ВНЕ дропдауна (самый правильный вариант)
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".dropdown__peoples")) {
+    menuPeople.classList.remove("active");
+  }
 });
