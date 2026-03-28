@@ -97,6 +97,7 @@ allMinusBtns.forEach((btn) => {
 
 const btnPeople = document.querySelector(".arrow_buttonTwo");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
+const btnApply = document.querySelector(".BtnApply");
 
 btnPeople.addEventListener("click", (e) => {
   e.stopPropagation(); // Останавливает всплытие к родителю
@@ -108,4 +109,8 @@ document.addEventListener("click", (e) => {
   if (!e.target.closest(".dropdown__peoples")) {
     menuPeople.classList.remove("active");
   }
+});
+
+btnApply.addEventListener("click", (e) => {
+  menuPeople.classList.remove("active");
 });
