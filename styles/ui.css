@@ -607,13 +607,11 @@ input[type="radio"]:checked + label::before {
 }
 /*Dropdown People*/
 
-.dropdown__peoples {
-  position: relative;
-  width: 320px;
+.dropdown__peoples span {
+  padding-bottom: 5px;
 }
 
 .dropdown__defaultPeople {
-  position: relative;
   min-width: 320px;
   flex-shrink: 0;
 }
@@ -622,38 +620,29 @@ input[type="radio"]:checked + label::before {
   position: relative;
   padding: 13px;
   border: 1px solid var(--Dark-Shade50);
-  border-radius: 4px;
+  border-radius: 1px;
   width: 100%;
 }
 
-.dropdown__counter {
-  /* display: flex;
-  gap: 9px;
-  justify-content: space-between; */
-  justify-content: flex-end !important;
-  gap: 12px;
+.dropdown__peoples {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
 }
 
 .dropdown__peopleExpander {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  visibility: hidden;
   opacity: 0;
-  z-index: 11;
-  border: 1px solid #1f204180;
-  padding-top: 6px;
-  padding-left: 15px;
-  padding-right: 7px;
-  padding-bottom: 13px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  padding: 13px;
+  border: 1px solid var(--Dark-Shade50);
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  transform: translateY(-10px); /* Легкое смещение для эффекта выезда */
-  transition: 0.4s ease;
-  background-color: #fff;
-  box-sizing: border-box;
+  gap: 8px;
+  visibility: visible;
+  min-width: 320px;
 }
 
 .dropdown__peopleExpander.active {
@@ -664,19 +653,19 @@ input[type="radio"]:checked + label::before {
 
 .dropdown__peopleExpander div {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .BtnApply {
-  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  padding-top: 11px;
+  width: auto;
+  white-space: nowrap;
   background: none;
+  border: none;
   color: #bc9cff;
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   text-transform: uppercase;
-  padding-top: 13px;
-  margin-left: auto;
-  cursor: pointer;
-  width: min-content;
 }
