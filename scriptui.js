@@ -19,6 +19,7 @@ buttonLikeInput.addEventListener("change", (event) => {
 /* Rate Buttons */
 
 const buttons = document.querySelectorAll(".buttonStars");
+
 // Выбираем все залитые звезды
 
 buttons.forEach((btn, index) => {
@@ -67,7 +68,7 @@ btnclose.addEventListener("click", () => {
 //     counter.textContent = counterInt - 1;
 //   }
 // });
-
+const dataCount = document.getElementById("peoplesData");
 const allPlusBtns = document.querySelectorAll(".dropdown__plus");
 
 allPlusBtns.forEach((btn) => {
@@ -77,6 +78,7 @@ allPlusBtns.forEach((btn) => {
     // Ищем span именно в том блоке, где нажата кнопка
     const counterSpan = e.target.parentElement.querySelector("span");
     counterSpan.textContent = parseInt(counterSpan.textContent) + 1;
+    dataCount = counterSpan.textContent;
   });
 });
 
@@ -98,6 +100,8 @@ allMinusBtns.forEach((btn) => {
 const btnPeople = document.querySelector(".arrow_buttonTwo");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
 const btnApply = document.querySelector(".BtnApply");
+const btnApplyClean = document.querySelector(".BtnApplyClean");
+const allSpans = document.querySelectorAll(".dropdown__counter span");
 
 btnPeople.addEventListener("click", (e) => {
   e.stopPropagation(); // Останавливает всплытие к родителю
@@ -113,4 +117,9 @@ document.addEventListener("click", (e) => {
 
 btnApply.addEventListener("click", (e) => {
   menuPeople.classList.remove("active");
+});
+
+btnApplyClean.addEventListener("click", (e) => {
+  e.stopPropagation(); // Останавливает всплытие к родителю
+  allSpans.forEach((span) => (span.textContent = "0"));
 });

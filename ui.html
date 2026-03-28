@@ -264,7 +264,11 @@
         <label class="dropdown__peoples">
           <span>Dropdown</span>
           <div class="dropdown__defaultPeople">
-            <input placeholder="Сколько гостей" />
+            <input
+              placeholder="Сколько гостей"
+              class="dropdown__input"
+              readonly
+            />
             <button type="button" class="arrow_buttonTwo">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
@@ -294,7 +298,10 @@
                 <button class="dropdown__plus">+</button>
               </div>
             </div>
-            <button class="BtnApply">применить</button>
+            <div>
+              <button class="BtnApplyClean">очистить</button>
+              <button class="BtnApply">применить</button>
+            </div>
           </div>
         </label>
       </section>

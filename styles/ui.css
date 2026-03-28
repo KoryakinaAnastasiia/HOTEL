@@ -674,3 +674,12 @@ input[type="radio"]:checked + label::before {
   font-size: var(--h3-font-size);
   text-transform: uppercase;
 }
+
+.BtnApplyClean {
+  background: none;
+  border: none;
+  color: #bc9cff;
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
