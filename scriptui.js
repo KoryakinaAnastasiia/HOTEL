@@ -95,7 +95,7 @@ allMinusBtns.forEach((btn) => {
   });
 });
 
-const btnPeople = document.querySelector(".arrow_button");
+const btnPeople = document.querySelector(".arrow_buttonTwo");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
 
 btnPeople.addEventListener("click", (e) => {
@@ -103,7 +103,7 @@ btnPeople.addEventListener("click", (e) => {
   menuPeople.classList.toggle("active");
 });
 
-// Закрытие ПРИ КЛИКЕ ВНЕ дропдауна (самый правильный вариант)
+// закрытие при клике вне блока
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".dropdown__peoples")) {
     menuPeople.classList.remove("active");

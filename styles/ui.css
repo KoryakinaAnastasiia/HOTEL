@@ -151,7 +151,8 @@ body {
 }
 
 .arrow_button,
-.arrow_button-mini {
+.arrow_button-mini,
+.arrow_buttonTwo {
   position: absolute;
   background: none;
   border: none;
