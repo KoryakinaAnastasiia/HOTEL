@@ -682,4 +682,11 @@ input[type="radio"]:checked + label::before {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   text-transform: uppercase;
+  visibility: visible;
+  opacity: 0;
+}
+
+.BtnApplyClean.active {
+  opacity: 1;
+  visibility: visible;
 }

@@ -68,40 +68,15 @@ btnclose.addEventListener("click", () => {
 //     counter.textContent = counterInt - 1;
 //   }
 // });
-const dataCount = document.getElementById("peoplesData");
-const allPlusBtns = document.querySelectorAll(".dropdown__plus");
-
-allPlusBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Ищем span именно в том блоке, где нажата кнопка
-    const counterSpan = e.target.parentElement.querySelector("span");
-    counterSpan.textContent = parseInt(counterSpan.textContent) + 1;
-    dataCount = counterSpan.textContent;
-  });
-});
-
 const allMinusBtns = document.querySelectorAll(".dropdown__minus");
-
-allMinusBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Ищем span именно в том блоке, где нажата кнопка
-    const counterSpan = e.target.parentElement.querySelector("span");
-    let counter = parseInt(counterSpan.textContent);
-    if (counter > 0) {
-      counterSpan.textContent = counter - 1;
-    }
-  });
-});
-
+const allPlusBtns = document.querySelectorAll(".dropdown__plus");
+const dataCount = document.getElementById("peoplesData");
 const btnPeople = document.querySelector(".arrow_buttonTwo");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
 const btnApply = document.querySelector(".BtnApply");
-const btnApplyClean = document.querySelector(".BtnApplyClean");
 const allSpans = document.querySelectorAll(".dropdown__counter span");
+const btnApplyClean = document.querySelector(".BtnApplyClean");
+const inputData = document.querySelector(".dropdown__input");
 
 btnPeople.addEventListener("click", (e) => {
   e.stopPropagation(); // Останавливает всплытие к родителю
@@ -115,11 +90,65 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// закрытие при клике на кнопку "применить"
 btnApply.addEventListener("click", (e) => {
+  e.preventDefault();
   menuPeople.classList.remove("active");
 });
 
-btnApplyClean.addEventListener("click", (e) => {
-  e.stopPropagation(); // Останавливает всплытие к родителю
-  allSpans.forEach((span) => (span.textContent = "0"));
+//кнопка очистить
+function Updatestatus() {
+  let total = 0;
+  allSpans.forEach((span) => {
+    total += parseInt(span.textContent);
+  });
+
+  inputData.value =
+    total === 0
+      ? "Сколько гостей"
+      : total % 10 === 1 && total % 100 !== 11
+        ? `${total} гость`
+        : `${total} гостей`;
+
+  if (total > 0) {
+    btnApplyClean.classList.add("active");
+  } else {
+    btnApplyClean.classList.remove("active");
+  }
+
+  btnApplyClean.addEventListener("click", (e) => {
+    e.preventDefault();
+    allSpans.forEach((span) => {
+      span.textContent = "0";
+    });
+
+    inputData.value = "";
+  });
+}
+
+//счетчик плюса
+allPlusBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Ищем span именно в том блоке, где нажата кнопка
+    const counterSpan = e.target.parentElement.querySelector("span");
+    counterSpan.textContent = parseInt(counterSpan.textContent) + 1;
+    Updatestatus();
+  });
+});
+
+//счетчик минуса
+allMinusBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Ищем span именно в том блоке, где нажата кнопка
+    const counterSpan = e.target.parentElement.querySelector("span");
+    let counter = parseInt(counterSpan.textContent);
+    if (counter > 0) {
+      counterSpan.textContent = counter - 1;
+      Updatestatus();
+    }
+  });
 });
