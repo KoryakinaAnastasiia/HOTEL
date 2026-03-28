@@ -226,7 +226,11 @@
         <label class="dropdown__rooms">
           <span>Dropdown</span>
           <div class="dropdown__default" id="menuBtnClose">
-            <input placeholder="2 спальни, 2 кровати..." />
+            <input
+              placeholder="2 спальни, 2 кровати..."
+              class="dropdownInputBad"
+              readonly
+            />
             <button class="arrow_button" id="arrow_button">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
@@ -298,7 +302,7 @@
                 <button class="dropdown__plus">+</button>
               </div>
             </div>
-            <div>
+            <div class="dropdown__buttons">
               <button class="BtnApplyClean">очистить</button>
               <button class="BtnApply">применить</button>
             </div>

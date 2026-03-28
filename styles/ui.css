@@ -617,7 +617,7 @@ input[type="radio"]:checked + label::before {
   flex-shrink: 0;
 }
 
-.dropdown__defaultPeople input {
+.dropdown__input {
   position: relative;
   padding: 13px;
   border: 1px solid var(--Dark-Shade50);
@@ -660,11 +660,13 @@ input[type="radio"]:checked + label::before {
   display: flex;
 }
 
-.BtnApply {
-  display: block;
-  margin-left: auto;
-  margin-right: 0;
+.dropdown__buttons {
+  display: flex;
+  justify-content: space-between;
   padding-top: 11px;
+}
+
+.BtnApply {
   width: auto;
   white-space: nowrap;
   background: none;

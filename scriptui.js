@@ -118,6 +118,7 @@ function Updatestatus() {
 
   btnApplyClean.addEventListener("click", (e) => {
     e.preventDefault();
+
     allSpans.forEach((span) => {
       span.textContent = "0";
     });
