@@ -68,8 +68,12 @@ btnclose.addEventListener("click", () => {
 //     counter.textContent = counterInt - 1;
 //   }
 // });
-const allMinusBtns = document.querySelectorAll(".dropdown__minus");
-const allPlusBtns = document.querySelectorAll(".dropdown__plus");
+
+//d
+
+//dropdownPeople
+const allMinusBtns = document.querySelectorAll(".dropdown__minusPeople");
+const allPlusBtns = document.querySelectorAll(".dropdown__plusPeople");
 const dataCount = document.getElementById("peoplesData");
 const btnPeople = document.querySelector(".arrow_buttonTwo");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
@@ -99,7 +103,10 @@ btnApply.addEventListener("click", (e) => {
 //кнопка очистить
 function Updatestatus() {
   let total = 0;
-  allSpans.forEach((span) => {
+  const peopleSpans = document.querySelectorAll(
+    ".dropdown__peopleExpander .dropdown__counter span",
+  );
+  peopleSpans.forEach((span) => {
     total += parseInt(span.textContent);
   });
 
@@ -118,37 +125,30 @@ function Updatestatus() {
 
   btnApplyClean.addEventListener("click", (e) => {
     e.preventDefault();
-
-    allSpans.forEach((span) => {
-      span.textContent = "0";
-    });
-
-    inputData.value = "";
+    const peopleSpans = document.querySelectorAll(
+      ".dropdown__peopleExpander .dropdown__counter span",
+    );
+    peopleSpans.forEach((span) => (span.textContent = "0"));
+    Updatestatus();
   });
 }
 
 //счетчик плюса
-allPlusBtns.forEach((btn) => {
+document.querySelectorAll(".dropdown__plusPeople").forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Ищем span именно в том блоке, где нажата кнопка
-    const counterSpan = e.target.parentElement.querySelector("span");
-    counterSpan.textContent = parseInt(counterSpan.textContent) + 1;
+    const span = e.currentTarget.parentElement.querySelector("span");
+    span.textContent = parseInt(span.textContent) + 1;
     Updatestatus();
   });
 });
 
 //счетчик минуса
-allMinusBtns.forEach((btn) => {
+document.querySelectorAll(".dropdown__minusPeople").forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Ищем span именно в том блоке, где нажата кнопка
-    const counterSpan = e.target.parentElement.querySelector("span");
-    let counter = parseInt(counterSpan.textContent);
-    if (counter > 0) {
-      counterSpan.textContent = counter - 1;
+    const span = e.currentTarget.parentElement.querySelector("span");
+    let val = parseInt(span.textContent);
+    if (val > 0) {
+      span.textContent = val - 1;
       Updatestatus();
     }
   });

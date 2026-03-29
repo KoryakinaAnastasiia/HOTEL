@@ -555,7 +555,9 @@ input[type="radio"]:checked + label::before {
 }
 
 .dropdown__plus,
-.dropdown__minus {
+.dropdown__minus,
+.dropdown__minusPeople,
+.dropdown__plusPeople {
   width: 30px;
   height: 30px;
   border-radius: 22px;
@@ -646,14 +648,16 @@ input[type="radio"]:checked + label::before {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  visibility: visible;
+  visibility: hidden;
   min-width: 320px;
+  z-index: 20;
+  transition: 0.3s ease;
+  box-sizing: border-box;
 }
 
 .dropdown__peopleExpander.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
 
 .dropdown__peopleExpander div {
@@ -675,6 +679,7 @@ input[type="radio"]:checked + label::before {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   text-transform: uppercase;
+  display: block;
 }
 
 .BtnApplyClean {
@@ -684,11 +689,13 @@ input[type="radio"]:checked + label::before {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   text-transform: uppercase;
-  visibility: visible;
+  cursor: pointer;
+  display: none;
+  display: block;
   opacity: 0;
 }
 
 .BtnApplyClean.active {
+  display: block;
   opacity: 1;
-  visibility: visible;
 }
