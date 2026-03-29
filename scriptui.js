@@ -50,6 +50,9 @@ btnclose.addEventListener("click", () => {
   menu.classList.remove("active");
 });
 
+const allMinusBtnsRooms = document.querySelectorAll(".dropdown__minus");
+const allPlusBtnsRooms = document.querySelectorAll(".dropdown__plus");
+
 /*Dropdown plus minus*/
 // const plusBtn = document.querySelectorAll(".dropdownBad__plus");
 // const minusBtn = document.querySelectorAll(".dropdownBad__minus");
@@ -74,7 +77,7 @@ btnclose.addEventListener("click", () => {
 //dropdownPeople
 const allMinusBtns = document.querySelectorAll(".dropdown__minusPeople");
 const allPlusBtns = document.querySelectorAll(".dropdown__plusPeople");
-const dataCount = document.getElementById("peoplesData");
+// const dataCount = document.getElementById("peoplesData");
 const btnPeople = document.querySelector(".arrow_buttonTwo");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
 const btnApply = document.querySelector(".BtnApply");
@@ -101,6 +104,15 @@ btnApply.addEventListener("click", (e) => {
 });
 
 //кнопка очистить
+const prRu = new Intl.PluralRules("ru-RU");
+const guestsPr = {
+  zero: "гостей",
+  one: "гость",
+  few: "гостя",
+  other: "гостей",
+  many: "гостей",
+};
+
 function Updatestatus() {
   let total = 0;
   const peopleSpans = document.querySelectorAll(
@@ -111,11 +123,7 @@ function Updatestatus() {
   });
 
   inputData.value =
-    total === 0
-      ? "Сколько гостей"
-      : total % 10 === 1 && total % 100 !== 11
-        ? `${total} гость`
-        : `${total} гостей`;
+    total === 0 ? "Сколько гостей" : `${total} ${guestsPr[prRu.select(total)]}`;
 
   if (total > 0) {
     btnApplyClean.classList.add("active");
