@@ -14,7 +14,7 @@
 <!-- Не нужно ничего писать в CSS — достаточно добавить нужный класс -->
 <button class="btn btn-primary btn-lg">Купить</button>
 <div class="card shadow-sm p-3">...</div>
-<input class="form-control form-control-lg">
+<input class="form-control form-control-lg" />
 ```
 
 Разработчик подключает один CSS-файл и получает готовую «библиотеку деталей». Это и есть HTML/CSS design system.
@@ -37,6 +37,7 @@
 ```
 
 В твоём проекте уже есть все три слоя:
+
 - **Токены** — `variables.css` (`--Dark-Shade100`, `--h3-font-size` и т.д.)
 - **Компоненты** — `ui.css` (`.button`, `.dropdown`, `.checkbox-ios` и т.д.)
 - **Глобальные стили** — `globals.css` (сброс стилей браузера)
@@ -46,6 +47,7 @@
 #### Почему именование так важно
 
 Представь, что дизайн-система — это конструктор LEGO. Каждый CSS-класс — это деталь. Если детали называются хаотично (`.BtnApply`, `.arrow_buttonTwo`, `.data__form`), то:
+
 - Новый разработчик не поймёт, какую деталь взять
 - Непонятно, можно ли переиспользовать класс в другом месте
 - Сложно найти стили в CSS-файле
@@ -84,7 +86,7 @@ BEM расшифровывается как **Block — Element — Modifier** (
 
 ```html
 <div class="dropdown">
-  <input class="dropdown__input">
+  <input class="dropdown__input" />
   <div class="dropdown__expander">
     <h3 class="dropdown__title">Спальни</h3>
     <div class="dropdown__counter">
@@ -100,10 +102,12 @@ BEM расшифровывается как **Block — Element — Modifier** (
 
 ```css
 /* ✗ Неправильно — двойная вложенность */
-.dropdown__expander__title { }
+.dropdown__expander__title {
+}
 
 /* ✓ Правильно — всегда от корня блока */
-.dropdown__title { }
+.dropdown__title {
+}
 ```
 
 #### Модификатор (Modifier) — разделитель `--`
@@ -125,12 +129,13 @@ BEM расшифровывается как **Block — Element — Modifier** (
 ```
 
 Модификатор **никогда не используется один** — только вместе с основным классом:
+
 ```html
 <!-- ✗ Неправильно -->
 <button class="button--outline">
-
-<!-- ✓ Правильно -->
-<button class="button button--outline">
+  <!-- ✓ Правильно -->
+  <button class="button button--outline"></button>
+</button>
 ```
 
 #### Полная шпаргалка
@@ -166,8 +171,10 @@ BEM расшифровывается как **Block — Element — Modifier** (
 
 ```html
 <button class="btn btn-primary btn-lg">
-<div class="form-control form-control-lg">
-<div class="modal-dialog modal-dialog-centered">
+  <div class="form-control form-control-lg">
+    <div class="modal-dialog modal-dialog-centered"></div>
+  </div>
+</button>
 ```
 
 Здесь `btn` — блок, `btn-primary` и `btn-lg` — модификаторы (Bootstrap использует `-` вместо `--`, это их вариация). `modal-dialog` — это блок, `modal-dialog-centered` — его модификатор. Принцип тот же.
@@ -203,29 +210,39 @@ BEM расшифровывается как **Block — Element — Modifier** (
 
 ---
 
+<!--
 ## 1. Два класса вместо одного имени блока
 
 **Файл:** `ui.html`, строки 22 и 98
 
 **Проблема:**
+
 ```html
 <section class="choice input">
-<section class="check box">
+  <section class="check box"></section>
+</section>
 ```
+
 Это **два отдельных класса** (`choice` и `input`), которые выглядят как одно название. Браузер применит стили обоих классов по отдельности. В CSS написано `.check.box { }` — это селектор "элемент, у которого есть оба класса одновременно", что нестандартно и запутанно.
 
 **Как должно быть в BEM:**
 Блок — это **одно слово** или слова через дефис:
+
 ```html
 <section class="inputs-section">
-<section class="controls-section">
+  <section class="controls-section"></section>
+</section>
 ```
+
 ```css
-.inputs-section { }
-.controls-section { }
+.inputs-section {
+}
+.controls-section {
+}
 ```
 
 **Почему это важно:** Непонятно, намеренно ли два класса или это опечатка. Код должен быть однозначным.
+-->
 
 ---
 
@@ -234,49 +251,68 @@ BEM расшифровывается как **Block — Element — Modifier** (
 **Файл:** `ui.html`, строки 31, 43, 50–70, 74, 86
 
 **Проблема:**
+
 ```html
 <label class="number_guests__form">
-<label class="data__form">
-<div class="data__form-mini">
-<label class="data__form-mini-first">
-<label class="data__form-mini-second">
-<label class="data__form-filter">
-<label class="data__form-email">
+  <label class="data__form">
+    <div class="data__form-mini">
+      <label class="data__form-mini-first">
+        <label class="data__form-mini-second">
+          <label class="data__form-filter">
+            <label class="data__form-email"></label></label></label
+      ></label></div></label
+></label>
 ```
+
 В BEM двойное подчёркивание `__` означает: **«элемент внутри блока»**. То есть `data__form` читается как «элемент `form` внутри блока `data`». Но блока `.data` нигде нет — это самостоятельные компоненты. Они **сами являются блоками**.
 
 **Как должно быть:**
 Если это самостоятельный компонент (не часть другого) — это блок, и `__` здесь не нужен:
+
 ```html
-<label class="text-input">           <!-- вместо text-field -->
-<label class="guests-input">         <!-- вместо number_guests__form -->
-<label class="date-input">           <!-- вместо data__form -->
-<label class="date-input date-input--mini">  <!-- вместо data__form-mini-first -->
-<label class="date-input date-input--filter"> <!-- вместо data__form-filter -->
-<label class="date-input date-input--email">  <!-- вместо data__form-email -->
+<label class="text-input">
+  <!-- вместо text-field -->
+  <label class="guests-input">
+    <!-- вместо number_guests__form -->
+    <label class="date-input">
+      <!-- вместо data__form -->
+      <label class="date-input date-input--mini">
+        <!-- вместо data__form-mini-first -->
+        <label class="date-input date-input--filter">
+          <!-- вместо data__form-filter -->
+          <label class="date-input date-input--email">
+            <!-- вместо data__form-email --></label
+          ></label
+        ></label
+      ></label
+    ></label
+  ></label
+>
 ```
 
 **Почему это важно:** `__` — это контракт: «я живу только внутри родительского блока». Если нарушить это правило, код становится непредсказуемым при переиспользовании компонента.
 
 **Как это будет использоваться на странице отеля:**
+
 ```html
 <!-- Форма поиска на главной странице -->
 <form class="search-form">
   <div class="date-input">
     <span>Дата заезда</span>
-    <input placeholder="ДД.ММ.ГГГГ">
+    <input placeholder="ДД.ММ.ГГГГ" />
   </div>
   <div class="date-input date-input--mini">
     <span>Дата выезда</span>
-    <input placeholder="ДД.ММ.ГГГГ">
+    <input placeholder="ДД.ММ.ГГГГ" />
   </div>
   <div class="guests-input">
     <span>Гости</span>
-    <input placeholder="Сколько гостей">
+    <input placeholder="Сколько гостей" />
   </div>
   <button class="button button--full-width">Найти номер</button>
 </form>
 ```
+
 Видно, что `date-input` — это самостоятельный блок, который можно поставить в любую форму на любой странице, просто добавив нужный модификатор.
 
 ---
@@ -286,16 +322,20 @@ BEM расшифровывается как **Block — Element — Modifier** (
 **Файл:** `ui.html` строка 31, `ui.css` строки 26–48
 
 **Проблема:**
+
 ```html
-<label class="number_guests__form">
+<label class="number_guests__form"></label>
 ```
+
 Часть имени до `__` — это имя блока. В BEM принято использовать **только дефис** для составных слов в именах блоков и элементов. Подчёркивание не запрещено технически, но нарушает единый стиль и мешает читаемости.
 
 **Как должно быть:**
+
 ```html
 <label class="number-guests__form">
-<!-- или, как написано выше, лучше сделать это отдельным блоком: -->
-<label class="guests-input">
+  <!-- или, как написано выше, лучше сделать это отдельным блоком: -->
+  <label class="guests-input"></label
+></label>
 ```
 
 ---
@@ -305,20 +345,30 @@ BEM расшифровывается как **Block — Element — Modifier** (
 **Файл:** `ui.html`, строки 271, 278, 286–287
 
 **Проблема:**
+
 ```html
 <div class="dropdown__defaultPeople">
-<button class="arrow_buttonTwo">
-<button class="dropdown__minusPeople">
-<button class="dropdown__plusPeople">
+  <button class="arrow_buttonTwo">
+    <button class="dropdown__minusPeople">
+      <button class="dropdown__plusPeople"></button>
+    </button>
+  </button>
+</div>
 ```
+
 В BEM **все буквы строчные**, слова разделяются дефисом. camelCase (заглавная буква в середине слова) в BEM не используется.
 
 **Как должно быть:**
+
 ```html
 <div class="dropdown__default-people">
-<button class="arrow-button">           <!-- и использовать модификатор, см. задание 7 -->
-<button class="dropdown__minus-people">
-<button class="dropdown__plus-people">
+  <button class="arrow-button">
+    <!-- и использовать модификатор, см. задание 7 -->
+    <button class="dropdown__minus-people">
+      <button class="dropdown__plus-people"></button>
+    </button>
+  </button>
+</div>
 ```
 
 ---
@@ -328,14 +378,17 @@ BEM расшифровывается как **Block — Element — Modifier** (
 **Файл:** `ui.html` строки 308–309, `ui.css` строки 666–694
 
 **Проблема:**
+
 ```html
 <button class="BtnApplyClean">очистить</button>
 <button class="BtnApply">применить</button>
 ```
+
 PascalCase (каждое слово с заглавной буквы) используется в JavaScript для названий классов и компонентов — но **не в CSS**. В BEM все классы пишутся строчными буквами.
 
 **Как должно быть:**
 Эти кнопки являются элементами блока `dropdown`, значит:
+
 ```html
 <button class="dropdown__btn-clean">очистить</button>
 <button class="dropdown__btn-apply">применить</button>
@@ -348,15 +401,19 @@ PascalCase (каждое слово с заглавной буквы) испол
 **Файл:** `ui.html` строка 218, `ui.css` строки 483–497
 
 **Проблема:**
+
 ```html
 <button class="button__clickBorderOff">click me</button>
 ```
+
 Это третий стиль кнопки (без рамки и фона). Такие вариации в BEM — это **модификаторы**, и обозначаются через `--`. Но здесь использован `__`, что означает "элемент внутри блока `.button`". Это неверно — кнопка не находится "внутри" другой кнопки.
 
 **Как должно быть:**
+
 ```html
 <button class="button button--ghost">click me</button>
 ```
+
 ```css
 .button--ghost {
   border: none;
@@ -364,13 +421,18 @@ PascalCase (каждое слово с заглавной буквы) испол
   color: #bc9cff;
 }
 ```
+
 Сравни с правильными примерами, которые уже есть в коде:
+
 ```html
-<button class="button button--outline">click me</button>   <!-- ✓ правильно -->
-<button class="button button--fullWidth">...</button>       <!-- ✓ правильно -->
+<button class="button button--outline">click me</button>
+<!-- ✓ правильно -->
+<button class="button button--fullWidth">...</button>
+<!-- ✓ правильно -->
 ```
 
 **Как это будет использоваться на странице бронирования:**
+
 ```html
 <!-- Страница выбора номера -->
 <div class="room-card__actions">
@@ -384,6 +446,7 @@ PascalCase (каждое слово с заглавной буквы) испол
   <button class="button button--ghost">Отмена</button>
 </div>
 ```
+
 Все три кнопки — один блок `.button` с разными модификаторами. Один CSS-класс, три внешних вида.
 
 ---
@@ -393,14 +456,17 @@ PascalCase (каждое слово с заглавной буквы) испол
 **Файл:** `ui.html` строки 35, 55, 65, 78, 90, 235, 278; `ui.css` строки 153–162
 
 **Проблема:**
+
 ```css
 .arrow_button,
 .arrow_button-mini,
 .arrow_buttonTwo { ... }  /* одинаковые стили у всех трёх */
 ```
+
 Это три названия для одного и того же компонента — кнопки со стрелкой. Разница только в контексте использования. В BEM для этого есть модификаторы.
 
 **Как должно быть:**
+
 ```html
 <!-- обычная кнопка-стрелка -->
 <button class="arrow-btn">...</button>
@@ -408,6 +474,7 @@ PascalCase (каждое слово с заглавной буквы) испол
 <!-- маленькая версия — модификатор -->
 <button class="arrow-btn arrow-btn--small">...</button>
 ```
+
 Тогда в CSS нужен только один блок `.arrow-btn` и один модификатор `.arrow-btn--small`.
 
 ---
@@ -417,6 +484,7 @@ PascalCase (каждое слово с заглавной буквы) испол
 **Файл:** `ui.html` строки 101–115, `ui.css` строки 193–249
 
 **Проблема:**
+
 ```html
 <label class="container">
   <input type="checkbox" />
@@ -424,9 +492,11 @@ PascalCase (каждое слово с заглавной буквы) испол
   Можно курить
 </label>
 ```
+
 Слово `container` — одно из самых перегруженных в вёрстке. Оно не описывает компонент. Встретив `.container` в чужом коде, невозможно понять, что это за элемент.
 
 **Как должно быть:**
+
 ```html
 <label class="checkbox">
   <input type="checkbox" class="checkbox__input" />
@@ -436,28 +506,30 @@ PascalCase (каждое слово с заглавной буквы) испол
 ```
 
 **Как это будет использоваться на странице фильтрации номеров:**
+
 ```html
 <!-- Боковая панель фильтров -->
 <aside class="filters">
   <h2 class="filters__title">Удобства</h2>
 
   <label class="checkbox">
-    <input type="checkbox" class="checkbox__input">
+    <input type="checkbox" class="checkbox__input" />
     <span class="checkbox__mark"></span>
     Можно курить
   </label>
   <label class="checkbox">
-    <input type="checkbox" class="checkbox__input">
+    <input type="checkbox" class="checkbox__input" />
     <span class="checkbox__mark"></span>
     Можно с питомцами
   </label>
   <label class="checkbox">
-    <input type="checkbox" class="checkbox__input">
+    <input type="checkbox" class="checkbox__input" />
     <span class="checkbox__mark"></span>
     Можно пригласить гостей
   </label>
 </aside>
 ```
+
 Компонент `.checkbox` переиспользуется сколько угодно раз — просто дублируется тег, без новых CSS-правил.
 
 ---
@@ -467,20 +539,24 @@ PascalCase (каждое слово с заглавной буквы) испол
 **Файл:** `ui.css`, строки 544, 656
 
 **Проблема:**
+
 ```css
 .dropdown__expander div { ... }
 .dropdown__peopleExpander div { ... }
 ```
+
 BEM требует, чтобы каждый значимый элемент имел свой класс. Стилизация через тег `div` внутри блока — хрупкая: если структура HTML изменится или добавится новый `div`, стили поедут.
 
 **Как должно быть:**
 Добавить класс каждому `div` и стилизовать по нему:
+
 ```html
 <div class="dropdown__row">
   <h3 class="dropdown__title">спальни</h3>
   <div class="dropdown__counter">...</div>
 </div>
 ```
+
 ```css
 .dropdown__row {
   display: flex;
@@ -496,6 +572,7 @@ BEM требует, чтобы каждый значимый элемент им
 **Файл:** `ui.css`, строки 462 и 466
 
 **Проблема:**
+
 ```css
 .button {
   text-transform: uppercase;  /* строка 462 */
@@ -503,6 +580,7 @@ BEM требует, чтобы каждый значимый элемент им
   text-transform: uppercase;  /* строка 466 — дубликат! */
 }
 ```
+
 Одно и то же свойство написано дважды. Браузер применит только последнее, первое игнорируется. Это захламляет код и говорит о невнимательности.
 
 **Как исправить:** Удалить одно из двух объявлений.
@@ -525,6 +603,7 @@ BEM требует, чтобы каждый значимый элемент им
 /* строка 114 — класса .purpose_trip__form нет в HTML */
 .purpose_trip__form, ... { position: relative; ... }
 ```
+
 Также в HTML встречается класс `dropdownInputBad` (строка 234), которого нет в CSS.
 
 **Как исправить:** Удалить неиспользуемые правила из CSS. Для класса `dropdownInputBad` — либо удалить его из HTML и использовать уже существующий `.dropdown__input`, либо добавить стили в CSS.
@@ -536,6 +615,7 @@ BEM требует, чтобы каждый значимый элемент им
 **Файл:** `ui.html`, строки 226–266 и 268–313
 
 **Проблема:**
+
 ```html
 <!-- Первый дропдаун -->
 <section class="dropdown">
@@ -547,6 +627,7 @@ BEM требует, чтобы каждый значимый элемент им
   <label class="dropdown__peoples">...</label>
 </section>
 ```
+
 Первый дропдаун: секция называется `dropdown` (блок), внутри `dropdown__rooms` (элемент).
 Второй дропдаун: секция называется `dropdown__people` (как будто элемент блока `dropdown`), но при этом сама является блоком-контейнером.
 
@@ -554,6 +635,7 @@ BEM требует, чтобы каждый значимый элемент им
 
 **Как должно быть:**
 Использовать один блок `dropdown` с модификаторами для разных вариантов:
+
 ```html
 <div class="dropdown">
   <span class="dropdown__label">Комнаты и спальни</span>
@@ -569,6 +651,7 @@ BEM требует, чтобы каждый значимый элемент им
 ```
 
 **Как это будет использоваться на странице поиска:**
+
 ```html
 <!-- Поисковый виджет в шапке -->
 <div class="search-widget">
@@ -589,6 +672,7 @@ BEM требует, чтобы каждый значимый элемент им
   <button class="button">Найти</button>
 </div>
 ```
+
 Оба дропдауна используют один и тот же CSS-блок `.dropdown`. Отличие только в модификаторе, который добавляет специфичные стили (например, другой размер или кнопки «применить»/«очистить»).
 
 ---
@@ -604,12 +688,14 @@ BEM требует, чтобы каждый значимый элемент им
 **Файл:** `ui.html`, строки 31–95 (инпуты с кнопкой-стрелкой), строки 227, 269 (дропдауны)
 
 **Проблема:**
+
 ```html
 <!-- Инпуты -->
 <label class="number_guests__form">
   <div>
     <input placeholder="Сколько гостей" />
-    <button class="arrow_button">      <!-- кнопка ВНУТРИ label -->
+    <button class="arrow_button">
+      <!-- кнопка ВНУТРИ label -->
       <img src="..." />
     </button>
   </div>
@@ -619,7 +705,8 @@ BEM требует, чтобы каждый значимый элемент им
 <label class="dropdown__rooms">
   <div class="dropdown__default">
     <input readonly />
-    <button>...</button>              <!-- та же проблема -->
+    <button>...</button>
+    <!-- та же проблема -->
   </div>
   <div class="dropdown__expander">...</div>
 </label>
@@ -639,9 +726,14 @@ BEM требует, чтобы каждый значимый элемент им
 <!-- Инпут с дропдауном -->
 <div class="guests-input">
   <span class="guests-input__label">Количество гостей</span>
-  <div class="guests-input__trigger">           <!-- весь триггер — один div -->
+  <div class="guests-input__trigger">
+    <!-- весь триггер — один div -->
     <input class="guests-input__input" readonly placeholder="Сколько гостей" />
-    <img class="guests-input__arrow" src="./img/arrow_number_guest.png" alt="">
+    <img
+      class="guests-input__arrow"
+      src="./img/arrow_number_guest.png"
+      alt=""
+    />
     <!-- стрелка — картинка, не кнопка -->
   </div>
   <div class="guests-input__expander">...</div>
@@ -651,8 +743,12 @@ BEM требует, чтобы каждый значимый элемент им
 <div class="dropdown">
   <span class="dropdown__label">Комнаты и спальни</span>
   <div class="dropdown__trigger">
-    <input class="dropdown__input" readonly placeholder="2 спальни, 2 кровати..." />
-    <img class="dropdown__arrow" src="./img/arrow_number_guest.png" alt="">
+    <input
+      class="dropdown__input"
+      readonly
+      placeholder="2 спальни, 2 кровати..."
+    />
+    <img class="dropdown__arrow" src="./img/arrow_number_guest.png" alt="" />
   </div>
   <div class="dropdown__expander">...</div>
 </div>
@@ -667,63 +763,80 @@ JS из задания 17 находит все `.dropdown__trigger` на стр
 **Файл:** `ui.html`, строки 35, 55, 65, 235, 244, 246, 252, 254, 260, 262 и другие
 
 **Проблема:**
+
 ```html
-<button class="arrow_button">         <!-- нет type -->
-<button class="dropdown__minus">-</button>  <!-- нет type -->
-<button class="dropdown__plus">+</button>   <!-- нет type -->
+<button class="arrow_button">
+  <!-- нет type -->
+  <button class="dropdown__minus">-</button>
+  <!-- нет type -->
+  <button class="dropdown__plus">+</button>
+  <!-- нет type -->
+</button>
 ```
+
 По умолчанию у `<button>` атрибут `type="submit"`. Это значит: если кнопка окажется внутри `<form>`, нажатие на неё отправит форму — даже если это просто кнопка `+` у счётчика или стрелка дропдауна.
 
 В коде уже есть правильный пример (строка 278):
+
 ```html
-<button type="button" class="arrow_buttonTwo">  <!-- ✓ правильно -->
+<button type="button" class="arrow_buttonTwo"><!-- ✓ правильно --></button>
 ```
 
 **Как должно быть:**
 Для всех кнопок, которые не отправляют форму, всегда писать `type="button"`:
+
 ```html
 <button type="button" class="arrow-btn">
-<button type="button" class="dropdown__minus">-</button>
-<button type="button" class="dropdown__plus">+</button>
+  <button type="button" class="dropdown__minus">-</button>
+  <button type="button" class="dropdown__plus">+</button>
+</button>
 ```
 
 ---
 
+<!--
 ## 16. Неправильный порядок подключения CSS-файлов
 
 **Файл:** `ui.html`, строки 7–9
 
 **Проблема:**
+
 ```html
-<link rel="stylesheet" href="./styles/ui.css" />       <!-- 1й -->
-<link rel="stylesheet" href="./styles/globals.css" />  <!-- 2й -->
-<link rel="stylesheet" href="./styles/variables.css" /> <!-- 3й -->
+<link rel="stylesheet" href="./styles/ui.css" />
+
+<link rel="stylesheet" href="./styles/globals.css" />
+
+<link rel="stylesheet" href="./styles/variables.css" />
+
 ```
+
 `ui.css` подключён **раньше** `variables.css`, но использует переменные из него (`var(--Dark-Shade100)`, `var(--h3-font-size)` и т.д.). Это работает в большинстве браузеров, потому что CSS-переменные вычисляются в момент рендеринга, а не парсинга. Но это неправильный порядок логически и может вызвать проблемы в некоторых ситуациях.
 
 **Правильный порядок — от общего к частному:**
+
 ```html
-<!-- 1. Сначала переменные — они нужны всем остальным файлам -->
+
 <link rel="stylesheet" href="./styles/variables.css" />
-<!-- 2. Потом сброс стилей браузера -->
+
 <link rel="stylesheet" href="./styles/globals.css" />
-<!-- 3. Потом компоненты, которые используют переменные -->
+
 <link rel="stylesheet" href="./styles/ui.css" />
 ```
-
----
+-->
 
 ## 17. Дропдауны завязаны на конкретные ID — не масштабируется
 
 **Файл:** `scriptui.js`, строки 39–51, 81–98
 
 **Проблема:**
+
 ```js
-const btn  = document.getElementById("arrow_button");
+const btn = document.getElementById("arrow_button");
 const menu = document.getElementById("mobileMenu");
 
 btn.addEventListener("click", () => menu.classList.toggle("active"));
 ```
+
 Каждый дропдаун требует уникального ID и отдельного куска JS-кода. Добавишь третий дропдаун на страницу — придётся снова писать те же строки с новыми ID. Это не масштабируется.
 
 Кроме того, `id="menuBtnClose"` — название противоречит себе: элемент открывает дропдаун, а назван «кнопка закрытия».
@@ -738,7 +851,7 @@ btn.addEventListener("click", () => menu.classList.toggle("active"));
   <span class="dropdown__label">Комнаты и спальни</span>
   <div class="dropdown__trigger">
     <input class="dropdown__input" readonly placeholder="2 спальни..." />
-    <img class="dropdown__arrow" src="..." alt="">
+    <img class="dropdown__arrow" src="..." alt="" />
   </div>
   <div class="dropdown__expander">...</div>
 </div>
@@ -748,7 +861,7 @@ btn.addEventListener("click", () => menu.classList.toggle("active"));
   <span class="dropdown__label">Гости</span>
   <div class="dropdown__trigger">
     <input class="dropdown__input" readonly placeholder="Сколько гостей" />
-    <img class="dropdown__arrow" src="..." alt="">
+    <img class="dropdown__arrow" src="..." alt="" />
   </div>
   <div class="dropdown__expander">...</div>
 </div>
@@ -810,25 +923,37 @@ document.addEventListener("click", () => {
 **Файл:** `ui.html`, строки 170–209
 
 **Проблема:**
+
 ```html
 <button class="buttonStars">
-  <img class="buttonsRate__starsBorder" src="./img/star_border.svg" alt="stars" />
+  <img
+    class="buttonsRate__starsBorder"
+    src="./img/star_border.svg"
+    alt="stars"
+  />
   <img class="buttonsRate__stars" src="./img/star.svg" alt="stars" />
 </button>
 ```
+
 Пять одинаковых кнопок, у каждой `alt="stars"`. Пользователь со скринридером услышит: «stars, кнопка» — пять раз подряд. Непонятно, за что отвечает каждая кнопка.
 
 Атрибут `alt` у `<img>` также неточен: он должен описывать смысл изображения в контексте, а не просто «звёзды».
 
 **Как должно быть:**
+
 ```html
 <button type="button" class="button-star" aria-label="Оценить на 1 звезду">
-  <img class="button-star__border" src="./img/star_border.svg" alt="">
-  <img class="button-star__fill"   src="./img/star.svg"        alt="">
+  <img class="button-star__border" src="./img/star_border.svg" alt="" />
+  <img class="button-star__fill" src="./img/star.svg" alt="" />
 </button>
-<button type="button" class="button-star" aria-label="Оценить на 2 звезды">...</button>
-<button type="button" class="button-star" aria-label="Оценить на 3 звезды">...</button>
+<button type="button" class="button-star" aria-label="Оценить на 2 звезды">
+  ...
+</button>
+<button type="button" class="button-star" aria-label="Оценить на 3 звезды">
+  ...
+</button>
 ```
+
 Декоративные изображения внутри кнопки с `aria-label` получают пустой `alt=""` — скринридер их пропускает и читает только `aria-label` кнопки.
 
 ---

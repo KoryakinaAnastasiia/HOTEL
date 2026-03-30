@@ -178,7 +178,7 @@ body {
   width: 100%;
 }
 
-.check.box {
+.controls-section {
   display: flex;
   flex-direction: column;
   gap: 17px;
