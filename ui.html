@@ -22,14 +22,14 @@
     <div class="blockOne">
       <section class="inputs-section" id="input">
         <!--email-->
-        <label class="text-field">
+        <label class="text-input">
           <span>Text Field</span>
           <input placeholder="Email" />
         </label>
         <!--email-->
 
         <!--number guests form-->
-        <label class="number_guests__form">
+        <label class="guests-input">
           <span>Dropdown</span>
           <div>
             <input placeholder="Сколько гостей" />
@@ -41,7 +41,7 @@
         <!--number guests form-->
 
         <!--data form-->
-        <label class="data__form">
+        <label class="date-input">
           <span>masked text field</span>
           <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
         </label>
@@ -49,7 +49,7 @@
 
         <!--data form mini-->
         <div class="data__form-mini">
-          <label class="data__form-mini-first">
+          <label class="date-input date-input--mini">
             <span>date Dropdown</span>
             <div>
               <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
@@ -72,7 +72,7 @@
         <!--data form mini-->
 
         <!--data form filter-->
-        <label class="data__form-filter">
+        <label class="date-input date-input--filter">
           <span>date Dropdown</span>
           <div>
             <input placeholder="19 авг - 23 авг" />
@@ -84,7 +84,7 @@
         <!--data form filter-->
 
         <!--data form email-->
-        <label class="data__form-email">
+        <label class="date-input date-input--email">
           <span>subscription text field</span>
           <div>
             <input type="email" placeholder="Email" />
@@ -269,14 +269,14 @@
       <section class="dropdown__people">
         <label class="dropdown__peoples">
           <span>Dropdown</span>
-          <div class="dropdown__defaultPeople">
+          <div class="dropdown__default-people">
             <!--сделаль buttons-->
             <input
               placeholder="Сколько гостей"
               class="dropdown__input"
               readonly
             />
-            <button type="button" class="arrow_buttonTwo">
+            <button type="button" class="arrow-button">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
           </div>
@@ -284,30 +284,30 @@
             <div>
               <h3 class="dropdown__title">взрослые</h3>
               <div class="dropdown__counter">
-                <button class="dropdown__minusPeople">-</button>
+                <button class="dropdown__minus-people">-</button>
                 <span>0</span>
-                <button class="dropdown__plusPeople">+</button>
+                <button class="dropdown__plus-people">+</button>
               </div>
             </div>
             <div>
               <h3 class="dropdown__title">дети</h3>
               <div class="dropdown__counter">
-                <button class="dropdown__minusPeople">-</button>
+                <button class="dropdown__minus-people">-</button>
                 <span>0</span>
-                <button class="dropdown__plusPeople">+</button>
+                <button class="dropdown__plus-people">+</button>
               </div>
             </div>
             <div>
               <h3 class="dropdown__title">младенцы</h3>
               <div class="dropdown__counter">
-                <button class="dropdown__minusPeople">-</button>
+                <button class="dropdown__minus-people">-</button>
                 <span>0</span>
-                <button class="dropdown__plusPeople">+</button>
+                <button class="dropdown__plus-people">+</button>
               </div>
             </div>
             <div class="dropdown__buttons">
-              <button class="BtnApplyClean">очистить</button>
-              <button class="BtnApply">применить</button>
+              <button class="dropdown__btn-clean">очистить</button>
+              <button class="dropdown__btn-apply">применить</button>
             </div>
           </div>
         </label>

@@ -272,17 +272,23 @@ BEM расшифровывается как **Block — Element — Modifier** (
 ```html
 <label class="text-input">
   <!-- вместо text-field -->
+  //сделала
   <label class="guests-input">
     <!-- вместо number_guests__form -->
+    //сделала
     <label class="date-input">
       <!-- вместо data__form -->
+      //сделала
       <label class="date-input date-input--mini">
         <!-- вместо data__form-mini-first -->
+        //сделала
         <label class="date-input date-input--filter">
           <!-- вместо data__form-filter -->
+          //сделала
           <label class="date-input date-input--email">
-            <!-- вместо data__form-email --></label
-          ></label
+            <!-- вместо data__form-email -->
+            //сделала
+          </label></label
         ></label
       ></label
     ></label
@@ -362,10 +368,13 @@ BEM расшифровывается как **Block — Element — Modifier** (
 
 ```html
 <div class="dropdown__default-people">
+  //сделала
   <button class="arrow-button">
     <!-- и использовать модификатор, см. задание 7 -->
     <button class="dropdown__minus-people">
+      <!--сделала-->
       <button class="dropdown__plus-people"></button>
+      <!--сделала-->
     </button>
   </button>
 </div>
@@ -567,7 +576,7 @@ BEM требует, чтобы каждый значимый элемент им
 
 ---
 
-## 10. Дублирование свойств
+## 10. Дублирование свойств <!--сделано-->
 
 **Файл:** `ui.css`, строки 462 и 466
 

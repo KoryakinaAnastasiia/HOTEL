@@ -75,14 +75,14 @@ const allPlusBtnsRooms = document.querySelectorAll(".dropdown__plus");
 //d
 
 //dropdownPeople
-const allMinusBtns = document.querySelectorAll(".dropdown__minusPeople");
-const allPlusBtns = document.querySelectorAll(".dropdown__plusPeople");
+const allMinusBtns = document.querySelectorAll(".dropdown__minus-people");
+const allPlusBtns = document.querySelectorAll(".dropdown__plus-people");
 // const dataCount = document.getElementById("peoplesData");
 const btnPeople = document.querySelector(".arrow_buttonTwo");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
-const btnApply = document.querySelector(".BtnApply");
+const btnApply = document.querySelector(".dropdown__btn-apply");
 const allSpans = document.querySelectorAll(".dropdown__counter span");
-const btnApplyClean = document.querySelector(".BtnApplyClean");
+const btnApplyClean = document.querySelector(".dropdown__btn-clean");
 const inputData = document.querySelector(".dropdown__input");
 
 btnPeople.addEventListener("click", (e) => {
