@@ -36,7 +36,7 @@ buttons.forEach((btn, index) => {
 });
 /*Dropdown flashback*/
 
-const btn = document.getElementById("arrow_button");
+const btn = document.getElementById("arrow-btn");
 const menu = document.getElementById("mobileMenu");
 const btnclose = document.getElementById("menuBtnClose");
 
@@ -78,7 +78,7 @@ const allPlusBtnsRooms = document.querySelectorAll(".dropdown__plus");
 const allMinusBtns = document.querySelectorAll(".dropdown__minus-people");
 const allPlusBtns = document.querySelectorAll(".dropdown__plus-people");
 // const dataCount = document.getElementById("peoplesData");
-const btnPeople = document.querySelector(".arrow_buttonTwo");
+const btnPeople = document.querySelector(".arrow-btn");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
 const btnApply = document.querySelector(".dropdown__btn-apply");
 const allSpans = document.querySelectorAll(".dropdown__counter span");
@@ -142,7 +142,7 @@ function Updatestatus() {
 }
 
 //счетчик плюса
-document.querySelectorAll(".dropdown__plusPeople").forEach((btn) => {
+document.querySelectorAll(".dropdown__plus-people").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const span = e.currentTarget.parentElement.querySelector("span");
     span.textContent = parseInt(span.textContent) + 1;
@@ -151,7 +151,7 @@ document.querySelectorAll(".dropdown__plusPeople").forEach((btn) => {
 });
 
 //счетчик минуса
-document.querySelectorAll(".dropdown__minusPeople").forEach((btn) => {
+document.querySelectorAll(".dropdown__minus-people").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const span = e.currentTarget.parentElement.querySelector("span");
     let val = parseInt(span.textContent);

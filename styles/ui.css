@@ -6,12 +6,12 @@ body {
   font-family: var(--body-font);
 }
 
-.blockOne {
+.block-one {
   display: flex;
   gap: 126px;
 }
 
-.blockTwo {
+.block-two {
   display: flex;
   gap: 181px;
 }
@@ -26,7 +26,6 @@ body {
 .guests-input span,
 .date-input span,
 .date-input.date-input--mini span,
-.data__form-mini-second span,
 .date-input.date-input--filter span,
 .date-input.date-input--email span,
 .dropdown__peoples span {
@@ -47,8 +46,7 @@ body {
   flex-shrink: 0;
 }
 
-.date-input.date-input--mini,
-.data__form-mini-second {
+.date-input.date-input--mini {
   position: relative;
   min-width: 150px;
   display: flex;
@@ -60,7 +58,6 @@ body {
 .guests-input input,
 .date-input input,
 .date-input.date-input--mini input,
-.data__form-mini-second input,
 .date-input.date-input--filter input,
 .date-input.date-input--email input {
   position: relative;
@@ -96,8 +93,7 @@ body {
   color: var(--Dark-Shade100);
 }
 
-.date-input.date-input--mini div input::placeholder,
-.data__form-mini-second div input::placeholder {
+.date-input.date-input--mini div input::placeholder {
   font-weight: var(--font-small);
   font-size: var(--body-font-size);
   line-height: 18px;
@@ -111,10 +107,8 @@ body {
   color: var(--Dark-Shade75);
 }
 
-.purpose_trip__form,
 .guests-input div,
-.date-input.date-input--mini div,
-.data__form-mini-second div {
+.date-input.date-input--mini div {
   position: relative;
   max-width: 320px;
   display: inline-block;
@@ -140,19 +134,8 @@ body {
   display: inline-block;
 }
 
-.number_guests::placeholder {
-  color: var(--Dark-Shade25);
-}
-
-.data-mini {
-  border: none;
-  width: 100%;
-  padding: 13px;
-}
-
-.arrow_button,
-.arrow_button-mini,
-.arrow_buttonTwo {
+.arrow-btn,
+.arrow-btn.arrow-btn--small {
   position: absolute;
   background: none;
   border: none;
@@ -190,14 +173,14 @@ body {
   gap: 11px;
 }
 
-.container {
+.checkbox {
   display: block;
   position: relative;
   cursor: pointer;
   padding-left: 30px;
 }
 
-.container input {
+.checkbox input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -205,7 +188,7 @@ body {
   width: 0;
 }
 
-.checkmark {
+.checkbox__mark {
   position: absolute;
   top: 0;
   left: 0;
@@ -224,13 +207,13 @@ body {
 } */
 
 /* Когда чекбокс активен — красим ТОЛЬКО рамку */
-.container input:checked ~ .checkmark {
+.checkbox input:checked ~ .checkmark {
   background-color: transparent; /* Фон остается прозрачным */
   border-color: #bc9cff; /* Рамка становится синей */
 }
 
 /* Создаем саму галочку (скрыта по умолчанию) */
-.checkmark:after {
+.checkbox__mark:after {
   content: "";
   position: absolute;
   display: none;
@@ -244,7 +227,7 @@ body {
 }
 
 /* Показываем галочку при клике */
-.container input:checked ~ .checkmark:after {
+.checkbox input:checked ~ .checkmark:after {
   display: block;
 }
 
@@ -479,7 +462,7 @@ input[type="radio"]:checked + label::before {
   padding: 13px 18px;
 }
 
-.button__clickBorderOff {
+.button--ghost {
   border: none;
   background: white;
   color: #bc9cff;
@@ -490,7 +473,7 @@ input[type="radio"]:checked + label::before {
   text-transform: uppercase;
 }
 
-.button__clickBorderOff:hover {
+.button--ghost:hover {
   color: #1f204180;
   cursor: pointer;
 }
@@ -540,7 +523,7 @@ input[type="radio"]:checked + label::before {
   flex-shrink: 0;
 }
 
-.dropdown__expander div {
+.dropdown__row {
   display: flex;
   gap: 9px;
   justify-content: space-between;
@@ -558,7 +541,7 @@ input[type="radio"]:checked + label::before {
   background-color: white;
 }
 
-.dropdown__counter span {
+.dropdown__counter {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -692,6 +675,6 @@ input[type="radio"]:checked + label::before {
   opacity: 1;
 }
 
-.arrow-button.active image {
+.arrow-btn.active image {
   transform: rotate(180deg);
 }

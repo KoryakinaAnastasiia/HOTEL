@@ -19,7 +19,7 @@
     <!--font family-->
   </head>
   <body>
-    <div class="blockOne">
+    <div class="block-one">
       <section class="inputs-section" id="input">
         <!--email-->
         <label class="text-input">
@@ -28,90 +28,90 @@
         </label>
         <!--email-->
 
-        <!--number guests form-->
+        <!--guests-input-->
         <label class="guests-input">
           <span>Dropdown</span>
           <div>
             <input placeholder="Сколько гостей" />
-            <button class="arrow_button">
+            <button class="arrow-btn">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
           </div>
         </label>
-        <!--number guests form-->
+        <!--guests-input-->
 
-        <!--data form-->
+        <!--date-input-->
         <label class="date-input">
           <span>masked text field</span>
           <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
         </label>
-        <!--data form-->
+        <!--date-input-->
 
-        <!--data form mini-->
+        <!--date-input date-input--mini-->
         <div class="data__form-mini">
           <label class="date-input date-input--mini">
             <span>date Dropdown</span>
             <div>
               <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
-              <button class="arrow_button">
+              <button class="arrow-btn">
                 <img src="./img/arrow_number_guest.png" alt="image" />
               </button>
             </div>
           </label>
 
-          <label class="data__form-mini-second">
+          <label class="date-input date-input--mini">
             <span>date Dropdown</span>
             <div>
               <input placeholder="19.08.2019" pattern="\d{2}\.\d{2}\.\d{4}" />
-              <button class="arrow_button">
+              <button class="arrow-btn">
                 <img src="./img/arrow_number_guest.png" alt="image" />
               </button>
             </div>
           </label>
         </div>
-        <!--data form mini-->
+        <!--date-input date-input--mini-->
 
-        <!--data form filter-->
+        <!--date-input date-input--filter-->
         <label class="date-input date-input--filter">
           <span>date Dropdown</span>
           <div>
             <input placeholder="19 авг - 23 авг" />
-            <button class="arrow_button-mini">
+            <button class="arrow-btn arrow-btn--small">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
           </div>
         </label>
-        <!--data form filter-->
+        <!--date-input date-input--filter-->
 
-        <!--data form email-->
+        <!--date-input date-input--email-->
         <label class="date-input date-input--email">
           <span>subscription text field</span>
           <div>
             <input type="email" placeholder="Email" />
-            <button class="arrow_button-mini">
+            <button class="arrow-btn arrow-btn--small">
               <img src="./img/arrow_forward.png" alt="image" />
             </button>
           </div>
         </label>
-        <!--data form email-->
+        <!--date-input date-input--email-->
       </section>
       <!--controls-section-->
       <section class="controls-section" id="check">
         <div class="checkbox__title">Checkbox Buttons</div>
         <div class="checkbox__form">
-          <label class="container">
-            <input type="checkbox" />
-            <span class="checkmark"></span>
+          <label class="checkbox">
+            <input type="checkbox" class="checkbox__input" />
+            <span class="checkbox__mark"></span>
             Можно курить
           </label>
-          <label class="container">
-            <input type="checkbox" />
-            <span class="checkmark"></span>
+          <label class="checkbox">
+            <input type="checkbox" class="checkbox__input" />
+            <span class="checkbox__mark"></span>
             Можно с питомцами
           </label>
-          <label class="container">
-            <input type="checkbox" />
-            <span class="checkmark"></span>
+          <label class="checkbox">
+            <input type="checkbox" class="checkbox__input" />
+            <span class="checkbox__mark"></span>
             Можно пригласить гостей (до 10 человек)
           </label>
         </div>
@@ -216,14 +216,14 @@
         <h3 class="buttonsClick__title">buttons</h3>
         <button class="button">click me</button>
         <button class="button button--outline">click me</button>
-        <button class="button__clickBorderOff">click me</button>
+        <button class="button button--ghost">click me</button>
         <!--доделать-->
         <button class="button button--fullWidth">перейти к оплате</button>
       </section>
     </div>
     <!--Buttons-->
     <!--Dropdown-->
-    <div class="blockTwo">
+    <div class="block-two">
       <section class="dropdown">
         <label class="dropdown__rooms">
           <span>Dropdown</span>
@@ -233,12 +233,12 @@
               class="dropdownInputBad"
               readonly
             />
-            <button class="arrow_button" id="arrow_button">
+            <button class="arrow-btn" id="arrow-btn">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
           </div>
           <div class="dropdown__expander" id="mobileMenu">
-            <div>
+            <div class="dropdown__row">
               <h3 class="dropdown__title">спальни</h3>
               <div class="dropdown__counter">
                 <button class="dropdown__minus">-</button>
@@ -246,7 +246,7 @@
                 <button class="dropdown__plus">+</button>
               </div>
             </div>
-            <div>
+            <div class="dropdown__row">
               <h3 class="dropdown__title">кровати</h3>
               <div class="dropdown__counter">
                 <button class="dropdown__minus">-</button>
@@ -254,7 +254,7 @@
                 <button class="dropdown__plus">+</button>
               </div>
             </div>
-            <div>
+            <div class="dropdown__row">
               <h3 class="dropdown__title">ванные комнаты</h3>
               <div class="dropdown__counter">
                 <button class="dropdown__minus">-</button>
@@ -276,7 +276,7 @@
               class="dropdown__input"
               readonly
             />
-            <button type="button" class="arrow-button">
+            <button type="button" class="arrow-btn">
               <img src="./img/arrow_number_guest.png" alt="image" />
             </button>
           </div>
