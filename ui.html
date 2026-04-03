@@ -20,44 +20,41 @@
   </head>
   <body>
     <div class="block-one">
-      <section class="inputs-section" id="input">
+      <section class="inputs-section">
         <!--email-->
         <label class="text-input">
-          <span>Text Field</span>
-          <input placeholder="Email" />
+          <span class="text-input__label">Text Field</span>
+          <input class="text-input__input" placeholder="Email" />
         </label>
         <!--email-->
 
-        <!--guests-input-->
-        <div class="guests-input">
-          <span class="guests-input__label">Количество гостей</span>
-          <div class="guests-input__trigger">
-            <!-- весь триггер — один div -->
+        <!--dropdown-->
+        <div class="dropdown">
+          <span class="dropdown__label">Dropdown</span>
+          <div class="dropdown__trigger">
             <input
-              class="guests-input__input"
+              class="dropdown__input"
               readonly
               placeholder="Сколько гостей"
             />
-            <img
-              class="guests-input__arrow"
-              src="./img/arrow_number_guest.png"
-              alt=""
-            />
-            <!-- стрелка — картинка, не кнопка -->
           </div>
         </div>
-        <!--guests-input-->
+        <!--dropdown-->
 
         <!--date-input-->
-        <label class="date-input">
-          <span>masked text field</span>
-          <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
+        <label class="text-input">
+          <span class="text-input__label">masked text field</span>
+          <input
+            class="text-input__input"
+            placeholder="ДД.ММ.ГГГГ"
+            pattern="\d{2}\.\d{2}\.\d{4}"
+          />
         </label>
         <!--date-input-->
 
         <!--date-form-->
 
-        <div class="date-form">
+        <div class="date-row">
           <div class="date-form__item">
             <span class="date-form__label">date Dropdown</span>
             <div class="date-form__trigger">
@@ -118,23 +115,24 @@
         <!--date-input date-input--filter-->
 
         <!--date-input date-input--email-->
-        <div class="date-input date-input-email">
-          <span class="date-input__label">date Dropdown</span>
-          <div class="date-input__trigger">
-            <!-- весь триггер — один div -->
+        <form class="subscription-form">
+          <label class="subscription-form__label"
+            ><span>subscription text field</span>
             <input
-              class="date-input__input"
+              class="subscription-form__input"
               type="email"
               readonly
               placeholder="Email"
             />
-            <img
-              class="date-input__arrow"
-              src="./img/arrow_forward.png"
-              alt=""
-            />
-          </div>
-        </div>
+            <button type="submit" class="subscription-form__button">
+              <img
+                class="subscription-form__button-icon"
+                src="./img/arrow_forward.png"
+                alt=""
+              />
+            </button>
+          </label>
+        </form>
         <!--date-input date-input--email-->
       </section>
       <!--controls-section-->
@@ -260,6 +258,7 @@
       </section>
       <!--Buttons-->
       <section class="buttons-demo">
+        <!--buttons-section-->
         <h3 class="buttons-demo__title">buttons</h3>
 
         <button type="button" class="button">click me</button>
