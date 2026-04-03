@@ -29,15 +29,23 @@
         <!--email-->
 
         <!--guests-input-->
-        <label class="guests-input">
-          <span>Dropdown</span>
-          <div>
-            <input placeholder="Сколько гостей" />
-            <button class="arrow-btn">
-              <img src="./img/arrow_number_guest.png" alt="image" />
-            </button>
+        <div class="guests-input">
+          <span class="guests-input__label">Количество гостей</span>
+          <div class="guests-input__trigger">
+            <!-- весь триггер — один div -->
+            <input
+              class="guests-input__input"
+              readonly
+              placeholder="Сколько гостей"
+            />
+            <img
+              class="guests-input__arrow"
+              src="./img/arrow_number_guest.png"
+              alt=""
+            />
+            <!-- стрелка — картинка, не кнопка -->
           </div>
-        </label>
+        </div>
         <!--guests-input-->
 
         <!--date-input-->
@@ -48,26 +56,44 @@
         <!--date-input-->
 
         <!--date-input date-input--mini-->
-        <div class="data__form-mini">
-          <label class="date-input date-input--mini">
-            <span>date Dropdown</span>
-            <div>
-              <input placeholder="ДД.ММ.ГГГГ" pattern="\d{2}\.\d{2}\.\d{4}" />
-              <button class="arrow-btn">
-                <img src="./img/arrow_number_guest.png" alt="image" />
-              </button>
-            </div>
-          </label>
 
-          <label class="date-input date-input--mini">
-            <span>date Dropdown</span>
-            <div>
-              <input placeholder="19.08.2019" pattern="\d{2}\.\d{2}\.\d{4}" />
-              <button class="arrow-btn">
-                <img src="./img/arrow_number_guest.png" alt="image" />
-              </button>
+        <div class="date-form">
+          <div class="date-form__item">
+            <span class="date-form__label">date Dropdown</span>
+            <div class="date-form__trigger">
+              <!-- весь триггер — один div -->
+              <input
+                class="date-form__input"
+                readonly
+                placeholder="ДД.ММ.ГГГГ"
+                pattern="\d{2}\.\d{2}\.\d{4}"
+              />
+              <img
+                class="date-form__arrow"
+                src="./img/arrow_number_guest.png"
+                alt=""
+              />
+              <!-- стрелка — картинка, не кнопка -->
             </div>
-          </label>
+          </div>
+          <div class="date-form__item">
+            <span class="date-form__label">date Dropdown</span>
+            <div class="date-form__trigger">
+              <!-- весь триггер — один div -->
+              <input
+                class="date-form__input"
+                readonly
+                placeholder="19.08.2019"
+                pattern="\d{2}\.\d{2}\.\d{4}"
+              />
+              <img
+                class="date-form__arrow"
+                src="./img/arrow_number_guest.png"
+                alt=""
+              />
+            </div>
+            <!-- стрелка — картинка, не кнопка -->
+          </div>
         </div>
         <!--date-input date-input--mini-->
 

@@ -28,7 +28,8 @@ body {
 .date-input.date-input--mini span,
 .date-input.date-input--filter span,
 .date-input.date-input--email span,
-.dropdown__peoples span {
+.dropdown__peoples span,
+.date-form__label {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   color: var(--Dark-Shade100);
@@ -46,7 +47,14 @@ body {
   flex-shrink: 0;
 }
 
-.date-input.date-input--mini {
+.date-form {
+  display: flex;
+  gap: 5px;
+  max-width: 320px;
+  flex-shrink: 0;
+}
+
+.date-form__item {
   position: relative;
   min-width: 150px;
   display: flex;
@@ -59,7 +67,8 @@ body {
 .date-input input,
 .date-input.date-input--mini input,
 .date-input.date-input--filter input,
-.date-input.date-input--email input {
+.date-input.date-input--email input,
+.date-form__input {
   position: relative;
   padding: 13px;
   border: 1px solid var(--Dark-Shade25);
@@ -115,7 +124,7 @@ body {
   gap: 5px;
 }
 
-.data__form-mini {
+.date-form {
   display: flex;
   gap: 20px;
 }
@@ -135,13 +144,20 @@ body {
 }
 
 .arrow-btn,
-.arrow-btn.arrow-btn--small {
+.arrow-btn.arrow-btn--small,
+.guests-input__arrow,
+.guests-input__arrow,
+.date-form__arrow {
   position: absolute;
   background: none;
   border: none;
   padding: 13px;
   cursor: pointer;
   right: 5px;
+}
+
+.date-form__arrow {
+  bottom: 5px;
 }
 
 /* check box */
