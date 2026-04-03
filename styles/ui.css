@@ -69,7 +69,6 @@ body {
 .date-input.date-input--filter input,
 .date-input.date-input--email input,
 .date-form__input {
-  position: relative;
   padding: 13px;
   border: 1px solid var(--Dark-Shade25);
   border-radius: 4px;
@@ -129,25 +128,21 @@ body {
   gap: 20px;
 }
 
-.date-input.date-input--filter,
-.date-input.date-input--email {
+.date-input.date-input-filter,
+.date-input.date-input-email {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 5px;
   max-width: 266px;
 }
 
-.date-input.date-input--filter div,
-.date-input.date-input--email div {
-  position: relative;
-  display: inline-block;
-}
-
 .arrow-btn,
 .arrow-btn.arrow-btn--small,
 .guests-input__arrow,
 .guests-input__arrow,
-.date-form__arrow {
+.date-form__arrow,
+.date-input__arrow {
   position: absolute;
   background: none;
   border: none;

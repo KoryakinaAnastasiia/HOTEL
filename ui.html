@@ -55,7 +55,7 @@
         </label>
         <!--date-input-->
 
-        <!--date-input date-input--mini-->
+        <!--date-form-->
 
         <div class="date-form">
           <div class="date-form__item">
@@ -95,30 +95,46 @@
             <!-- стрелка — картинка, не кнопка -->
           </div>
         </div>
-        <!--date-input date-input--mini-->
+        <!--date-form-->
 
         <!--date-input date-input--filter-->
-        <label class="date-input date-input--filter">
-          <span>date Dropdown</span>
-          <div>
-            <input placeholder="19 авг - 23 авг" />
-            <button class="arrow-btn arrow-btn--small">
-              <img src="./img/arrow_number_guest.png" alt="image" />
-            </button>
+        <div class="date-input date-input-filter">
+          <span class="date-input__label">date Dropdown</span>
+          <div class="date-input__trigger">
+            <!-- весь триггер — один div -->
+            <input
+              class="date-input__input"
+              readonly
+              placeholder="19 авг - 23 авг"
+            />
+            <img
+              class="date-form__arrow"
+              src="./img/arrow_number_guest.png"
+              alt=""
+            />
           </div>
-        </label>
+          <!-- стрелка — картинка, не кнопка -->
+        </div>
         <!--date-input date-input--filter-->
 
         <!--date-input date-input--email-->
-        <label class="date-input date-input--email">
-          <span>subscription text field</span>
-          <div>
-            <input type="email" placeholder="Email" />
-            <button class="arrow-btn arrow-btn--small">
-              <img src="./img/arrow_forward.png" alt="image" />
-            </button>
+        <div class="date-input date-input-email">
+          <span class="date-input__label">date Dropdown</span>
+          <div class="date-input__trigger">
+            <!-- весь триггер — один div -->
+            <input
+              class="date-input__input"
+              type="email"
+              readonly
+              placeholder="Email"
+            />
+            <img
+              class="date-input__arrow"
+              src="./img/arrow_forward.png"
+              alt=""
+            />
           </div>
-        </label>
+        </div>
         <!--date-input date-input--email-->
       </section>
       <!--controls-section-->
