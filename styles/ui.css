@@ -30,6 +30,19 @@ body {
   flex-direction: column;
 }
 
+.date-row {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown-middle {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 267px;
+  flex-direction: column;
+}
+
 /* text-input */
 
 .text-input {
@@ -116,126 +129,6 @@ body {
 }
 
 /* end of dropdown */
-
-.date-input span,
-.date-input.date-input--mini span,
-.date-input.date-input--filter span,
-.date-input.date-input--email span,
-.dropdown__peoples span,
-.date-form__label,
-.buttons-demo__title {
-  font-weight: var(--font-big);
-  font-size: var(--h3-font-size);
-  color: var(--Dark-Shade100);
-  text-transform: uppercase;
-  line-height: 100%;
-}
-
-.date-input {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  max-width: 320px;
-  flex-shrink: 0;
-}
-
-.date-form {
-  display: flex;
-  gap: 5px;
-  max-width: 320px;
-  flex-shrink: 0;
-}
-
-.date-form__item {
-  position: relative;
-  min-width: 150px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.date-input input,
-.date-input.date-input--mini input,
-.date-input.date-input--filter input,
-.date-input.date-input--email input,
-.date-form__input {
-  padding: 13px;
-  border: 1px solid var(--Dark-Shade25);
-  border-radius: 4px;
-  width: 100%;
-}
-
-.date-input.date-input--email input::placeholder {
-  color: var(--Dark-Shade25);
-}
-
-.date-input input::placeholder {
-  font-weight: var(--font-small);
-  font-size: var(--body-font-size);
-  line-height: 24px;
-  color: var(--Dark-Shade25);
-  letter-spacing: 0%;
-}
-
-.guests-input div input::placeholder {
-  font-weight: var(--font-small);
-  font-size: var(--body-font-size);
-  line-height: 24px;
-  color: var(--Dark-Shade100);
-}
-
-.date-input.date-input--mini div input::placeholder {
-  font-weight: var(--font-small);
-  font-size: var(--body-font-size);
-  line-height: 18px;
-  color: var(--Dark-Shade75);
-}
-
-.date-input.date-input--filter div input::placeholder {
-  font-weight: var(--font-small);
-  font-size: var(--body-font-size);
-  line-height: 24px;
-  color: var(--Dark-Shade75);
-}
-
-.guests-input div,
-.date-input.date-input--mini div {
-  position: relative;
-  max-width: 320px;
-  display: inline-block;
-  gap: 5px;
-}
-
-.date-form {
-  display: flex;
-  gap: 20px;
-}
-
-.date-input.date-input-filter,
-.date-input.date-input-email {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  max-width: 266px;
-}
-
-.arrow-btn,
-.arrow-btn.arrow-btn--small,
-.guests-input__arrow,
-.date-form__arrow,
-.date-input__arrow {
-  position: absolute;
-  background: none;
-  border: none;
-  padding: 13px;
-  cursor: pointer;
-  right: 5px;
-}
-
-.date-form__arrow {
-  bottom: 5px;
-}
 
 /* check box */
 

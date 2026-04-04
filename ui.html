@@ -52,88 +52,66 @@
         </label>
         <!--date-input-->
 
-        <!--date-form-->
-
+        <!--dropdown-->
         <div class="date-row">
-          <div class="date-form__item">
-            <span class="date-form__label">date Dropdown</span>
-            <div class="date-form__trigger">
-              <!-- весь триггер — один div -->
+          <div class="dropdown">
+            <span class="dropdown__label">Dropdown</span>
+            <div class="dropdown__trigger">
               <input
-                class="date-form__input"
+                class="dropdown__input"
                 readonly
                 placeholder="ДД.ММ.ГГГГ"
                 pattern="\d{2}\.\d{2}\.\d{4}"
               />
-              <img
-                class="date-form__arrow"
-                src="./img/arrow_number_guest.png"
-                alt=""
-              />
-              <!-- стрелка — картинка, не кнопка -->
             </div>
           </div>
-          <div class="date-form__item">
-            <span class="date-form__label">date Dropdown</span>
-            <div class="date-form__trigger">
-              <!-- весь триггер — один div -->
+          <div class="dropdown">
+            <span class="dropdown__label">Dropdown</span>
+            <div class="dropdown__trigger">
               <input
-                class="date-form__input"
+                class="dropdown__input"
                 readonly
                 placeholder="19.08.2019"
                 pattern="\d{2}\.\d{2}\.\d{4}"
               />
-              <img
-                class="date-form__arrow"
-                src="./img/arrow_number_guest.png"
-                alt=""
+            </div>
+          </div>
+        </div>
+        <!--dropdown-->
+
+        <!--dropdown-->
+        <div class="dropdown-middle">
+          <div class="dropdown">
+            <span class="dropdown__label">date Dropdown</span>
+            <div class="dropdown__trigger">
+              <input
+                class="dropdown__input"
+                readonly
+                placeholder="19 авг - 23 авг"
               />
             </div>
-            <!-- стрелка — картинка, не кнопка -->
           </div>
-        </div>
-        <!--date-form-->
+          <!--dropdown-->
 
-        <!--date-input date-input--filter-->
-        <div class="date-input date-input-filter">
-          <span class="date-input__label">date Dropdown</span>
-          <div class="date-input__trigger">
-            <!-- весь триггер — один div -->
+          <!--date-input__button-->
+          <label class="text-input"
+            ><span class="text-input__label">subscription text field</span>
             <input
-              class="date-input__input"
-              readonly
-              placeholder="19 авг - 23 авг"
-            />
-            <img
-              class="date-form__arrow"
-              src="./img/arrow_number_guest.png"
-              alt=""
-            />
-          </div>
-          <!-- стрелка — картинка, не кнопка -->
-        </div>
-        <!--date-input date-input--filter-->
-
-        <!--date-input date-input--email-->
-        <form class="subscription-form">
-          <label class="subscription-form__label"
-            ><span>subscription text field</span>
-            <input
-              class="subscription-form__input"
+              class="text-input__input"
               type="email"
               readonly
               placeholder="Email"
             />
-            <button type="submit" class="subscription-form__button">
+            <button type="submit" class="text-input__button">
               <img
-                class="subscription-form__button-icon"
+                class="text-input__button__img"
                 src="./img/arrow_forward.png"
                 alt=""
               />
             </button>
           </label>
-        </form>
-        <!--date-input date-input--email-->
+        </div>
+        <!--date-input-->
       </section>
       <!--controls-section-->
       <section class="controls-section" id="check">
