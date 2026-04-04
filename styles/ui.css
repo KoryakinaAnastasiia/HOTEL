@@ -130,6 +130,46 @@ body {
 
 /* end of dropdown */
 
+/* text-input-subscription button  */
+
+.text-input-subscription {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.text-input-subscription__label {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  color: var(--Dark-Shade100);
+  text-transform: uppercase;
+  line-height: 100%;
+}
+
+.text-input-subscription__input {
+  padding: 13px;
+  border: 1px solid var(--Dark-Shade25);
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box; /* Чтобы кнопка позиционировалась внутри */
+}
+
+.text-input-subscription__button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 44px; /* Высота должна совпадать с высотой инпута */
+  width: 44px; /* Ширина кнопки */
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* end of text-input button */
+
 /* check box */
 
 .filter-group__title,
