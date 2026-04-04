@@ -168,7 +168,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* end of text-input button */
+
+/* end of text-input-subscription button */
 
 /* check box */
 
@@ -220,22 +221,16 @@ body {
   left: 0;
   height: 20px;
   width: 20px;
-  background-color: transparent; /* Прозрачный фон */
-  border: 1px solid #1f204140; /* Серая рамка по умолчанию */
+  background-color: transparent;
+  border: 1px solid #1f204140;
   border-radius: 4px;
-  transition: all 0.2s ease; /* Плавный переход для всех свойств */
-  box-sizing: border-box; /* Чтобы рамка не увеличивала размер */
+  transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
-/* При наведении подсвечиваем только рамку */
-/* .container:hover input ~ .checkmark {
-  border-color: #bc9cff;
-} */
-
-/* Когда чекбокс активен — красим ТОЛЬКО рамку */
 .checkbox__input:checked ~ .checkbox__mark {
-  background-color: transparent; /* Фон остается прозрачным */
-  border-color: #bc9cff; /* Рамка становится синей */
+  background-color: transparent;
+  border-color: #bc9cff;
 }
 
 /* Создаем саму галочку (скрыта по умолчанию) */
@@ -265,14 +260,15 @@ body {
   color: var(--Dark-Shade50ƒ);
 }
 
-/* check box */
+/* end of check box */
 
 /* radio buttons */
-.radio__buttons {
+.radio-buttons {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+/* end of radio buttons */
 
 .radioButtons__title {
   font-weight: var(--font-big);
@@ -323,7 +319,7 @@ input[type="radio"]:checked + label::before {
   font-size: var(--body-font-size);
   color: var(--Dark-Shade75);
 }
-/* radio buttons */
+/* end of radio buttons */
 
 /* toggle button */
 .checkbox-ios {
