@@ -1,12 +1,9 @@
 /* like buttons */
-const buttonLikeInput = document.querySelector(".buttonsLike__input");
-//const likesCount = document.querySelector(".buttonsLike__counter");
-
-//let count = parseInt(likesCount.textContent);
+const buttonLikeInput = document.querySelector(".buttons-like__input");
 
 buttonLikeInput.addEventListener("change", (event) => {
   const input = event.target; // почитать
-  const likesCount = input.parentElement.querySelector(".buttonsLike__counter");
+  const likesCount = input.parentElement.querySelector(".buttons-like__span");
   let count = parseInt(likesCount.textContent);
   if (buttonLikeInput.checked) {
     count++;
@@ -15,17 +12,16 @@ buttonLikeInput.addEventListener("change", (event) => {
   }
   likesCount.textContent = count;
 });
+/* end of like buttons */
 
-/* Rate Buttons */
+/* rate buttons */
 
-const buttons = document.querySelectorAll(".buttonStars");
-
-// Выбираем все залитые звезды
+const buttons = document.querySelectorAll(".buttons-rate__buttons");
 
 buttons.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     // Выбираем все звезды
-    const starsOn = document.querySelectorAll(".buttonsRate__stars");
+    const starsOn = document.querySelectorAll(".buttons-rate__img");
     // Сбрасываем активный класс у всех залитых звезд
     starsOn.forEach((star) => star.classList.remove("active"));
     // Красим все звезды ДО нажатой включительно
@@ -34,6 +30,9 @@ buttons.forEach((btn, index) => {
     }
   });
 });
+
+/* end of rate buttons */
+
 /*Dropdown flashback*/
 
 const btn = document.getElementById("arrow-btn");

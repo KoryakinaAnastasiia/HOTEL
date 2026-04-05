@@ -173,16 +173,6 @@ body {
 
 /* check box */
 
-.filter-group__title,
-.buttonsLike__title,
-.buttonsRate__title,
-.buttons__title,
-.dropdown__rooms span {
-  text-transform: uppercase;
-  font-weight: var(--font-big);
-  font-size: var(--h3-font-size);
-}
-
 .checkbox__block {
   white-space: nowrap;
   width: 100%;
@@ -379,11 +369,17 @@ body {
 /* end of toggle button */
 
 /* like buttons */
-.buttonsLike__input {
+.buttons-like__title {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
+
+.buttons-like__input {
   display: none;
 }
 
-.buttonsLike__content {
+.buttons-like__form {
   display: inline-flex; /* Чтобы кнопка была по ширине контента */
   align-items: center;
   gap: 4px;
@@ -396,43 +392,48 @@ body {
   user-select: none;
 }
 
-.buttonsLike__counter {
+.buttons-like__span {
   font-weight: var(--font-small);
   font-size: 10px;
   color: #1f204140;
   user-select: none;
 }
 
-.buttonsLike__heart {
+.buttons-like__img {
   object-fit: none;
 }
 
-.buttonsLike__heart2 {
+.buttons-like__img-heart {
   object-fit: none;
   opacity: 0;
   position: absolute;
 }
 
-.buttonsLike__input:checked + .buttonsLike__content .buttonsLike__heart {
+.buttons-like__input:checked + .buttons-like__form .buttons-like__img {
   opacity: 0;
 }
 
-.buttonsLike__input:checked + .buttonsLike__content .buttonsLike__heart2 {
+.buttons-like__input:checked + .buttons-like__form .buttons-like__img-heart {
   opacity: 1;
 }
 
-.buttonsLike__input:checked + .buttonsLike__content {
+.buttons-like__input:checked + .buttons-like__form {
   border-color: #bc9cff;
 }
 
-.buttonsLike__input:checked + .buttonsLike__content .buttonsLike__counter {
+.buttons-like__input:checked + .buttons-like__form .buttons-like__span {
   color: #bc9cff;
 }
-/* like buttons */
+/* end of like buttons */
 
 /* Rate Buttons */
+.buttons-rate__title {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
 
-.buttonStars {
+.buttons-rate__buttons {
   position: relative;
   background: none;
   border: none;
@@ -441,29 +442,25 @@ body {
   height: 24px;
 }
 
-.buttonsRate__starsBorder,
-.buttonsRate__stars {
+.buttons-rate__img-border,
+.buttons-rate__img {
   position: absolute;
   object-fit: none;
   top: 0px;
   left: 0px;
 }
 
-.buttonsRate__stars {
+.buttons-rate__img {
   position: absolute;
   object-fit: none;
   display: none; /* По умолчанию скрыты */
 }
 
-.buttonsRate__starsBorder.active {
-  display: none;
-}
-
-.buttonsRate__stars.active {
+.buttons-rate__img.active {
   display: block; /* Показываем при наличии класса */
 }
 
-/* Rate Buttons */
+/* end of Rate Buttons */
 
 /* Buttons Click*/
 .buttons-demo {
