@@ -267,98 +267,83 @@
     <!--Buttons-->
     <!--Dropdown-->
     <div class="block-two">
-      <section class="dropdown">
-        <label class="dropdown__rooms">
-          <span>Dropdown</span>
-          <div class="dropdown__default" id="menuBtnClose">
-            <input
-              placeholder="2 спальни, 2 кровати..."
-              class="dropdownInputBad"
-              readonly
-            />
-            <button type="button" class="arrow-btn" id="arrow-btn">
-              <img src="./img/arrow_number_guest.png" alt="image" />
-            </button>
-          </div>
-          <div class="dropdown__expander" id="mobileMenu">
-            <div class="dropdown__row">
-              <h3 class="dropdown__title">спальни</h3>
-              <div class="dropdown__counter">
-                <button type="button" class="dropdown__minus">-</button>
-                <span>0</span>
-                <button type="button" class="dropdown__plus">+</button>
-              </div>
-            </div>
-            <div class="dropdown__row">
-              <h3 class="dropdown__title">кровати</h3>
-              <div class="dropdown__counter">
-                <button type="button" class="dropdown__minus">-</button>
-                <span>0</span>
-                <button type="button" class="dropdown__plus">+</button>
-              </div>
-            </div>
-            <div class="dropdown__row">
-              <h3 class="dropdown__title">ванные комнаты</h3>
-              <div class="dropdown__counter">
-                <button type="button" class="dropdown__minus">-</button>
-                <span>0</span>
-                <button type="button" class="dropdown__plus">+</button>
-              </div>
+      <div class="dropdown">
+        <span class="dropdown__label">Dropdown</span>
+        <div class="dropdown__trigger">
+          <input
+            placeholder="2 спальни, 2 кровати..."
+            class="dropdown__input"
+            readonly
+          />
+        </div>
+        <div class="dropdown__expander">
+          <div class="dropdown__row">
+            <h3 class="dropdown__title">спальни</h3>
+            <div class="dropdown__counter">
+              <button type="button" class="dropdown__button-minus">-</button>
+              <span class="dropdown__span">0</span>
+              <button type="button" class="dropdown__button-plus">+</button>
             </div>
           </div>
-        </label>
-      </section>
+          <div class="dropdown__row">
+            <h3 class="dropdown__title">кровати</h3>
+            <div class="dropdown__counter">
+              <button type="button" class="dropdown__button-minus">-</button>
+              <span class="dropdown__span">0</span>
+              <button type="button" class="dropdown__button-plus">+</button>
+            </div>
+          </div>
+          <div class="dropdown__row">
+            <h3 class="dropdown__title">ванные комнаты</h3>
+            <div class="dropdown__counter">
+              <button type="button" class="dropdown__button-minus">-</button>
+              <span class="dropdown__span">0</span>
+              <button type="button" class="dropdown__button-plus">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <section class="dropdown__people">
-        <label class="dropdown__peoples">
-          <span>Dropdown</span>
-          <div class="dropdown__default-people">
-            <!--сделаль buttons-->
-            <input
-              placeholder="Сколько гостей"
-              class="dropdown__input"
-              readonly
-            />
-            <button type="button" class="arrow-btn">
-              <img src="./img/arrow_number_guest.png" alt="image" />
-            </button>
-          </div>
-          <div class="dropdown__peopleExpander">
-            <div>
-              <h3 class="dropdown__title">взрослые</h3>
-              <div class="dropdown__counter">
-                <button type="button" class="dropdown__minus-people">-</button>
-                <span>0</span>
-                <button type="button" class="dropdown__plus-people">+</button>
-              </div>
-            </div>
-            <div>
-              <h3 class="dropdown__title">дети</h3>
-              <div class="dropdown__counter">
-                <button type="button" class="dropdown__minus-people">-</button>
-                <span>0</span>
-                <button type="button" class="dropdown__plus-people">+</button>
-              </div>
-            </div>
-            <div>
-              <h3 class="dropdown__title">младенцы</h3>
-              <div class="dropdown__counter">
-                <button type="button" class="dropdown__minus-people">-</button>
-                <span>0</span>
-                <button type="button" class="dropdown__plus-people">+</button>
-              </div>
-            </div>
-            <div class="dropdown__buttons">
-              <button type="button" class="dropdown__btn-clean">
-                очистить
-              </button>
-              <button type="button" class="dropdown__btn-apply">
-                применить
-              </button>
+      <div class="dropdown">
+        <span class="dropdown__label">Dropdown</span>
+        <div class="dropdown__trigger">
+          <input
+            placeholder="Сколько гостей"
+            class="dropdown__input"
+            readonly
+          />
+        </div>
+        <div class="dropdown__peopleExpander">
+          <div>
+            <h3 class="dropdown__title">взрослые</h3>
+            <div class="dropdown__counter">
+              <button type="button" class="dropdown__button-minus">-</button>
+              <span class="dropdown__span">0</span>
+              <button type="button" class="dropdown__button-plus">+</button>
             </div>
           </div>
-        </label>
-      </section>
+          <div>
+            <h3 class="dropdown__title">дети</h3>
+            <div class="dropdown__counter">
+              <button type="button" class="dropdown__button-minus">-</button>
+              <span class="dropdown__span">0</span>
+              <button type="button" class="dropdown__button-plus">+</button>
+            </div>
+          </div>
+          <div>
+            <h3 class="dropdown__title">младенцы</h3>
+            <div class="dropdown__counter">
+              <button type="button" class="dropdown__button-minus">-</button>
+              <span class="dropdown__span">0</span>
+              <button type="button" class="dropdown__button-plus">+</button>
+            </div>
+          </div>
+          <div class="dropdown__buttons">
+            <button type="button" class="dropdown__btn-clean">очистить</button>
+            <button type="button" class="dropdown__btn-apply">применить</button>
+          </div>
+        </div>
+      </div>
     </div>
     <!--Dropdown-->
     <!--==================== JAVASCRIPT ====================-->

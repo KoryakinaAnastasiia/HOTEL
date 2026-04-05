@@ -459,10 +459,16 @@ body {
 .buttons-rate__img.active {
   display: block; /* Показываем при наличии класса */
 }
-
 /* end of Rate Buttons */
 
 /* Buttons Click*/
+
+.buttons-demo__title {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
+
 .buttons-demo {
   display: flex;
   flex-direction: column;
@@ -520,25 +526,6 @@ body {
 
 /*Dropdown*/
 
-.dropdown__rooms {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  max-width: 266px;
-}
-
-.dropdown__rooms span {
-  padding-bottom: 5px;
-}
-
-.dropdown__rooms input {
-  position: relative;
-  padding: 13px;
-  border: 1px solid var(--Dark-Shade25);
-  border-radius: 4px;
-  width: 100%;
-}
-
 .dropdown__rooms input:active {
   border-radius: 4px 4px 0px 0px;
   border: 1px solid #1f204180;
@@ -547,7 +534,7 @@ body {
 
 .active .dropdown__expander {
   border-radius: 0 0 4px 4px;
-  border-top: none; /* Убираем двойную рамку на стыке */
+  border-top: none;
 }
 
 .dropdown__default {
@@ -594,10 +581,10 @@ body {
 }
 
 .dropdown__expander {
-  opacity: 0;
-  visibility: hidden; /* элемент становится невидемый, но он есть*/
+  opacity: 1;
+  visibility: hidden;
   position: absolute;
-  top: 100%; /* Появляется ПОД инпутом */
+  top: 100%;
   left: 0;
   width: 100%;
   background: white;
@@ -606,7 +593,7 @@ body {
   display: flex;
   padding: 13px;
   justify-content: space-between;
-  transform: translateY(-10px); /* Легкое смещение для эффекта выезда */
+  transform: translateY(-10px);
   transition: 0.4s ease;
   flex-direction: column;
   gap: 7px;
@@ -614,29 +601,8 @@ body {
 
 .dropdown__expander.active {
   opacity: 1;
-  visibility: visible; /*элемент становится невидемый*/
+  visibility: visible;
   transform: translateY(0);
-}
-/*Dropdown People*/
-
-.dropdown__peoples span {
-  padding-bottom: 5px;
-}
-
-.dropdown__default-people {
-  min-width: 320px;
-  flex-shrink: 0;
-}
-
-.dropdown__peoples {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 320px;
-}
-
-.dropdown__counter {
-  gap: 10px;
 }
 
 .dropdown__peopleExpander {
@@ -663,12 +629,6 @@ body {
 
 .dropdown__peopleExpander div {
   display: flex;
-}
-
-.dropdown__buttons {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 11px;
 }
 
 .dropdown__btn-clean {
