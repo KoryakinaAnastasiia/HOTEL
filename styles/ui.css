@@ -12,8 +12,11 @@ body {
 }
 
 .block-two {
+  width: 100%;
+  max-width: 266px;
   display: flex;
-  gap: 181px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 #input {
@@ -526,7 +529,7 @@ body {
 
 /*Dropdown*/
 
-.dropdown__rooms input:active {
+.dropdown__input:active {
   border-radius: 4px 4px 0px 0px;
   border: 1px solid #1f204180;
   outline: none;
@@ -537,23 +540,22 @@ body {
   border-top: none;
 }
 
-.dropdown__default {
-  position: relative;
-  min-width: 266px;
-  display: inline-block;
-  flex-shrink: 0;
-}
-
 .dropdown__row {
   display: flex;
   gap: 9px;
   justify-content: space-between;
 }
 
-.dropdown__plus,
-.dropdown__minus,
-.dropdown__minus-people,
-.dropdown__plus-people {
+.dropdown__button-minus {
+  width: 30px;
+  height: 30px;
+  border-radius: 22px;
+  border: 1px solid #1f204140;
+  color: #1f204140;
+  background-color: white;
+}
+
+.dropdown__button-plus {
   width: 30px;
   height: 30px;
   border-radius: 22px;
@@ -605,23 +607,6 @@ body {
   transform: translateY(0);
 }
 
-.dropdown__peopleExpander {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  padding: 13px;
-  border: 1px solid var(--Dark-Shade50);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  visibility: hidden;
-  min-width: 320px;
-  z-index: 20;
-  transition: 0.3s ease;
-  box-sizing: border-box;
-}
-
 .dropdown__peopleExpander.active {
   opacity: 1;
   visibility: visible;
@@ -631,19 +616,9 @@ body {
   display: flex;
 }
 
-.dropdown__btn-clean {
+.dropdown__button-clean {
   width: auto;
   white-space: nowrap;
-  background: none;
-  border: none;
-  color: #bc9cff;
-  font-weight: var(--font-big);
-  font-size: var(--h3-font-size);
-  text-transform: uppercase;
-  display: block;
-}
-
-.dropdown__btn-clean {
   background: none;
   border: none;
   color: #bc9cff;
@@ -656,7 +631,7 @@ body {
   opacity: 0;
 }
 
-.dropdown__btn-clean.active {
+.dropdown__button-clean.active {
   display: block;
   opacity: 1;
 }
