@@ -318,13 +318,13 @@ body {
 /* end of radio buttons */
 
 /* toggle button */
-.toggle__lable {
+.checkbox-toggle__lable {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   text-transform: uppercase;
 }
 
-.toggle {
+.checkbox-toggle {
   display: inline-block;
   font-weight: var(--font-small);
   position: relative;
@@ -332,7 +332,7 @@ body {
   color: var(--Dark-Shade75);
 }
 
-.toggle .toggle__span {
+.checkbox-toggle .checkbox-toggle__span {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -345,7 +345,7 @@ body {
   transition: 0.2s;
   margin-right: 10px;
 }
-.toggle .toggle__span:before {
+.checkbox-toggle .checkbox-toggle__span:before {
   content: "";
   position: absolute;
   top: 3px;
@@ -357,7 +357,7 @@ body {
   box-shadow: 0 3px 5px white;
   transition: 0.15s;
 }
-.toggle input[type="checkbox"] {
+.checkbox-toggle input[type="checkbox"] {
   width: 0;
   height: 0;
   position: absolute;
@@ -365,11 +365,13 @@ body {
   opacity: 0;
 }
 
-.toggle input[type="checkbox"]:checked + .toggle__span {
+.checkbox-toggle input[type="checkbox"]:checked + .checkbox-toggle__span {
   border-color: #bc9cff;
 }
 
-.toggle input[type="checkbox"]:checked + .toggle__span:before {
+.checkbox-toggle
+  input[type="checkbox"]:checked
+  + .checkbox-toggle__span:before {
   transform: translateX(20px);
   background: #bc9cff;
 }
