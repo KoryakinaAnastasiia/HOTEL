@@ -34,6 +34,7 @@ buttons.forEach((btn, index) => {
 /* end of rate buttons */
 
 /*Dropdown */
+
 // Один обработчик работает для ВСЕХ дропдаунов на странице
 document.querySelectorAll(".dropdown__trigger").forEach((trigger) => {
   trigger.addEventListener("click", (e) => {
@@ -59,34 +60,30 @@ document.addEventListener("click", () => {
   });
 });
 
-const allMinusBtnsRooms = document.querySelectorAll(".dropdown__button-minus");
-const allPlusBtnsRooms = document.querySelectorAll(".dropdown__button-plus");
+document.querySelectorAll(".dropdown__counter").forEach((counter) => {
+  const minusBtn = counter.querySelector(".dropdown__button-minus");
+  const plusBtn = counter.querySelector(".dropdown__button-plus");
+  const span = counter.querySelector(".dropdown__span");
+  const dropdown = counter.closest(".dropdown");
 
-document.querySelectorAll(".dropdown__button-plus").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const span = e.currentTarget.parentElement.querySelector("span");
+  plusBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // ОСТАНОВИТЬ ЗАКРЫТИЕ
     span.textContent = parseInt(span.textContent) + 1;
-    Updatestatus();
+    updateStatus(dropdown);
   });
-});
 
-//счетчик минуса
-document.querySelectorAll(".dropdown__button-minus").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const span = e.currentTarget.parentElement.querySelector("span");
+  minusBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // ОСТАНОВИТЬ ЗАКРЫТИЕ
     let val = parseInt(span.textContent);
     if (val > 0) {
       span.textContent = val - 1;
-      Updatestatus();
+      updateStatus(dropdown);
     }
   });
 });
 
-const menuPeople = document.querySelector(".dropdown__peopleExpander");
 const btnApply = document.querySelector(".dropdown__button-apply");
-const allSpans = document.querySelectorAll(".dropdown__span");
 const btnApplyClean = document.querySelector(".dropdown__button-clean");
-const inputData = document.querySelector(".dropdown__input");
 
 // закрытие при клике вне блока
 document.addEventListener("click", (e) => {
@@ -111,30 +108,40 @@ const guestsPr = {
   many: "гостей",
 };
 
-function Updatestatus() {
+function updateStatus(dropdown) {
+  const input = dropdown.querySelector(".dropdown__input");
+  const spans = dropdown.querySelectorAll(".dropdown__span");
+  const titles = dropdown.querySelectorAll(".dropdown__title");
+  const cleanBtn = dropdown.querySelector(".dropdown__button-clean");
+
   let total = 0;
-  const peopleSpans = document.querySelectorAll(
-    ".dropdown__expander .dropdown__span",
-  );
-  peopleSpans.forEach((span) => {
-    total += parseInt(span.textContent);
+  let parts = [];
+
+  spans.forEach((span, index) => {
+    const count = parseInt(span.textContent);
+    total += count;
+
+    if (count > 0) {
+      const type = titles[index].textContent.toLowerCase().trim();
+      parts.push(`${count} ${getPlural(count, type)}`);
+    }
   });
 
-  inputData.value =
-    total === 0 ? "Сколько гостей" : `${total} ${guestsPr[prRu.select(total)]}`;
-
-  if (total > 0) {
-    btnApplyClean.classList.add("active");
+  // Логика для Гостей (показываем "5 гостей" суммарно)
+  if (input.placeholder.includes("гост")) {
+    input.value = total > 0 ? `${total} ${getPlural(total, "гостей")}` : "";
   } else {
-    btnApplyClean.classList.remove("active");
+    // Логика для Комнат (перечисляем через запятую: "2 спальни, 1 кровать")
+    input.value = parts.join(", ");
   }
 
-  btnApplyClean.addEventListener("click", (e) => {
-    e.preventDefault();
-    const peopleSpans = document.querySelectorAll(
-      ".dropdown__expander .dropdown__span",
-    );
-    peopleSpans.forEach((span) => (span.textContent = "0"));
-    Updatestatus();
-  });
+  // Показываем/скрываем кнопку "Очистить"
+  if (cleanBtn) {
+    if (total > 0) {
+      cleanBtn.style.display = "block";
+      cleanBtn.style.opacity = "1";
+    } else {
+      cleanBtn.style.display = "none";
+    }
+  }
 }

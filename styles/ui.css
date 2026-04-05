@@ -87,6 +87,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  position: relative;
 }
 
 .dropdown__label {
@@ -583,6 +584,7 @@ body {
 }
 
 .dropdown__expander {
+  position: absolute;
   visibility: hidden;
   top: 100%;
   left: 0;
@@ -590,6 +592,7 @@ body {
   background: white;
   z-index: 10;
   border: 1px solid #1f204180;
+  border-top: none;
   display: flex;
   padding: 13px;
   justify-content: space-between;
@@ -607,8 +610,8 @@ body {
   transform: translateY(0);
 }
 
-.dropdown--open .dropdown__arrow {
-  transform: rotate(180deg);
+.dropdown--open .dropdown__input {
+  border-radius: 4px 4px 0 0;
 }
 
 .dropdown__expander.active {
