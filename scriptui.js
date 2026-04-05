@@ -33,65 +33,64 @@ buttons.forEach((btn, index) => {
 
 /* end of rate buttons */
 
-/*Dropdown flashback*/
+/*Dropdown */
+// Один обработчик работает для ВСЕХ дропдаунов на странице
+document.querySelectorAll(".dropdown__trigger").forEach((trigger) => {
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-const btn = document.getElementById("arrow-btn");
-const menu = document.getElementById("mobileMenu");
-const btnclose = document.getElementById("menuBtnClose");
+    // closest() поднимается вверх по DOM и находит родительский блок .dropdown
+    const dropdown = trigger.closest(".dropdown");
 
-btn.addEventListener("click", (e) => {
-  e.stopPropagation(); // Останавливает всплытие к родителю
-  menu.classList.toggle("active");
+    // Закрываем все остальные открытые дропдауны
+    document.querySelectorAll(".dropdown--open").forEach((other) => {
+      if (other !== dropdown) other.classList.remove("dropdown--open");
+    });
+
+    // Переключаем текущий
+    dropdown.classList.toggle("dropdown--open");
+  });
 });
 
-// Закрытие меню при клике вне его области
-btnclose.addEventListener("click", () => {
-  menu.classList.remove("active");
+// Закрытие при клике вне любого дропдауна
+document.addEventListener("click", () => {
+  document.querySelectorAll(".dropdown--open").forEach((dropdown) => {
+    dropdown.classList.remove("dropdown--open");
+  });
 });
 
-const allMinusBtnsRooms = document.querySelectorAll(".dropdown__minus");
-const allPlusBtnsRooms = document.querySelectorAll(".dropdown__plus");
+const allMinusBtnsRooms = document.querySelectorAll(".dropdown__button-minus");
+const allPlusBtnsRooms = document.querySelectorAll(".dropdown__button-plus");
 
-/*Dropdown plus minus*/
-// const plusBtn = document.querySelectorAll(".dropdownBad__plus");
-// const minusBtn = document.querySelectorAll(".dropdownBad__minus");
-// let counter = document.querySelectorAll(".dropdown__counter span");
+document.querySelectorAll(".dropdown__button-plus").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const span = e.currentTarget.parentElement.querySelector("span");
+    span.textContent = parseInt(span.textContent) + 1;
+    Updatestatus();
+  });
+});
 
-// plusBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let counterInt = parseInt(counter.textContent);
-//   counter.textContent = counterInt + 1;
-// });
+//счетчик минуса
+document.querySelectorAll(".dropdown__button-minus").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const span = e.currentTarget.parentElement.querySelector("span");
+    let val = parseInt(span.textContent);
+    if (val > 0) {
+      span.textContent = val - 1;
+      Updatestatus();
+    }
+  });
+});
 
-// minusBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let counterInt = parseInt(counter.textContent);
-//   if (counterInt > 0) {
-//     counter.textContent = counterInt - 1;
-//   }
-// });
-
-//d
-
-//dropdownPeople
-const allMinusBtns = document.querySelectorAll(".dropdown__minus-people");
-const allPlusBtns = document.querySelectorAll(".dropdown__plus-people");
-// const dataCount = document.getElementById("peoplesData");
-const btnPeople = document.querySelector(".arrow-btn");
 const menuPeople = document.querySelector(".dropdown__peopleExpander");
-const btnApply = document.querySelector(".dropdown__btn-apply");
-const allSpans = document.querySelectorAll(".dropdown__counter span");
-const btnApplyClean = document.querySelector(".dropdown__btn-clean");
+const btnApply = document.querySelector(".dropdown__button-apply");
+const allSpans = document.querySelectorAll(".dropdown__span");
+const btnApplyClean = document.querySelector(".dropdown__button-clean");
 const inputData = document.querySelector(".dropdown__input");
-
-btnPeople.addEventListener("click", (e) => {
-  e.stopPropagation(); // Останавливает всплытие к родителю
-  menuPeople.classList.toggle("active");
-});
 
 // закрытие при клике вне блока
 document.addEventListener("click", (e) => {
-  if (!e.target.closest(".dropdown__peoples")) {
+  if (!e.target.closest(".dropdown")) {
     menuPeople.classList.remove("active");
   }
 });
@@ -115,7 +114,7 @@ const guestsPr = {
 function Updatestatus() {
   let total = 0;
   const peopleSpans = document.querySelectorAll(
-    ".dropdown__peopleExpander .dropdown__counter span",
+    ".dropdown__expander .dropdown__span",
   );
   peopleSpans.forEach((span) => {
     total += parseInt(span.textContent);
@@ -133,30 +132,9 @@ function Updatestatus() {
   btnApplyClean.addEventListener("click", (e) => {
     e.preventDefault();
     const peopleSpans = document.querySelectorAll(
-      ".dropdown__peopleExpander .dropdown__counter span",
+      ".dropdown__expander .dropdown__span",
     );
     peopleSpans.forEach((span) => (span.textContent = "0"));
     Updatestatus();
   });
 }
-
-//счетчик плюса
-document.querySelectorAll(".dropdown__plus-people").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const span = e.currentTarget.parentElement.querySelector("span");
-    span.textContent = parseInt(span.textContent) + 1;
-    Updatestatus();
-  });
-});
-
-//счетчик минуса
-document.querySelectorAll(".dropdown__minus-people").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const span = e.currentTarget.parentElement.querySelector("span");
-    let val = parseInt(span.textContent);
-    if (val > 0) {
-      span.textContent = val - 1;
-      Updatestatus();
-    }
-  });
-});
