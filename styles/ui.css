@@ -593,6 +593,7 @@ body {
   z-index: 10;
   border: 1px solid #1f204180;
   border-top: none;
+  margin-top: -1px;
   display: flex;
   padding: 13px;
   justify-content: space-between;
@@ -602,6 +603,12 @@ body {
   visibility: hidden;
   transform: translateY(-10px);
   transition: 0.3s ease;
+}
+
+.dropdown__span {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
 }
 
 .dropdown--open .dropdown__expander {
@@ -644,11 +651,12 @@ body {
   display: none;
   display: block;
   opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
 }
 
-.dropdown__button-clean.active {
-  display: block;
-  opacity: 1;
+.dropdown__button-clean[style*="opacity: 1"] {
+  pointer-events: auto; /* Теперь можно нажать */
 }
 
 .dropdown__button-apply {

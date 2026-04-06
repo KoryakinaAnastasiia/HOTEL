@@ -84,29 +84,23 @@ document.querySelectorAll(".dropdown__counter").forEach((counter) => {
 
 const btnApply = document.querySelector(".dropdown__button-apply");
 const btnApplyClean = document.querySelector(".dropdown__button-clean");
-
-// закрытие при клике вне блока
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".dropdown")) {
-    menuPeople.classList.remove("active");
-  }
-});
-
-// закрытие при клике на кнопку "применить"
-btnApply.addEventListener("click", (e) => {
-  e.preventDefault();
-  menuPeople.classList.remove("active");
-});
-
-//кнопка очистить
 const prRu = new Intl.PluralRules("ru-RU");
-const guestsPr = {
-  zero: "гостей",
-  one: "гость",
-  few: "гостя",
-  other: "гостей",
-  many: "гостей",
+
+const pluralMaps = {
+  гости: { one: "гость", few: "гостя", many: "гостей" },
+  спальни: { one: "спальня", few: "спальни", many: "спален" },
+  кровати: { one: "кровать", few: "кровати", many: "кроватей" },
+  "ванные комнаты": {
+    one: "ванная комната",
+    few: "ванные комнаты",
+    many: "ванных комнат",
+  },
 };
+
+function getPlural(count, type) {
+  const key = prRu.select(count);
+  return pluralMaps[type][key] || pluralMaps[type].many;
+}
 
 function updateStatus(dropdown) {
   const input = dropdown.querySelector(".dropdown__input");
@@ -117,31 +111,50 @@ function updateStatus(dropdown) {
   let total = 0;
   let parts = [];
 
+  // Проверяем, какой это дропдаун по наличию слова "взрослые" в первом ряду
+  const isGuestDropdown = titles[0].textContent
+    .toLowerCase()
+    .includes("взросл");
+
   spans.forEach((span, index) => {
     const count = parseInt(span.textContent);
     total += count;
 
-    if (count > 0) {
+    if (count > 0 && !isGuestDropdown) {
+      // Для комнат: собираем массив строк "1 спальня", "2 кровати"
       const type = titles[index].textContent.toLowerCase().trim();
       parts.push(`${count} ${getPlural(count, type)}`);
     }
   });
 
-  // Логика для Гостей (показываем "5 гостей" суммарно)
-  if (input.placeholder.includes("гост")) {
-    input.value = total > 0 ? `${total} ${getPlural(total, "гостей")}` : "";
+  if (isGuestDropdown) {
+    // Для гостей: только общее число и слово "гость/гостя/гостей"
+    input.value = total > 0 ? `${total} ${getPlural(total, "гости")}` : "";
   } else {
-    // Логика для Комнат (перечисляем через запятую: "2 спальни, 1 кровать")
+    // Для комнат: объединяем массив в строку через запятую
     input.value = parts.join(", ");
   }
 
-  // Показываем/скрываем кнопку "Очистить"
+  // Показываем/скрываем кнопку очистки
   if (cleanBtn) {
-    if (total > 0) {
-      cleanBtn.style.display = "block";
-      cleanBtn.style.opacity = "1";
-    } else {
-      cleanBtn.style.display = "none";
-    }
+    cleanBtn.style.opacity = total > 0 ? "1" : "0";
+    cleanBtn.style.pointerEvents = total > 0 ? "auto" : "none";
   }
 }
+
+document.querySelectorAll(".dropdown__button-clean").forEach((cleanBtn) => {
+  cleanBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Чтобы дропдаун не закрылся при клике
+
+    // Находим родительский дропдаун
+    const dropdown = cleanBtn.closest(".dropdown");
+
+    // 1. Сбрасываем все счетчики (спаны) в 0
+    dropdown.querySelectorAll(".dropdown__span").forEach((span) => {
+      span.textContent = "0";
+    });
+
+    // 2. Обновляем статус (инпут очистится, кнопка скроется)
+    updateStatus(dropdown);
+  });
+});
