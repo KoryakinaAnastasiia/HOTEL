@@ -168,9 +168,15 @@ const dropChEx = document.querySelector(".dropdown-checkbox__expandable");
 dropChIn.forEach((input) => {
   input.addEventListener("click", (e) => {
     e.stopPropagation();
-    // Используем правильную переменную и toggle для открытия/закрытия
     dropChEx.classList.toggle("active");
   });
+});
+
+document.addEventListener("click", (e) => {
+  const isClickInside = e.target.closest(".dropdown-checkbox");
+  if (!isClickInside) {
+    dropChEx.classList.remove("active");
+  }
 });
 
 /* end of dropdown-checkbox */
