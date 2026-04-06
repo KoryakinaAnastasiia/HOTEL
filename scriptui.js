@@ -158,3 +158,5 @@ document.querySelectorAll(".dropdown__button-clean").forEach((cleanBtn) => {
     updateStatus(dropdown);
   });
 });
+
+/* end of dropdown */
