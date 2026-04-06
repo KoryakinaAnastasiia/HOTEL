@@ -19,6 +19,11 @@ body {
   gap: 16px;
 }
 
+.block-three {
+  display: flex;
+  gap: 100px;
+}
+
 #input {
   display: flex;
   flex-direction: column;
@@ -207,6 +212,13 @@ body {
   cursor: pointer;
   height: 0;
   width: 0;
+}
+
+.checkbox__label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .checkbox__mark {
@@ -710,6 +722,7 @@ body {
   width: 100%;
   text-align: left;
   outline: none;
+  opacity: 1;
 }
 
 .dropdown-checkbox__expandable {
@@ -730,3 +743,27 @@ body {
   transform: translateY(0);
 }
 /* end of dropdown-checkbox */
+
+/* Checkbox Buttons */
+.checkbox-buttons-rich {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 266px;
+  width: 100%;
+}
+
+.checkbox-buttons-rich__title {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+  color: var(--Dark-Shade100);
+}
+
+.checkbox-buttons-rich__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* end of Checkbox Buttons */
