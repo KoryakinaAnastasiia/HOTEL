@@ -251,7 +251,7 @@ body {
   vertical-align: middle;
   font-weight: var(--font-small);
   font-size: var(--body-font-size);
-  color: var(--Dark-Shade50ƒ);
+  color: #1f204180;
 }
 
 /* end of check box */
@@ -600,7 +600,6 @@ body {
   flex-direction: column;
   gap: 7px;
   opacity: 0;
-  visibility: hidden;
   transform: translateY(-10px);
   transition: 0.3s ease;
 }
@@ -667,3 +666,67 @@ body {
   text-transform: uppercase;
   border: none;
 }
+
+/* dropdown-checkbox */
+.dropdown-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-width: 266px;
+  width: 100%;
+}
+
+.dropdown-checkbox__label {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
+
+.dropdown-checkbox__trigger {
+  position: relative;
+}
+
+.dropdown-checkbox__trigger::after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(/img/icon_arrow_down.svg);
+  content: "";
+  width: 44px;
+  height: 44px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dropdown-checkbox__input {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+  color: var(--Dark-Shade100);
+  padding: 13px 0px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+}
+
+.dropdown-checkbox__expandable {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0, 3s;
+  background: white;
+  z-index: 10;
+}
+
+.dropdown-checkbox__expandable.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/* end of dropdown-checkbox */

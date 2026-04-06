@@ -33,14 +33,13 @@ buttons.forEach((btn, index) => {
 
 /* end of rate buttons */
 
-/*Dropdown */
+/*dropdown */
 
 // Один обработчик работает для ВСЕХ дропдаунов на странице
 document.querySelectorAll(".dropdown__trigger").forEach((trigger) => {
   trigger.addEventListener("click", (e) => {
-    e.stopPropagation();
-
     // closest() поднимается вверх по DOM и находит родительский блок .dropdown
+    e.stopPropagation();
     const dropdown = trigger.closest(".dropdown");
 
     // Закрываем все остальные открытые дропдауны
@@ -160,3 +159,18 @@ document.querySelectorAll(".dropdown__button-clean").forEach((cleanBtn) => {
 });
 
 /* end of dropdown */
+
+/* dropdown-checkbox */
+
+const dropChIn = document.querySelectorAll(".dropdown-checkbox__input");
+const dropChEx = document.querySelector(".dropdown-checkbox__expandable");
+
+dropChIn.forEach((input) => {
+  input.addEventListener("click", (e) => {
+    e.stopPropagation();
+    // Используем правильную переменную и toggle для открытия/закрытия
+    dropChEx.classList.toggle("active");
+  });
+});
+
+/* end of dropdown-checkbox */
