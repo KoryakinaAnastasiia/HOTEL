@@ -765,5 +765,45 @@ body {
   flex-direction: column;
   gap: 10px;
 }
-
 /* end of Checkbox Buttons */
+
+/* bullet list */
+.bullet-list__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bullet-list__title {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
+
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--Dark-Shade75);
+  line-height: 24px;
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  background-color: #1f204140;
+  border-radius: 50%;
+}
+/* end of bullet list */
