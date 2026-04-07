@@ -807,3 +807,15 @@ body {
   border-radius: 50%;
 }
 /* end of bullet list */
+
+/* benefit-list */
+.benefit-list {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--);
+  border-bottom: 1px solid #1f20411a;
+  max-width: 291px;
+  width: 100%;
+  padding: 17px 0px;
+}
+/* end of benefit-list */
