@@ -24,6 +24,11 @@ body {
   gap: 100px;
 }
 
+.block-four {
+  display: flex;
+  gap: 156px;
+}
+
 #input {
   display: flex;
   flex-direction: column;
@@ -835,3 +840,7 @@ body {
   color: var(--Dark-Shade75);
 }
 /* end of benefit-list */
+
+/* feedback-card */
+
+/* end of feedback-card */
