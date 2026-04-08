@@ -814,13 +814,17 @@ body {
 /* end of bullet list */
 
 /* benefit-list */
+
+.benefit {
+  max-width: 291px;
+  width: 100%;
+}
+
 .benefit-list {
   display: flex;
   gap: 10px;
   border-bottom: 1px solid var(--);
   border-bottom: 1px solid #1f20411a;
-  max-width: 291px;
-  width: 100%;
   padding: 17px 0px;
 }
 
@@ -842,5 +846,52 @@ body {
 /* end of benefit-list */
 
 /* feedback-card */
+
+.feedback-card {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.feedback-card__header {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.feedback-card__info {
+  padding-left: 58px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 48px;
+}
+
+.feedback-card__info::before {
+  position: absolute;
+  background-image: url(/img/avatar.svg);
+  left: 0;
+  transform: translateY(-50%);
+  content: "";
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+}
+
+.feedback-card__name {
+  font-weight: var(--font-big);
+  font-size: var(--body-font-size);
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: var(--Dark-Shade75);
+}
+
+.feedback-card__span {
+  font-weight: var(--font-small);
+  font-size: var(--body-font-size);
+  line-height: 24px;
+  letter-spacing: 0%;
+}
 
 /* end of feedback-card */
