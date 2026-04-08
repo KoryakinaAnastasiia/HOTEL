@@ -818,4 +818,20 @@ body {
   width: 100%;
   padding: 17px 0px;
 }
+
+.benefit-list__h {
+  font-weight: var(--font-big);
+  font-size: var(--body-font-size);
+  line-height: 24px;
+  color: var(--Dark-Shade75);
+  letter-spacing: 0%;
+}
+
+.benefit-list__span {
+  font-weight: var(--font-small);
+  font-size: var(--body-font-size);
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: var(--Dark-Shade75);
+}
 /* end of benefit-list */
