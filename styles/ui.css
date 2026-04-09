@@ -411,6 +411,7 @@ body {
   background-color: #ffffff;
   cursor: pointer;
   user-select: none;
+  margin: 0px 5px;
 }
 
 .buttons-like__span {
@@ -861,22 +862,26 @@ body {
 }
 
 .feedback-card__info {
-  padding-left: 58px;
+  padding-left: 68px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 48px;
+  text-align: justify;
 }
 
 .feedback-card__info::before {
   position: absolute;
-  background-image: url(/img/avatar.svg);
+  background-image: url(/img/avatar.png);
   left: 0;
-  transform: translateY(-50%);
   content: "";
   width: 48px;
   height: 48px;
   background-repeat: no-repeat;
+  border-radius: 32px;
+  background-size: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0px 10px 20px 0px #1f20411a;
 }
 
 .feedback-card__name {
@@ -892,6 +897,22 @@ body {
   font-size: var(--body-font-size);
   line-height: 24px;
   letter-spacing: 0%;
+  font-family: var(--body-font);
+  color: #1f2041bf;
+}
+
+.feedback-card__body {
+  display: flex;
+  gap: 29px;
+}
+
+.feedback-card__comment {
+  font-weight: var(--font-small);
+  font-size: var(--body-font-size);
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-family: var(--body-font);
+  color: #1f2041bf;
 }
 
 /* end of feedback-card */
