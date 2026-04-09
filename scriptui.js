@@ -1,16 +1,25 @@
 /* like buttons */
-const buttonLikeInput = document.querySelector(".buttons-like__input");
+const buttonLikeInputs = document.querySelectorAll(".buttons-like__input");
 
-buttonLikeInput.addEventListener("change", (event) => {
-  const input = event.target; // почитать
-  const likesCount = input.parentElement.querySelector(".buttons-like__span");
-  let count = parseInt(likesCount.textContent);
-  if (buttonLikeInput.checked) {
-    count++;
-  } else {
-    count--;
-  }
-  likesCount.textContent = count;
+// Выведем в консоль, сколько кнопок нашел JS (нажмите F12 в браузере)
+console.log("Найдено кнопок лайков:", buttonLikeInputs.length);
+
+buttonLikeInputs.forEach((input) => {
+  input.addEventListener("change", (event) => {
+    // Используем closest, чтобы точно найти общий контейнер кнопки и цифры
+    const container = event.target.closest(".buttons-like");
+    const likesCountLabel = container.querySelector(".buttons-like__span");
+
+    let count = parseInt(likesCountLabel.textContent);
+
+    if (event.target.checked) {
+      count++;
+    } else {
+      count--;
+    }
+
+    likesCountLabel.textContent = count;
+  });
 });
 /* end of like buttons */
 
