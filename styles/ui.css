@@ -146,14 +146,14 @@ body {
 
 /* text-input-subscription button  */
 
-.text-input-subscription {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+.subscription-form {
   position: relative;
 }
 
-.text-input-subscription__label {
+.subscription-form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   color: var(--Dark-Shade100);
@@ -161,15 +161,21 @@ body {
   line-height: 100%;
 }
 
-.text-input-subscription__input {
+.subscription-form__input {
   padding: 13px;
   border: 1px solid var(--Dark-Shade25);
   border-radius: 4px;
   width: 100%;
-  box-sizing: border-box; /* Чтобы кнопка позиционировалась внутри */
+  box-sizing: border-box;
 }
 
-.text-input-subscription__button {
+.subscription-form__input:hover,
+.subscription-form__input:focus {
+  border: 1px solid var(--Dark-Shade100);
+  outline: none;
+}
+
+.subscription-form__button {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -329,13 +335,13 @@ body {
 /* end of radio buttons */
 
 /* toggle button */
-.checkbox-toggle__lable {
+.toggle__lable {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   text-transform: uppercase;
 }
 
-.checkbox-toggle {
+.toggle {
   display: inline-block;
   font-weight: var(--font-small);
   position: relative;
@@ -343,7 +349,7 @@ body {
   color: var(--Dark-Shade75);
 }
 
-.checkbox-toggle .checkbox-toggle__span {
+.toggle .toggle__span {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -356,7 +362,7 @@ body {
   transition: 0.2s;
   margin-right: 10px;
 }
-.checkbox-toggle .checkbox-toggle__span:before {
+.toggle .toggle__span:before {
   content: "";
   position: absolute;
   top: 3px;
@@ -368,7 +374,7 @@ body {
   box-shadow: 0 3px 5px white;
   transition: 0.15s;
 }
-.checkbox-toggle input[type="checkbox"] {
+.toggle input[type="checkbox"] {
   width: 0;
   height: 0;
   position: absolute;
@@ -376,13 +382,11 @@ body {
   opacity: 0;
 }
 
-.checkbox-toggle input[type="checkbox"]:checked + .checkbox-toggle__span {
+.toggle input[type="checkbox"]:checked + .toggle__span {
   border-color: #bc9cff;
 }
 
-.checkbox-toggle
-  input[type="checkbox"]:checked
-  + .checkbox-toggle__span:before {
+.toggle input[type="checkbox"]:checked + .checkbox-toggle__span:before {
   transform: translateX(20px);
   background: #bc9cff;
 }
@@ -396,11 +400,11 @@ body {
   text-transform: uppercase;
 }
 
-.buttons-like__input {
+.button-like__input {
   display: none;
 }
 
-.buttons-like__form {
+.button-like {
   display: inline-flex; /* Чтобы кнопка была по ширине контента */
   align-items: center;
   gap: 4px;
@@ -411,39 +415,39 @@ body {
   background-color: #ffffff;
   cursor: pointer;
   user-select: none;
-  margin: 0px 5px;
+  width: fit-content;
 }
 
-.buttons-like__span {
+.button-like__counter {
   font-weight: var(--font-small);
   font-size: 10px;
   color: #1f204140;
   user-select: none;
 }
 
-.buttons-like__img {
+.button-like__heart-empty {
   object-fit: none;
 }
 
-.buttons-like__img-heart {
+.button-like__heart-filled {
   object-fit: none;
   opacity: 0;
   position: absolute;
 }
 
-.buttons-like__input:checked + .buttons-like__form .buttons-like__img {
+.button-like__input:checked + .button-like .button-like__heart-empty {
   opacity: 0;
 }
 
-.buttons-like__input:checked + .buttons-like__form .buttons-like__img-heart {
+.button-like__input:checked + .button-like .button-like__heart-filled {
   opacity: 1;
 }
 
-.buttons-like__input:checked + .buttons-like__form {
+.button-like__input:checked + .button-like {
   border-color: #bc9cff;
 }
 
-.buttons-like__input:checked + .buttons-like__form .buttons-like__span {
+.button-like__input:checked + .button-like .button-like__counter {
   color: #bc9cff;
 }
 /* end of like buttons */
@@ -849,42 +853,36 @@ body {
 /* feedback-card */
 
 .feedback-card {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.feedback-card__header {
-  position: relative;
-  display: flex;
+  display: grid;
   gap: 10px;
-  align-items: center;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
 }
 
-.feedback-card__info {
-  padding-left: 68px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.feedback-card__avatar {
   height: 48px;
-  text-align: justify;
-}
-
-.feedback-card__info::before {
-  position: absolute;
-  background-image: url(/img/avatar.png);
-  left: 0;
-  content: "";
   width: 48px;
-  height: 48px;
-  background-repeat: no-repeat;
-  border-radius: 32px;
-  background-size: cover;
+  border-radius: 50%;
   border: 2px solid #ffffff;
   box-shadow: 0px 10px 20px 0px #1f20411a;
 }
 
-.feedback-card__name {
+.feedback-card__avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  grid-row: span 2;
+}
+
+.feedback-card__author {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 48px;
+}
+
+.feedback-card__author-name {
   font-weight: var(--font-big);
   font-size: var(--body-font-size);
   line-height: 24px;
@@ -892,18 +890,13 @@ body {
   color: var(--Dark-Shade75);
 }
 
-.feedback-card__span {
+.feedback-card__feedback-date {
   font-weight: var(--font-small);
   font-size: var(--body-font-size);
   line-height: 24px;
   letter-spacing: 0%;
   font-family: var(--body-font);
   color: #1f2041bf;
-}
-
-.feedback-card__body {
-  display: flex;
-  gap: 29px;
 }
 
 .feedback-card__comment {

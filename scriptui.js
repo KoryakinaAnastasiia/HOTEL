@@ -7,7 +7,7 @@ console.log("Найдено кнопок лайков:", buttonLikeInputs.length
 buttonLikeInputs.forEach((input) => {
   input.addEventListener("change", (event) => {
     // Используем closest, чтобы точно найти общий контейнер кнопки и цифры
-    const container = event.target.closest(".buttons-like");
+    const container = event.target.closest(".buttons-like__label");
     const likesCountLabel = container.querySelector(".buttons-like__span");
 
     let count = parseInt(likesCountLabel.textContent);

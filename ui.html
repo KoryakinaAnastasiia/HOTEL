@@ -94,24 +94,24 @@
           <!--dropdown-->
 
           <!--text-input-subscription__button-->
-          <label class="text-input-subscription"
-            ><span class="text-input-subscription__label"
-              >subscription text field</span
-            >
+          <!--subscription-form ПОМЕНЯТЬ-->
+          <form class="subscription-form" >
+            <label class="subscription-form__label">
+              subscription text field
             <input
-              class="text-input-subscription__input"
+              class="subscription-form__input"
               type="email"
-              readonly
               placeholder="Email"
             />
-            <button type="submit" class="text-input-subscription__button">
+            </label>
+            <button type="submit" class="subscription-form__button">
               <img
-                class="text-input-subscription__button__img"
+                class="subscription-form__button-img"
                 src="./img/arrow_forward.png"
                 alt=""
               />
             </button>
-          </label>
+          </form>
         </div>
         <!--text-input-subscription__button-->
       </section>
@@ -122,6 +122,7 @@
         <h3 class="filter-group__title">Checkbox Buttons</h3>
         <div class="filter-group__items">
           <label class="checkbox">
+            <!-- сделать через befor/after-->
             <input type="checkbox" class="checkbox__input" />
             <span class="checkbox__mark"></span>
             <span class="checkbox__label">Можно курить</span>
@@ -146,7 +147,15 @@
         <!--Radio Buttons-->
         <div class="radio-buttons">
           <h3 class="radio-buttons__lable">Radio Buttons</h3>
+          <label class="radio-button">
+            <input type="radio" class="radio-button__input" />
+            <span class="radio-button__mark"></span>
+            <span class="radio-button__label">
+              Можно пригласить гостей (до 10 человек)</span
+            >
+          </label>
           <form class="radio-buttons__form">
+            
             <input
               class="radio-buttons__input"
               type="radio"
@@ -156,6 +165,7 @@
               checked
             />
             <label for="option1">Мужчина</label>
+            
             <input
               class="radio-buttons__input"
               type="radio"
@@ -169,52 +179,51 @@
         <!--Radio Buttons-->
 
         <!--Toggle Buttons-->
-        <h3 class="checkbox-toggle__lable">Toggle</h3>
+        <h3 class="toggle__title">Toggle</h3>
         <div>
-          <label class="checkbox-toggle">
-            <input type="checkbox" />
-            <span class="checkbox-toggle__span"></span>
-            Получать спецпредложения
+          <label class="toggle">
+            <input class="toggle__input" type="checkbox"/>
+            <span class="toggle__mark"></span>
+            <span class="toggle__label-text">Получать спецпредложения</span>
           </label>
         </div>
         <!--Toggle Buttons-->
 
         <!--Like Buttons-->
-        <h3 class="buttons-like__title">like button</h3>
+        <h3 class="button-like__title">like button</h3>
 
-        <label class="buttons-like__label">
-          <input type="checkbox" class="buttons-like__input" />
-          <div class="buttons-like__form">
+        <label class="button-like">
+          <input type="checkbox" class="button-like__input" />
             <img
-              class="buttons-like__img"
+              class="button-like__heart-empty"
               src="./img/buttons_heart.svg"
               alt="like"
             />
             <img
-              class="buttons-like__img-heart"
+              class="button-like__heart-filled"
               src="./img/buttons_heart_point.svg"
               alt="like"
             />
-            <span class="buttons-like__span">0</span>
-          </div>
+            <span class="button-like__counter">0</span>
         </label>
         <!--Like Buttons-->
 
         <!--Rate Buttons-->
-        <h3 class="buttons-rate__title">rate button</h3>
+        <h3 class="rate__title">rate button</h3>
 
-        <div class="buttons-rate">
-          <button type="button" class="buttons-rate__buttons">
+        <div class="rate">
+          <button type="button" class="rate__button">
             <img
-              class="buttons-rate__img-border"
+              class="rate__star-empty"
               src="./img/star_border.svg"
               alt="stars"
             />
-            <img class="buttons-rate__img" src="./img/star.svg" alt="stars" />
+            <img class="rate__star-filled" src="./img/star.svg" alt="stars" />
           </button>
-          <button type="button" class="buttons-rate__buttons">
+          <!--исправить ниже-->
+          <button type="button" class="rate__button">
             <img
-              class="buttons-rate__img-border"
+              class="rate__button-filled"
               src="./img/star_border.svg"
               alt="stars"
             />
@@ -460,14 +469,11 @@
 
      <!--feedback-card-->
       <div class="feedback-card">
-        <div class="feedback-card__header">
-            <div class="feedback-card__info">
-              <h3 class="feedback-card__name">Мурад Сарафанов</h3>
-              <span class="feedback-card__span">5 дней назад</span>
-            </div>
-        </div>
-        <div class="feedback-card__body">
-           <div class="buttons-like__form">
+        <div class="feedback-card__avatar-section">
+            <img class="feedback-card__avatar" src="./img/avatar.png" alt="img">
+            <label class="buttons-like__label">
+          <input type="checkbox" class="buttons-like__input" />
+          <div class="buttons-like__form">
             <img
               class="buttons-like__img"
               src="./img/buttons_heart.svg"
@@ -480,8 +486,13 @@
             />
             <span class="buttons-like__span">0</span>
           </div>
-          <p class="feedback-card__comment">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</p>
+        </label>
         </div>
+        <div class="feedback-card__author">
+          <p class="feedback-card__author-name">Мурад Сарафанов</p>
+          <p class="feedback-card__feedback-date">5 дней назад</p>
+        </div>
+        <p class="feedback-card__comment">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</p>
       </div>
      <!--end of feedback-card-->
     </div>
