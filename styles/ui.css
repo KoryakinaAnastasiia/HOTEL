@@ -204,6 +204,12 @@ body {
   gap: 17px;
 }
 
+.filter-group__title {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
+
 .filter-group__items {
   display: flex;
   flex-direction: column;
@@ -292,46 +298,40 @@ body {
   text-transform: uppercase;
 }
 
-.radio-buttons__form {
+.radio-buttons__lables {
   display: flex;
   gap: 20px;
 }
 
-.radio-buttons__input {
+.radio-button__input {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-.radio-buttons__input + label {
+..radio-button__mark {
   position: relative;
   padding-left: 30px;
   cursor: pointer;
 }
 
-.radio-buttons__input + label::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.radio-button__mark {
+  position: relative;
+  display: inline-block;
   width: 20px;
   height: 20px;
   border: 1px solid #1f204140;
   border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
-.radio-buttons__input:checked + label::before {
+.radio-button__input:checked + .radio-button__mark {
   background-color: #bc9cff;
   box-shadow: inset 0 0 0 3px #f4f4f4;
   border: 1px solid #bc9cff;
 }
 
-.radio-buttons__form label {
-  font-weight: var(--font-small);
-  font-size: var(--body-font-size);
-  color: var(--Dark-Shade75);
-}
 /* end of radio buttons */
 
 /* toggle button */
