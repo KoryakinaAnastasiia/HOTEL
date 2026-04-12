@@ -25,12 +25,12 @@ buttonLikeInputs.forEach((input) => {
 
 /* rate buttons */
 
-const buttons = document.querySelectorAll(".buttons-rate__buttons");
+const buttons = document.querySelectorAll(".rate__button");
 
 buttons.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     // Выбираем все звезды
-    const starsOn = document.querySelectorAll(".buttons-rate__img");
+    const starsOn = document.querySelectorAll(".rate__star-filled");
     // Сбрасываем активный класс у всех залитых звезд
     starsOn.forEach((star) => star.classList.remove("active"));
     // Красим все звезды ДО нажатой включительно

@@ -448,13 +448,13 @@ body {
 /* end of like buttons */
 
 /* Rate Buttons */
-.buttons-rate__title {
+.rate__title {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   text-transform: uppercase;
 }
 
-.buttons-rate__buttons {
+.rate__button {
   position: relative;
   background: none;
   border: none;
@@ -463,22 +463,22 @@ body {
   height: 24px;
 }
 
-.buttons-rate__img-border,
-.buttons-rate__img {
+.rate__star-empty,
+.rate__star-filled {
   position: absolute;
   object-fit: none;
   top: 0px;
   left: 0px;
 }
 
-.buttons-rate__img {
+.rate__star-filled {
   position: absolute;
   object-fit: none;
-  display: none; /* По умолчанию скрыты */
+  display: none;
 }
 
-.buttons-rate__img.active {
-  display: block; /* Показываем при наличии класса */
+.rate__star-filled.active {
+  display: block;
 }
 /* end of Rate Buttons */
 
