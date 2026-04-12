@@ -309,12 +309,6 @@ body {
   opacity: 0;
 }
 
-..radio-button__mark {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-}
-
 .radio-button__mark {
   position: relative;
   display: inline-block;
@@ -335,34 +329,34 @@ body {
 /* end of radio buttons */
 
 /* toggle button */
-.toggle__lable {
+.toggle__title {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   text-transform: uppercase;
 }
 
 .toggle {
-  display: inline-block;
-  font-weight: var(--font-small);
-  position: relative;
-  font-size: var(--body-font-size);
+  display: flex;
+  align-items: center; /* Центрируем текст и кнопку по вертикали */
+  max-width: 260px;
+  width: 100%;
+  cursor: pointer;
   color: var(--Dark-Shade75);
 }
 
-.toggle .toggle__span {
+.toggle__mark {
+  flex-shrink: 0; /* Чтобы тоггл не сжимался, если текст длинный */
   position: relative;
-  display: inline-block;
-  box-sizing: border-box;
   width: 40px;
   height: 20px;
   border: 1px solid #1f204140;
-  border-radius: 25% / 50%;
-  vertical-align: top;
+  border-radius: 10px; /* Фиксированный радиус для овальной формы */
   background: #ffffff;
   transition: 0.2s;
   margin-right: 10px;
 }
-.toggle .toggle__span:before {
+
+.toggle__mark:before {
   content: "";
   position: absolute;
   top: 3px;
@@ -370,11 +364,11 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #1f204140;
-  box-shadow: 0 3px 5px white;
-  transition: 0.15s;
+  background: #1f204140; /* Цвет выключенного кружка */
+  transition: 0.2s;
 }
-.toggle input[type="checkbox"] {
+
+.toggle__input[type="checkbox"] {
   width: 0;
   height: 0;
   position: absolute;
@@ -382,11 +376,11 @@ body {
   opacity: 0;
 }
 
-.toggle input[type="checkbox"]:checked + .toggle__span {
+.toggle__input:checked + .toggle__mark {
   border-color: #bc9cff;
 }
 
-.toggle input[type="checkbox"]:checked + .checkbox-toggle__span:before {
+.toggle__input[type="checkbox"]:checked + .toggle__mark:before {
   transform: translateX(20px);
   background: #bc9cff;
 }
