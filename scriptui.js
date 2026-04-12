@@ -1,5 +1,5 @@
 /* like buttons */
-const buttonLikeInputs = document.querySelectorAll(".buttons-like__input");
+const buttonLikeInputs = document.querySelectorAll(".button-like__input");
 
 // Выведем в консоль, сколько кнопок нашел JS (нажмите F12 в браузере)
 console.log("Найдено кнопок лайков:", buttonLikeInputs.length);
@@ -7,8 +7,8 @@ console.log("Найдено кнопок лайков:", buttonLikeInputs.length
 buttonLikeInputs.forEach((input) => {
   input.addEventListener("change", (event) => {
     // Используем closest, чтобы точно найти общий контейнер кнопки и цифры
-    const container = event.target.closest(".buttons-like__label");
-    const likesCountLabel = container.querySelector(".buttons-like__span");
+    const container = event.target.closest(".button-like");
+    const likesCountLabel = container.querySelector(".button-like__counter");
 
     let count = parseInt(likesCountLabel.textContent);
 

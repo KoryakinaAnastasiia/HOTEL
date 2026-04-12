@@ -388,7 +388,7 @@ body {
 /* end of toggle button */
 
 /* like buttons */
-.buttons-like__title {
+.button-like__title {
   font-weight: var(--font-big);
   font-size: var(--h3-font-size);
   text-transform: uppercase;
@@ -429,19 +429,20 @@ body {
   position: absolute;
 }
 
-.button-like__input:checked + .button-like .button-like__heart-empty {
-  opacity: 0;
+.button-like__input:checked ~ .button-like__heart-empty {
+  display: none; /* Скрываем пустую */
 }
 
-.button-like__input:checked + .button-like .button-like__heart-filled {
+.button-like__input:checked ~ .button-like__heart-filled {
   opacity: 1;
+  position: static; /* Возвращаем в поток */
 }
 
-.button-like__input:checked + .button-like {
+.button-like:has(.button-like__input:checked) {
   border-color: #bc9cff;
 }
 
-.button-like__input:checked + .button-like .button-like__counter {
+.button-like__input:checked ~ .button-like__counter {
   color: #bc9cff;
 }
 /* end of like buttons */
