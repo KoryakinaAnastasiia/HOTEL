@@ -3,6 +3,7 @@ body {
   font-family: var(--body-font);
 }
 
+/*form-room*/
 .form-room {
   max-width: 380px;
   width: 100%;
@@ -35,4 +36,29 @@ body {
   color: #ffffff;
   font-size: var(--h3-font-size);
   text-transform: uppercase;
+}
+/*end off form-room */
+
+.form-registration {
+  max-width: 380px;
+  width: 100%;
+  border: 1px solid #0000001f;
+  box-shadow: 0px 0px 25px 0px #00000033;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 4px;
+}
+
+.form-registration__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-registration__footer-title {
+  font-weight: var(--font-small);
+  font-size: var(--body-font-size);
+  vertical-align: middle;
 }

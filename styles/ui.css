@@ -344,6 +344,10 @@ body {
   color: var(--Dark-Shade75);
 }
 
+.toggle__label-text {
+  white-space: nowrap;
+}
+
 .toggle__mark {
   flex-shrink: 0; /* Чтобы тоггл не сжимался, если текст длинный */
   position: relative;

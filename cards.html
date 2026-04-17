@@ -93,6 +93,60 @@
       <button type="button" class="button-room">подобрать номер</button>
     </form>
 
+    <form action="" class="form-registration">
+      <p class="form-registration__label">Регистрация аккаунта</p>
+      <label class="text-input">
+        <input class="text-input__input" placeholder="Имя" />
+      </label>
+      <label class="text-input">
+        <input class="text-input__input" placeholder="Фамилия" />
+      </label>
+      <div class="radio-buttons">
+        <div class="radio-buttons__lables">
+          <label class="radio-button">
+            <input type="radio" name="gender" class="radio-button__input" />
+            <span class="radio-button__mark"></span>
+            <span class="radio-button__label"> Мужчина</span>
+          </label>
+
+          <label class="radio-button">
+            <input type="radio" name="gender" class="radio-button__input" />
+            <span class="radio-button__mark"></span>
+            <span class="radio-button__label"> Женщина </span>
+          </label>
+        </div>
+      </div>
+      <label class="text-input">
+        <span class="text-input__label">дата рождения</span>
+        <input
+          class="text-input__input"
+          placeholder="ДД.ММ.ГГГГ"
+          pattern="\d{2}\.\d{2}\.\d{4}"
+        />
+      </label>
+      <label class="text-input">
+        <span class="text-input__label">данные для входа в сервис</span>
+        <input class="text-input__input" placeholder="Email" />
+      </label>
+      <label class="text-input">
+        <input class="text-input__input" placeholder="Пароль" />
+      </label>
+      <div>
+        <label class="toggle">
+          <input class="toggle__input" type="checkbox" />
+          <span class="toggle__mark"></span>
+          <span class="toggle__label-text">Получать спецпредложения</span>
+        </label>
+      </div>
+      <button type="button" class="button button--full-width">
+        перейти к оплате
+      </button>
+      <div class="form-registration__footer">
+        <p class="form-registration__footer-title">Уже есть аккаунт на Toxin</p>
+        <button type="button" class="button button--outline">войти</button>
+      </div>
+    </form>
+
     <!--==================== JAVASCRIPT ====================-->
     <script src="./scriptui.js"></script>
   </body>
