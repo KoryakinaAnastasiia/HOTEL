@@ -119,4 +119,20 @@ body {
   font-weight: var(--font-big);
 }
 
+.form-booking__fields {
+  display: flex;
+  gap: 20px;
+}
+
+.form-booking__calculation {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 10px;
+  align-items: start;
+  font-weight: var(--font-small);
+  font-size: var(--body-font-size);
+  line-height: 14px;
+  color: var(----Dark-Shade75);
+}
+
 /*end of form-booking*/
