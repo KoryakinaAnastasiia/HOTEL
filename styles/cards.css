@@ -135,4 +135,9 @@ body {
   color: var(----Dark-Shade75);
 }
 
+.form-booking__total {
+  display: flex;
+  justify-content: space-between;
+}
+
 /*end of form-booking*/
