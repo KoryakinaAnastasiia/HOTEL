@@ -149,13 +149,15 @@
 
     <form action="" class="form-booking">
       <div class="form-booking__header">
-        <div class="form-booking__header-name">
-          <p class="form-booking__header-name-number">№ 888</p>
-          <p class="form-booking__header-name-title">люкс</p>
+        <div class="form-booking__title-group">
+          <p class="form-booking__number">№ 888</p>
+          <p class="form-booking__category">люкс</p>
         </div>
-        <p class="form-booking__header-price">9 990₽ в сутки</p>
+        <p class="form-booking__price-per-day">
+          <span class="form-booking__price-value"> 9 990 ₽ </span> в сутки
+        </p>
       </div>
-      <div class="form-booking__date-picker">
+      <div class="form-booking__fields">
         <div class="dropdown">
           <span class="dropdown__label">прибытие</span>
           <div class="dropdown__trigger">
@@ -169,7 +171,7 @@
           </div>
         </div>
       </div>
-      <div class="form-booking__number-guests">
+      <div class="fform-booking__field">
         <div class="dropdown">
           <span class="dropdown__label">Dropdown</span>
           <div class="dropdown__trigger">
@@ -181,7 +183,7 @@
           </div>
         </div>
       </div>
-      <div class="form-booking__info">
+      <div class="orm-booking__calculation">
         <p>9 990₽ х 4 суток</p>
         <p>39 960₽</p>
         <p>Сбор за услуги: скидка 2 179₽</p>
@@ -189,12 +191,13 @@
         <p>Сбор за дополнительные услуги</p>
         <p>300₽</p>
       </div>
-      <div class="form-booking__final-coast">
-        <p>Итого</p>
-        <span>0 ₽</span>
+      <div class="form-booking__total">
+        <p class="form-booking__total-label">Итого</p>
+        <div class="form-booking__total-separator"></div>
+        <span class="form-booking__total-price">0 ₽</span>
       </div>
-      <div class="form-booking__button">
-        <button type="button" class="button button--full-width">
+      <div class="form-booking__action">
+        <button type="submit" class="button button--full-width">
           Забронировать
         </button>
       </div>

@@ -80,4 +80,43 @@ body {
   border-radius: 4px;
 }
 
+.form-booking__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.form-booking__title-group {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.form-booking__number {
+  font-weight: var(--font-big);
+  font-size: var(--h1-font-size);
+  color: var(--Dark-Shade100);
+
+  &::first-letter {
+    font-size: var(--body-font-size);
+  }
+}
+
+.form-booking__category {
+  font-weight: var(--font-big);
+  font-size: var(--h3-font-size);
+  color: var(--Purple);
+}
+
+.form-booking__price-per-day {
+  font-weight: var(--font-small);
+  color: #1f204180;
+  font-size: var(--body-font-size);
+  line-height: 18px;
+}
+
+.form-booking__price-value {
+  font-weight: var(--font-big);
+}
+
 /*end of form-booking*/
