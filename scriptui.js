@@ -189,3 +189,25 @@ document.addEventListener("click", (e) => {
 });
 
 /* end of dropdown-checkbox */
+
+/* form-booking */
+const calculationForm = document.querySelectorAll(
+  ".form-booking__calculation p",
+);
+
+let totalSum = 0;
+
+const sumElement = document.querySelector(".form-booking__total-price");
+
+calculationForm.forEach((p, index) => {
+  if ((index + 1) % 2 === 0) {
+    p.style.fontWeight = "bold";
+    totalSum += parseInt(p.textContent) || 0;
+  }
+});
+
+if (sumElement) {
+  sumElement.textContent = totalSum;
+}
+
+/* end of form-booking */
