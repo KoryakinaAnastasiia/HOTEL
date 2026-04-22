@@ -127,17 +127,38 @@ body {
 .form-booking__calculation {
   display: grid;
   grid-template-columns: 1fr auto;
-  row-gap: 10px;
+  row-gap: 14px;
   align-items: start;
   font-weight: var(--font-small);
   font-size: var(--body-font-size);
   line-height: 14px;
-  color: var(----Dark-Shade75);
+  color: var(--Dark-Shade75);
 }
 
 .form-booking__total {
   display: flex;
-  justify-content: space-between;
+  align-items: baseline;
+}
+
+.form-booking__total-label {
+  font-weight: var(--font-big);
+  font-size: var(--h2-font-size);
+  line-height: 100%;
+  color: var(--Dark-Shade100);
+}
+
+.form-booking__total-separator {
+  flex-grow: 1;
+  border-bottom: 1px dashed var(--Dark-Shade25);
+  margin: 0 5px;
+  position: relative;
+}
+
+.form-booking__total-price {
+  font-weight: var(--font-big);
+  font-size: var(--h2-font-size);
+  line-height: 100%;
+  color: var(--Dark-Shade100);
 }
 
 /*end of form-booking*/
