@@ -191,6 +191,7 @@ document.addEventListener("click", (e) => {
 /* end of dropdown-checkbox */
 
 /* form-booking */
+
 const calculationForm = document.querySelectorAll(
   ".form-booking__calculation p",
 );

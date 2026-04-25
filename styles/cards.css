@@ -17,9 +17,11 @@ body {
 }
 
 .form-room__title {
+  font-family: var(--body-font);
   color: var(----Dark-Shade100);
   font-weight: var(--font-big);
   line-height: 100%;
+  font-size: var(--h1-font-size);
 }
 
 .form-room__dates {
@@ -51,6 +53,14 @@ body {
   flex-direction: column;
   gap: 20px;
   border-radius: 4px;
+}
+
+.form-registration__label {
+  font-family: var(--body-font);
+  color: var(----Dark-Shade100);
+  font-weight: var(--font-big);
+  line-height: 100%;
+  font-size: var(--h1-font-size);
 }
 
 .form-registration__footer {
@@ -162,3 +172,36 @@ body {
 }
 
 /*end of form-booking*/
+
+/* form-login */
+.form-login {
+  max-width: 380px;
+  width: 100%;
+  border: 1px solid #0000001f;
+  box-shadow: 0px 0px 25px 0px #00000033;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 4px;
+}
+
+.form-login__title {
+  font-family: var(--body-font);
+  color: var(----Dark-Shade100);
+  font-weight: var(--font-big);
+  line-height: 100%;
+  font-size: var(--h1-font-size);
+}
+
+.form-login__button {
+  padding-top: 10px;
+}
+
+.form-login__footer {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* end of form-login */
