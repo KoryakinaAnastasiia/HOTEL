@@ -3,6 +3,17 @@ body {
   font-family: var(--body-font);
 }
 
+.cards {
+  display: flex;
+  gap: 50px;
+}
+
+.block-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 /*form-room*/
 .form-room {
   max-width: 380px;
@@ -205,3 +216,36 @@ body {
   align-items: center;
 }
 /* end of form-login */
+
+/* form-calendar */
+
+.form-calendar {
+  padding: 20px;
+  border: 1px solid #1f204140;
+  border-radius: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.calendar__header {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  color: var(--Dark-Shade100);
+  font-weight: var(--font-big);
+  font-size: var(--h2-font-size);
+}
+
+.calendar_btn-left {
+  border: none;
+  background: white;
+}
+
+.calendar_btn-right {
+  border: none;
+  background: white;
+}
+
+/* end of form-calendar */
