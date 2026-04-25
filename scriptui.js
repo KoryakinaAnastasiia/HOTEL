@@ -201,7 +201,7 @@ const sumElement = document.querySelector(".form-booking__total-price");
 
 calculationForm.forEach((p, index) => {
   if ((index + 1) % 2 === 0) {
-    p.style.fontWeight = "bold";
+    p.style.fontWeight = "Montserrat";
     totalSum += parseInt(p.textContent) || 0;
   }
 });
